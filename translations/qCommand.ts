@@ -12,7 +12,11 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>add/modify command</source>
+        <source>edit command</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>add command</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -27,18 +31,11 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>add/modify command</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>edit</source>
         <translation type="unfinished"></translation>
     </message>
-</context>
-<context>
-    <name>CoverPage</name>
     <message>
-        <source>run command</source>
+        <source>add command</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -1,11 +1,10 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 import QtQuick.LocalStorage 2.0
-import "../src"
+import '../src'
 
 Page {
     id: page
-    objectName: "Main"
 
     signal exec(string cmd)
 
@@ -29,7 +28,7 @@ Page {
                 MenuItem {
                     text: qsTr('edit')
                     onClicked: {
-                        database.read(model, function(item) {
+                        database.read(commands.get(index), function(item) {
                             var dialog = pageStack.push(Qt.resolvedUrl('AddPage.qml'), item)
                             dialog.accepted.connect(function() {
                                 database.edit(item, dialog)
@@ -40,15 +39,15 @@ Page {
                 MenuItem {
                     text: qsTr('remove')
                     onClicked: {
-                        command.remorseAction("deleting", function() {
-                            database.remove(model)
+                        command.remorseAction('deleting', function() {
+                            database.remove(commands.get(index))
                         })
                     }
                 }
             }
             onClicked: {
-                database.read(model, function(item) {
-                    var dialog = pageStack.push(Qt.resolvedUrl("ExecPage.qml"), item)
+                database.read(commands.get(index), function(item) {
+                    var dialog = pageStack.push(Qt.resolvedUrl('ExecPage.qml'), item)
                     dialog.accepted.connect(function() {
                         page.exec(dialog.command)
                     })
@@ -65,7 +64,7 @@ Page {
 
         PullDownMenu {
             MenuItem {
-                text: qsTr('add/modify command')
+                text: qsTr('add command')
                 onClicked: {
                     var dialog = pageStack.push(Qt.resolvedUrl('AddPage.qml'))
                     dialog.accepted.connect(function() {
@@ -78,17 +77,28 @@ Page {
         VerticalScrollDecorator {}
     }
 
+    function getIndex(item) {
+        var length = commands.rowCount()
+        for (var i = 0; i < length; i++) {
+            if (commands.get(i).rowid === item.rowid) {
+                return i
+            }
+        }
+        return -1
+    }
+
     Component.onCompleted: {
         database.edited.connect(function(item, data) {
-            var entry = commands.get(item.index)
-            if (!entry || entry.name !== data.name) {
-                commands.append(data)
-            } else {
-                commands.set(item.index, data)
+            var index = getIndex(item)
+            if (index >= 0) {
+                commands.set(index, data)
             }
         })
         database.removed.connect(function(item) {
-            commands.remove(item.index)
+            var index = getIndex(item)
+            if (index >= 0) {
+                commands.remove(index)
+            }
         })
         database.added.connect(commands.append)
         database.load(commands.append)

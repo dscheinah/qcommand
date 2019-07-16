@@ -6,7 +6,7 @@ Page {
         width: parent.width
 
         PageHeader {
-            title: "qCommand"
+            title: 'qCommand'
         }
         Label {
             width: parent.width

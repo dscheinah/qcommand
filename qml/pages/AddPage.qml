@@ -3,6 +3,7 @@ import Sailfish.Silica 1.0
 import QtQuick.LocalStorage 2.0
 
 Dialog {
+    property int rowid
     property string name
     property string command
 
@@ -17,7 +18,7 @@ Dialog {
         width: parent.width
 
         DialogHeader {
-            title: qsTr('add/modify command')
+            title: rowid ? qsTr('edit command') : qsTr('add command')
         }
 
         TextField {
@@ -28,7 +29,7 @@ Dialog {
             text: name
 
             EnterKey.enabled: text.length > 0
-            EnterKey.iconSource: "image://theme/icon-m-enter-next"
+            EnterKey.iconSource: 'image://theme/icon-m-enter-next'
             EnterKey.onClicked: commandField.focus = true
         }
 

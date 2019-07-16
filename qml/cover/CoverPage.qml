@@ -4,7 +4,7 @@ import Sailfish.Silica 1.0
 CoverBackground {
     Label {
         anchors.centerIn: parent
-        text: qsTr("run command")
+        text: 'qCommand'
     }
 }
 

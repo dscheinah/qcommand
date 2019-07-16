@@ -11,16 +11,38 @@ QtObject {
     property var database
 
     function create() {
-        database = LocalStorage.openDatabaseSync('qCommand', '1.0', 'stored commands from qCommand')
-        database.transaction(function(tx) {
-            tx.executeSql('CREATE TABLE IF NOT EXISTS commands(name TEXT UNIQUE, command TEXT)')
+        database = LocalStorage.openDatabaseSync('qCommand', '', 'stored commands from qCommand')
+        if (database.version === '1.1') {
             ready()
-        })
+            return
+        }
+        var target, callback
+        switch (database.version) {
+            case '':
+                target = '1.0'
+                callback = function(tx) {
+                    tx.executeSql('CREATE TABLE commands(name TEXT UNIQUE, command TEXT)')
+                }
+                break
+            case '1.0':
+                target = '1.1'
+                callback = function(tx) {
+                    tx.executeSql('ALTER TABLE commands RENAME TO commands_migration')
+                    tx.executeSql('CREATE TABLE commands(name TEXT, command TEXT)')
+                    tx.executeSql('INSERT INTO commands(name, command) SELECT name, command FROM commands_migration')
+                    tx.executeSql('DROP TABLE commands_migration')
+                }
+                break
+            default:
+                return
+        }
+        database.changeVersion(database.version, target, callback)
+        create()
     }
 
     function load(callback) {
         database.transaction(function(tx) {
-            var result = tx.executeSql('SELECT * from commands ORDER BY name'), length = result.rows.length
+            var result = tx.executeSql('SELECT rowid, name, command from commands ORDER BY name'), length = result.rows.length
             for (var i = 0; i < length; i++) {
                 callback(result.rows.item(i))
             }
@@ -29,30 +51,33 @@ QtObject {
 
     function read(data, callback) {
         database.transaction(function(tx) {
-            var result = tx.executeSql('SELECT * FROM commands WHERE name = ?', [data.name]), item = result.rows.item(0)
+            var result = tx.executeSql('SELECT rowid, name, command FROM commands WHERE rowid = ?', [data.rowid]), item = result.rows.item(0)
             if (item) {
                 callback(item)
             }
         })
     }
 
-    function add(item) {
+    function add(data) {
         database.transaction(function(tx) {
-            tx.executeSql('INSERT OR REPLACE INTO commands VALUES(?, ?)', [item.name, item.command])
-            added(item)
+            tx.executeSql('INSERT INTO commands(name, command) VALUES(?, ?)', [data.name, data.command])
+            var result = tx.executeSql('SELECT rowid, name, command FROM commands WHERE rowid = last_insert_rowid()'), item = result.rows.item(0)
+            if (item) {
+                added(item)
+            }
         })
     }
 
     function edit(item, data) {
         database.transaction(function(tx) {
-            tx.executeSql('INSERT OR REPLACE INTO commands VALUES(?, ?)', [data.name, data.command])
+            tx.executeSql('UPDATE commands SET name = ?, command = ? WHERE rowid = ?', [data.name, data.command, item.rowid])
             edited(item, data)
         })
     }
 
     function remove(item) {
         database.transaction(function(tx) {
-            tx.executeSql('DELETE FROM commands WHERE name = ?', [item.name])
+            tx.executeSql('DELETE FROM commands WHERE rowid = ?', [item.rowid])
             removed(item)
         })
     }
