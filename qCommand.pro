@@ -14,18 +14,20 @@ TARGET = qCommand
 
 CONFIG += sailfishapp
 
-SOURCES += src/qCommand.cpp \
-    src/commandengine.cpp
+SOURCES += src/qCommand.cpp
 
-OTHER_FILES += qml/qCommand.qml \
+DISTFILES += qml/qCommand.qml \
     qml/cover/CoverPage.qml \
+    qml/pages/FirstPage.qml \
+    qml/pages/SecondPage.qml \
     rpm/qCommand.changes.in \
+    rpm/qCommand.changes.run.in \
     rpm/qCommand.spec \
     rpm/qCommand.yaml \
     translations/*.ts \
     qCommand.desktop
 
-SAILFISHAPP_ICONS = 86x86 108x108 128x128 256x256
+SAILFISHAPP_ICONS = 86x86 108x108 128x128 172x172
 
 # to disable building translations every time, comment out the
 # following CONFIG line
@@ -36,12 +38,3 @@ CONFIG += sailfishapp_i18n
 # following TRANSLATIONS line. And also do not forget to
 # modify the localized app name in the the .desktop file.
 TRANSLATIONS += translations/qCommand-de.ts
-
-DISTFILES += \
-    qml/pages/CommandPage.qml \
-    qml/pages/AddPage.qml \
-    qml/pages/ExecPage.qml
-
-HEADERS += \
-    src/commandengine.h
-
