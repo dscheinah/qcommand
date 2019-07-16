@@ -11,6 +11,10 @@
         <source>command</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>add/modify command</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>CommandPage</name>
@@ -35,6 +39,20 @@
     <name>CoverPage</name>
     <message>
         <source>run command</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ExecPage</name>
+    <message>
+        <source>run command</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>LoadingPage</name>
+    <message>
+        <source>loading...</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

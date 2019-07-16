@@ -14,18 +14,19 @@ TARGET = qCommand
 
 CONFIG += sailfishapp
 
-SOURCES += src/qCommand.cpp
+SOURCES += src/qCommand.cpp \
+    src/commandengine.cpp
 
 DISTFILES += qml/qCommand.qml \
     qml/cover/CoverPage.qml \
-    qml/pages/FirstPage.qml \
-    qml/pages/SecondPage.qml \
     rpm/qCommand.changes.in \
     rpm/qCommand.changes.run.in \
     rpm/qCommand.spec \
     rpm/qCommand.yaml \
     translations/*.ts \
-    qCommand.desktop
+    qCommand.desktop \
+    qml/src/Database.qml \
+    qml/pages/LoadingPage.qml
 
 SAILFISHAPP_ICONS = 86x86 108x108 128x128 172x172
 
@@ -38,3 +39,6 @@ CONFIG += sailfishapp_i18n
 # following TRANSLATIONS line. And also do not forget to
 # modify the localized app name in the the .desktop file.
 TRANSLATIONS += translations/qCommand-de.ts
+
+HEADERS += \
+    src/commandengine.h

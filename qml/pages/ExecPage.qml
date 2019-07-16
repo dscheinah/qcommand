@@ -10,7 +10,7 @@ Dialog {
         width: parent.width
 
         DialogHeader {
-            title: 'run command'
+            title: qsTr('run command')
         }
 
         TextArea {

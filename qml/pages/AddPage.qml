@@ -17,7 +17,7 @@ Dialog {
         width: parent.width
 
         DialogHeader {
-            title: 'add/modify command'
+            title: qsTr('add/modify command')
         }
 
         TextField {
