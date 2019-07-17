@@ -38,7 +38,7 @@ Dialog {
             width: parent.width
             placeholderText: qsTr('command')
             label: qsTr('command')
-            inputMethodHints: Qt.ImhNone
+            inputMethodHints: Qt.ImhNoPredictiveText
             text: command
         }
     }
