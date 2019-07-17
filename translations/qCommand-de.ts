@@ -45,12 +45,23 @@
         <source>run command</source>
         <translation>Befehl ausführen</translation>
     </message>
+    <message>
+        <source>none</source>
+        <translation>keiner</translation>
+    </message>
 </context>
 <context>
     <name>LoadingPage</name>
     <message>
         <source>loading...</source>
         <translation>laden...</translation>
+    </message>
+</context>
+<context>
+    <name>ResultPage</name>
+    <message>
+        <source>output</source>
+        <translation>Ausgabe</translation>
     </message>
 </context>
 </TS>

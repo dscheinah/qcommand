@@ -8,6 +8,7 @@ Page {
         PageHeader {
             title: 'qCommand'
         }
+
         Label {
             width: parent.width
             horizontalAlignment: Text.AlignHCenter

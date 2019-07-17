@@ -45,11 +45,22 @@
         <source>run command</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>none</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>LoadingPage</name>
     <message>
         <source>loading...</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ResultPage</name>
+    <message>
+        <source>output</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

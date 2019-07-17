@@ -3,10 +3,6 @@
 
 #include <QObject>
 #include <QString>
-#include <iostream>
-#include <stdexcept>
-#include <stdio.h>
-#include <string>
 
 class CommandEngine : public QObject
 {
@@ -15,6 +11,7 @@ public:
     explicit CommandEngine(QObject *parent = 0);
 
 signals:
+    void output(QString data);
 
 public slots:
     void exec(QString cmd);

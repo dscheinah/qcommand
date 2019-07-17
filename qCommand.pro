@@ -25,7 +25,8 @@ DISTFILES += qml/qCommand.qml \
     qCommand.desktop \
     qml/src/Database.qml \
     qml/pages/LoadingPage.qml \
-    qml/src/CommandEngine.qml
+    qml/src/CommandEngine.qml \
+    qml/pages/ResultPage.qml
 
 SAILFISHAPP_ICONS = 86x86 108x108 128x128 172x172
 

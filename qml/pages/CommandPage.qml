@@ -4,24 +4,22 @@ import QtQuick.LocalStorage 2.0
 import '../src'
 
 Page {
-    id: page
-
     property Database database
     property CommandEngine engine
 
     SilicaListView {
-        width: parent.width
-        height: parent.height
+        anchors.fill: parent
 
         header: PageHeader {
             title: qsTr('available commands')
         }
+
         model: ListModel {
             id: commands
         }
+
         delegate: ListItem {
             id: command
-            width: parent.width
 
             menu: ContextMenu {
                 MenuItem {
@@ -44,6 +42,7 @@ Page {
                     }
                 }
             }
+
             onClicked: {
                 database.read(commands.get(index), function(item) {
                     var dialog = pageStack.push(Qt.resolvedUrl('ExecPage.qml'), item)
@@ -54,10 +53,12 @@ Page {
             }
 
             Label {
-                color: command.highlighted ? Theme.highlightColor : Theme.primaryColor
-                text: name
                 x: Theme.horizontalPageMargin
+                width: parent.width - Theme.horizontalPageMargin * 2
+                color: command.highlighted ? Theme.highlightColor : Theme.primaryColor
                 anchors.verticalCenter: parent.verticalCenter
+                text: name
+                truncationMode: TruncationMode.Fade
             }
         }
 
@@ -73,7 +74,8 @@ Page {
             }
         }
 
-        VerticalScrollDecorator {}
+        VerticalScrollDecorator {
+        }
     }
 
     function getIndex(item) {

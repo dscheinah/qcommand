@@ -31,9 +31,12 @@ int main(int argc, char *argv[])
     view->setSource(SailfishApp::pathTo("qml/qCommand.qml"));
     view->show();
 
-    QObject* emitter = recursiveFind(view->rootObject(), "engine");
+    QObject* emitter = recursiveFind(view->rootObject(), "cengine");
     CommandEngine* engine = new CommandEngine();
-    emitter->connect(emitter, SIGNAL(exec(QString)), engine, SLOT(exec(QString)));
+
+    view->rootContext()->setContextProperty("cengine", engine);
+
+    QObject::connect(emitter, SIGNAL(exec(QString)), engine, SLOT(exec(QString)));
 
     return app->exec();
 }

@@ -20,7 +20,7 @@ ApplicationWindow
 
     CommandEngine {
         id: engine
-        objectName: 'engine'
+        objectName: 'cengine'
     }
 
     Database {

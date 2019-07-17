@@ -1,4 +1,6 @@
 #include "commandengine.h"
+#include <iostream>
+#include <stdexcept>
 
 CommandEngine::CommandEngine(QObject *parent) : QObject(parent)
 {
@@ -7,13 +9,13 @@ CommandEngine::CommandEngine(QObject *parent) : QObject(parent)
 
 void CommandEngine::exec(QString cmd)
 {
-    char buffer[128];
-    std::string result = "";
+    QString result = "";
     FILE* pipe = popen(cmd.toUtf8().data(), "r");
     if (!pipe)
     {
         throw std::runtime_error("popen failed");
     }
+    char buffer[128];
     try
     {
         while (!feof(pipe))
@@ -23,10 +25,15 @@ void CommandEngine::exec(QString cmd)
                 result += buffer;
             }
         }
-    } catch (...)
+    }
+    catch (...)
     {
         pclose(pipe);
         throw;
+    }
+    if (result != "")
+    {
+        emit output(result);
     }
     pclose(pipe);
 }
