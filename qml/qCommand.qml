@@ -1,17 +1,14 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
-import 'src'
 import 'pages'
 import 'cover'
+import 'src'
 
 ApplicationWindow
 {
     initialPage: loading
     cover: cover
     allowedOrientations: Orientation.All
-    objectName: 'Main'
-
-    signal exec(string cmd)
 
     LoadingPage {
         id: loading
@@ -21,15 +18,20 @@ ApplicationWindow
         id: cover
     }
 
+    CommandEngine {
+        id: engine
+        objectName: 'engine'
+    }
+
     Database {
         id: database
 
         onReady: {
             pageStack.clear()
-            var command = pageStack.push(Qt.resolvedUrl('pages/CommandPage.qml'), {
-                database: database
+            pageStack.push(Qt.resolvedUrl('pages/CommandPage.qml'), {
+                database: database,
+                engine: engine,
             })
-            command.exec.connect(exec)
         }
     }
 

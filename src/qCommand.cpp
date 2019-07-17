@@ -1,6 +1,4 @@
-//#ifdef QT_QML_DEBUG
 #include <QtQuick>
-//#endif
 
 #include <sailfishapp.h>
 #include "commandengine.h"
@@ -28,11 +26,12 @@ QObject* recursiveFind(QObject* item, QString name)
 int main(int argc, char *argv[])
 {
     QGuiApplication* app = SailfishApp::application(argc, argv);
+
     QQuickView* view = SailfishApp::createView();
     view->setSource(SailfishApp::pathTo("qml/qCommand.qml"));
     view->show();
 
-    QObject* emitter = recursiveFind(view->rootObject(), "Main");
+    QObject* emitter = recursiveFind(view->rootObject(), "engine");
     CommandEngine* engine = new CommandEngine();
     emitter->connect(emitter, SIGNAL(exec(QString)), engine, SLOT(exec(QString)));
 

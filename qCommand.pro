@@ -12,21 +12,20 @@
 # The name of your application
 TARGET = qCommand
 
-CONFIG += sailfishapp
+CONFIG += sailfishapp sailfishapp_i18n
 
 SOURCES += src/qCommand.cpp \
     src/commandengine.cpp
 
 DISTFILES += qml/qCommand.qml \
     qml/cover/CoverPage.qml \
-    rpm/qCommand.changes.in \
-    rpm/qCommand.changes.run.in \
     rpm/qCommand.spec \
     rpm/qCommand.yaml \
     translations/*.ts \
     qCommand.desktop \
     qml/src/Database.qml \
-    qml/pages/LoadingPage.qml
+    qml/pages/LoadingPage.qml \
+    qml/src/CommandEngine.qml
 
 SAILFISHAPP_ICONS = 86x86 108x108 128x128 172x172
 

@@ -6,9 +6,8 @@ import '../src'
 Page {
     id: page
 
-    signal exec(string cmd)
-
     property Database database
+    property CommandEngine engine
 
     SilicaListView {
         width: parent.width
@@ -49,7 +48,7 @@ Page {
                 database.read(commands.get(index), function(item) {
                     var dialog = pageStack.push(Qt.resolvedUrl('ExecPage.qml'), item)
                     dialog.accepted.connect(function() {
-                        page.exec(dialog.command)
+                        engine.exec(dialog.command)
                     })
                 })
             }
