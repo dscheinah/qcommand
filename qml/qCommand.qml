@@ -10,14 +10,6 @@ ApplicationWindow
     cover: cover
     allowedOrientations: Orientation.All
 
-    LoadingPage {
-        id: loading
-    }
-
-    CoverPage {
-        id: cover
-    }
-
     CommandEngine {
         id: engine
         objectName: 'cengine'
@@ -32,7 +24,18 @@ ApplicationWindow
                 database: database,
                 engine: engine,
             })
+            cover.next()
         }
+    }
+
+    LoadingPage {
+        id: loading
+    }
+
+    CoverPage {
+        id: cover
+        database: database
+        engine: engine
     }
 
     Component.onCompleted: {

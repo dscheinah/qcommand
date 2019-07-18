@@ -64,6 +64,17 @@ QtObject {
         })
     }
 
+    function readNext(data, callback) {
+        database.transaction(function(tx) {
+            var result = tx.executeSql('SELECT rowid, * FROM commands WHERE rowid > ? LIMIT 1', [data.rowid]), item = result.rows.item(0)
+            if (item) {
+                callback(item)
+            } else {
+                readNext({rowid: -1}, callback);
+            }
+        })
+    }
+
     function add(data) {
         database.transaction(function(tx) {
             tx.executeSql('INSERT INTO commands(name, command, has_output) VALUES(?, ?)', [data.name, data.command, data.has_output])
