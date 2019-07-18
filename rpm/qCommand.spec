@@ -9,7 +9,7 @@ Name:       qCommand
 # << macros
 
 Summary:    run commands from gui
-Version:    0.3
+Version:    0.4
 Release:    1
 Group:      Qt/Qt
 License:    LICENSE
