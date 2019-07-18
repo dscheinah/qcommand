@@ -5,63 +5,63 @@
     <name>AddPage</name>
     <message>
         <source>name</source>
-        <translation type="unfinished"></translation>
+        <translation>名称</translation>
     </message>
     <message>
         <source>command</source>
-        <translation type="unfinished"></translation>
+        <translation>命令</translation>
     </message>
     <message>
         <source>edit command</source>
-        <translation type="unfinished"></translation>
+        <translation>编辑命令</translation>
     </message>
     <message>
         <source>add command</source>
-        <translation type="unfinished"></translation>
+        <translation>添加命令</translation>
     </message>
 </context>
 <context>
     <name>CommandPage</name>
     <message>
         <source>available commands</source>
-        <translation type="unfinished"></translation>
+        <translation>可用命令</translation>
     </message>
     <message>
         <source>remove</source>
-        <translation type="unfinished"></translation>
+        <translation>移出</translation>
     </message>
     <message>
         <source>edit</source>
-        <translation type="unfinished"></translation>
+        <translation>编辑</translation>
     </message>
     <message>
         <source>add command</source>
-        <translation type="unfinished"></translation>
+        <translation>添加命令</translation>
     </message>
 </context>
 <context>
     <name>ExecPage</name>
     <message>
         <source>run command</source>
-        <translation type="unfinished"></translation>
+        <translation>运行命令</translation>
     </message>
     <message>
         <source>none</source>
-        <translation type="unfinished"></translation>
+        <translation>无</translation>
     </message>
 </context>
 <context>
     <name>LoadingPage</name>
     <message>
         <source>loading...</source>
-        <translation type="unfinished"></translation>
+        <translation>加载中……</translation>
     </message>
 </context>
 <context>
     <name>ResultPage</name>
     <message>
         <source>output</source>
-        <translation type="unfinished"></translation>
+        <translation>输出</translation>
     </message>
 </context>
 </TS>
