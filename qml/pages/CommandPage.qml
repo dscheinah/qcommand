@@ -26,7 +26,7 @@ Page {
                     text: qsTr('edit')
                     onClicked: {
                         database.read(commands.get(index), function(item) {
-                            var dialog = pageStack.push(Qt.resolvedUrl('AddPage.qml'), item)
+                            var dialog = pageStack.push(Qt.resolvedUrl('EditPage.qml'), item)
                             dialog.accepted.connect(function() {
                                 database.edit(item, dialog)
                             })
@@ -47,7 +47,7 @@ Page {
                 database.read(commands.get(index), function(item) {
                     var dialog = pageStack.push(Qt.resolvedUrl('ExecPage.qml'), item)
                     dialog.accepted.connect(function() {
-                        engine.exec(dialog.command)
+                        engine.exec(dialog.command, dialog.has_output)
                     })
                 })
             }
@@ -66,7 +66,7 @@ Page {
             MenuItem {
                 text: qsTr('add command')
                 onClicked: {
-                    var dialog = pageStack.push(Qt.resolvedUrl('AddPage.qml'))
+                    var dialog = pageStack.push(Qt.resolvedUrl('EditPage.qml'))
                     dialog.accepted.connect(function() {
                         database.add(dialog)
                     })

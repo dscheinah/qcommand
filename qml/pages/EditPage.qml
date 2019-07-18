@@ -5,11 +5,13 @@ Dialog {
     property int rowid
     property string name
     property string command
+    property int has_output
 
     onDone: {
        if (result == DialogResult.Accepted) {
            name = nameField.text
            command = commandField.text
+           has_output = hasOutputField.checked
        }
     }
 
@@ -45,6 +47,12 @@ Dialog {
                 label: qsTr('command')
                 text: command
                 inputMethodHints: Qt.ImhNoPredictiveText
+            }
+
+            TextSwitch {
+                id: hasOutputField
+                checked: has_output
+                text: qsTr('show output')
             }
         }
 

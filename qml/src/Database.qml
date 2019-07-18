@@ -12,7 +12,7 @@ QtObject {
 
     function create() {
         database = LocalStorage.openDatabaseSync('qCommand', '', 'stored commands from qCommand')
-        if (database.version === '1.1') {
+        if (database.version === '1.2') {
             ready()
             return
         }
@@ -33,6 +33,12 @@ QtObject {
                     tx.executeSql('DROP TABLE commands_migration')
                 }
                 break
+            case '1.1':
+                target = '1.2'
+                callback = function(tx) {
+                    tx.executeSql('ALTER TABLE commands ADD has_output INTEGER')
+                }
+                break
             default:
                 return
         }
@@ -42,7 +48,7 @@ QtObject {
 
     function load(callback) {
         database.transaction(function(tx) {
-            var result = tx.executeSql('SELECT rowid, name, command from commands ORDER BY name'), length = result.rows.length
+            var result = tx.executeSql('SELECT rowid, * from commands ORDER BY name'), length = result.rows.length
             for (var i = 0; i < length; i++) {
                 callback(result.rows.item(i))
             }
@@ -51,7 +57,7 @@ QtObject {
 
     function read(data, callback) {
         database.transaction(function(tx) {
-            var result = tx.executeSql('SELECT rowid, name, command FROM commands WHERE rowid = ?', [data.rowid]), item = result.rows.item(0)
+            var result = tx.executeSql('SELECT rowid, * FROM commands WHERE rowid = ?', [data.rowid]), item = result.rows.item(0)
             if (item) {
                 callback(item)
             }
@@ -60,8 +66,8 @@ QtObject {
 
     function add(data) {
         database.transaction(function(tx) {
-            tx.executeSql('INSERT INTO commands(name, command) VALUES(?, ?)', [data.name, data.command])
-            var result = tx.executeSql('SELECT rowid, name, command FROM commands WHERE rowid = last_insert_rowid()'), item = result.rows.item(0)
+            tx.executeSql('INSERT INTO commands(name, command, has_output) VALUES(?, ?)', [data.name, data.command, data.has_output])
+            var result = tx.executeSql('SELECT rowid, * FROM commands WHERE rowid = last_insert_rowid()'), item = result.rows.item(0)
             if (item) {
                 added(item)
             }
@@ -70,7 +76,7 @@ QtObject {
 
     function edit(item, data) {
         database.transaction(function(tx) {
-            tx.executeSql('UPDATE commands SET name = ?, command = ? WHERE rowid = ?', [data.name, data.command, item.rowid])
+            tx.executeSql('UPDATE commands SET name = ?, command = ?, has_output = ? WHERE rowid = ?', [data.name, data.command, data.has_output, item.rowid])
             edited(item, data)
         })
     }

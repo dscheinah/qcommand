@@ -2,25 +2,6 @@
 <!DOCTYPE TS>
 <TS version="2.1">
 <context>
-    <name>AddPage</name>
-    <message>
-        <source>name</source>
-        <translation>Name</translation>
-    </message>
-    <message>
-        <source>command</source>
-        <translation>Befehl</translation>
-    </message>
-    <message>
-        <source>edit command</source>
-        <translation>Befehl bearbeiten</translation>
-    </message>
-    <message>
-        <source>add command</source>
-        <translation>Befehl hinzufügen</translation>
-    </message>
-</context>
-<context>
     <name>CommandPage</name>
     <message>
         <source>available commands</source>
@@ -37,6 +18,29 @@
     <message>
         <source>add command</source>
         <translation>Befehl hinzufügen</translation>
+    </message>
+</context>
+<context>
+    <name>EditPage</name>
+    <message>
+        <source>edit command</source>
+        <translation>Befehl bearbeiten</translation>
+    </message>
+    <message>
+        <source>add command</source>
+        <translation>Befehl hinzufügen</translation>
+    </message>
+    <message>
+        <source>name</source>
+        <translation>Name</translation>
+    </message>
+    <message>
+        <source>command</source>
+        <translation>Befehl</translation>
+    </message>
+    <message>
+        <source>show output</source>
+        <translation>Ausgabe anzeigen</translation>
     </message>
 </context>
 <context>

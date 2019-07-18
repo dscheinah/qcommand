@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
 
     view->rootContext()->setContextProperty("cengine", engine);
 
-    QObject::connect(emitter, SIGNAL(exec(QString)), engine, SLOT(exec(QString)));
+    QObject::connect(emitter, SIGNAL(exec(QString, bool)), engine, SLOT(exec(QString, bool)));
 
     return app->exec();
 }

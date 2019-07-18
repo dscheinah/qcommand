@@ -22,7 +22,7 @@ signals:
     void output(QString data);
 
 public slots:
-    void exec(QString cmd);
+    void exec(QString cmd, bool emitOutput);
 };
 
 #endif // COMMANDENGINE_H

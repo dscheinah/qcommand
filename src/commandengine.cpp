@@ -33,7 +33,7 @@ CommandEngine::~CommandEngine()
     }
 }
 
-void CommandEngine::exec(QString cmd)
+void CommandEngine::exec(QString cmd, bool emitOutput)
 {
     int pid = run(cmd);
     if (!pid)
@@ -48,7 +48,9 @@ void CommandEngine::exec(QString cmd)
     {
         result += buffer;
     }
-    emit output(result);
+    if (emitOutput) {
+        emit output(result);
+    }
 }
 
 int CommandEngine::run(QString command)

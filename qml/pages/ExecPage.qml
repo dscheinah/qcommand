@@ -2,12 +2,12 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 
 Dialog {
+    id: dialog
     canAccept: command
-    acceptDestination: Qt.resolvedUrl('ResultPage.qml')
-    acceptDestinationAction: PageStackAction.Push
 
     property string name
     property string command
+    property int has_output
 
     SilicaFlickable {
         anchors.fill: parent
@@ -32,6 +32,13 @@ Dialog {
         }
 
         VerticalScrollDecorator {
+        }
+    }
+
+    Component.onCompleted: {
+        if (has_output) {
+            dialog.acceptDestination = Qt.resolvedUrl('ResultPage.qml')
+            dialog.acceptDestinationAction = PageStackAction.Push
         }
     }
 }
