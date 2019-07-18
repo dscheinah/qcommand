@@ -23,7 +23,7 @@ BuildRequires:  pkgconfig(Qt5Quick)
 BuildRequires:  desktop-file-utils
 
 %description
-run and manage commands from gui
+%{summary}.
 
 %prep
 %setup -q -n %{name}-%{version}

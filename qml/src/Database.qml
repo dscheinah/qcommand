@@ -69,7 +69,7 @@ QtObject {
             var result = tx.executeSql('SELECT rowid, * FROM commands WHERE rowid > ? LIMIT 1', [data.rowid]), item = result.rows.item(0)
             if (item) {
                 callback(item)
-            } else {
+            } else if (data.rowid > -1) {
                 readNext({rowid: -1}, callback);
             }
         })
