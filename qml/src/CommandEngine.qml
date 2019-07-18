@@ -1,5 +1,5 @@
 import QtQuick 2.0
 
-Item {
+QtObject {
     signal exec(string cmd)  
 }
