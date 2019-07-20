@@ -4,22 +4,27 @@
 <context>
     <name>CommandPage</name>
     <message>
-        <location filename="../qml/pages/CommandPage.qml" line="14"/>
+        <location filename="../qml/pages/CommandPage.qml" line="15"/>
         <source>available commands</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommandPage.qml" line="26"/>
+        <location filename="../qml/pages/CommandPage.qml" line="27"/>
         <source>edit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommandPage.qml" line="37"/>
+        <location filename="../qml/pages/CommandPage.qml" line="41"/>
         <source>remove</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommandPage.qml" line="67"/>
+        <location filename="../qml/pages/CommandPage.qml" line="43"/>
+        <source>deleting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/CommandPage.qml" line="82"/>
         <source>add command</source>
         <translation type="unfinished"></translation>
     </message>
@@ -68,17 +73,9 @@
     </message>
 </context>
 <context>
-    <name>LoadingPage</name>
-    <message>
-        <location filename="../qml/pages/LoadingPage.qml" line="15"/>
-        <source>loading...</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>ResultPage</name>
     <message>
-        <location filename="../qml/pages/ResultPage.qml" line="24"/>
+        <location filename="../qml/pages/ResultPage.qml" line="33"/>
         <source>output</source>
         <translation type="unfinished"></translation>
     </message>

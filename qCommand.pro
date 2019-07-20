@@ -12,21 +12,21 @@
 # The name of your application
 TARGET = qCommand
 
-CONFIG += sailfishapp sailfishapp_i18n
+CONFIG += sailfishapp
 
-SOURCES += src/qCommand.cpp \
+SOURCES += \
+    src/qCommand.cpp \
     src/commandengine.cpp
 
-DISTFILES += qml/qCommand.qml \
-    qml/cover/CoverPage.qml \
+DISTFILES += \
+    qml/qCommand.qml \
+    qml/cover/*.qml \
+    qml/pages/*.qml \
+    qml/src/*.qml \
     rpm/qCommand.spec \
     rpm/qCommand.yaml \
     translations/*.ts \
-    qCommand.desktop \
-    qml/src/Database.qml \
-    qml/pages/LoadingPage.qml \
-    qml/src/CommandEngine.qml \
-    qml/pages/ResultPage.qml
+    qCommand.desktop
 
 SAILFISHAPP_ICONS = 86x86 108x108 128x128 172x172
 
@@ -38,8 +38,7 @@ CONFIG += sailfishapp_i18n
 # planning to localize your app, remember to comment out the
 # following TRANSLATIONS line. And also do not forget to
 # modify the localized app name in the the .desktop file.
-TRANSLATIONS += translations/qCommand-de.ts \
-    translations/qCommand-zh_CN.ts
+TRANSLATIONS += translations/*.ts
 
 HEADERS += \
     src/commandengine.h

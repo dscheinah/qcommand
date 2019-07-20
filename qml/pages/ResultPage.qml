@@ -3,13 +3,22 @@ import Sailfish.Silica 1.0
 import '../src'
 
 Page {
+    id: page
     property string result
 
     Connections {
         target: cengine
         onOutput: {
-           result = data
+            result = data
+            loading.running = false
         }
+    }
+
+    BusyIndicator {
+        id: loading
+        size: BusyIndicatorSize.Large
+        anchors.centerIn: page
+        running: true
     }
 
     SilicaFlickable {

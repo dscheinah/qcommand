@@ -19,6 +19,10 @@
         <source>add command</source>
         <translation>Befehl hinzufügen</translation>
     </message>
+    <message>
+        <source>deleting</source>
+        <translation>löschen</translation>
+    </message>
 </context>
 <context>
     <name>EditPage</name>
@@ -52,13 +56,6 @@
     <message>
         <source>none</source>
         <translation>keiner</translation>
-    </message>
-</context>
-<context>
-    <name>LoadingPage</name>
-    <message>
-        <source>loading...</source>
-        <translation>laden...</translation>
     </message>
 </context>
 <context>

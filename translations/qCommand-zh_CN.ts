@@ -19,6 +19,10 @@
         <source>add command</source>
         <translation>添加命令</translation>
     </message>
+    <message>
+        <source>deleting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>EditPage</name>
@@ -52,13 +56,6 @@
     <message>
         <source>none</source>
         <translation>无</translation>
-    </message>
-</context>
-<context>
-    <name>LoadingPage</name>
-    <message>
-        <source>loading...</source>
-        <translation>加载中……</translation>
     </message>
 </context>
 <context>

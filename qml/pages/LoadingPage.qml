@@ -2,17 +2,15 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 
 Page {
-    Column {
-        width: parent.width
+    id: page
 
-        PageHeader {
-            title: 'qCommand'
-        }
+    PageHeader {
+        title: 'qCommand'
+    }
 
-        Label {
-            width: parent.width
-            horizontalAlignment: Text.AlignHCenter
-            text: qsTr('loading...')
-        }
+    BusyIndicator {
+        size: BusyIndicatorSize.Large
+        anchors.centerIn: page
+        running: true
     }
 }

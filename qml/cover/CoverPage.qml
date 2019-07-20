@@ -76,6 +76,13 @@ CoverBackground {
                 next()
             }
         })
+        database.added.connect(function(item) {
+            if (!rowid) {
+                rowid = item.rowid
+                name = item.name
+                command= item.command
+            }
+        })
     }
 }
 

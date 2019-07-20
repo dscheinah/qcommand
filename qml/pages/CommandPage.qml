@@ -8,6 +8,7 @@ Page {
     property CommandEngine engine
 
     SilicaListView {
+        id: list
         anchors.fill: parent
 
         header: PageHeader {
@@ -25,9 +26,12 @@ Page {
                 MenuItem {
                     text: qsTr('edit')
                     onClicked: {
+                        load(commandLabel.mapToItem(list, 0, 0), commandLabel.height)
                         database.read(commands.get(index), function(item) {
+                            loading.running = false
                             var dialog = pageStack.push(Qt.resolvedUrl('EditPage.qml'), item)
                             dialog.accepted.connect(function() {
+                                load(commandLabel.mapToItem(list, 0, 0), commandLabel.height)
                                 database.edit(item, dialog)
                             })
                         })
@@ -36,7 +40,8 @@ Page {
                 MenuItem {
                     text: qsTr('remove')
                     onClicked: {
-                        command.remorseAction('deleting', function() {
+                        command.remorseAction(qsTr('deleting'), function() {
+                            load(commandLabel.mapToItem(list, 0, 0), commandLabel.height)
                             database.remove(commands.get(index))
                         })
                     }
@@ -44,7 +49,9 @@ Page {
             }
 
             onClicked: {
+                load(commandLabel.mapToItem(list, 0, 0), commandLabel.height)
                 database.read(commands.get(index), function(item) {
+                    loading.running = false
                     var dialog = pageStack.push(Qt.resolvedUrl('ExecPage.qml'), item)
                     dialog.accepted.connect(function() {
                         engine.exec(dialog.command, dialog.has_output)
@@ -53,6 +60,7 @@ Page {
             }
 
             Label {
+                id: commandLabel
                 x: Theme.horizontalPageMargin
                 width: parent.width - Theme.horizontalPageMargin * 2
                 color: command.highlighted ? Theme.highlightColor : Theme.primaryColor
@@ -60,6 +68,13 @@ Page {
                 text: name
                 truncationMode: TruncationMode.Fade
             }
+        }
+
+        BusyIndicator {
+            id: loading
+            anchors.horizontalCenter: parent.horizontalCenter
+            size: BusyIndicatorSize.Small
+            running: false
         }
 
         PullDownMenu {
@@ -78,6 +93,11 @@ Page {
         }
     }
 
+    function load(position, height) {
+        loading.y = position.y + (height - loading.height) / 2
+        loading.running = true
+    }
+
     function getIndex(item) {
         var length = commands.rowCount()
         for (var i = 0; i < length; i++) {
@@ -94,12 +114,14 @@ Page {
             if (index >= 0) {
                 commands.set(index, data)
             }
+            loading.running = false
         })
         database.removed.connect(function(item) {
             var index = getIndex(item)
             if (index >= 0) {
                 commands.remove(index)
             }
+            loading.running = false
         })
         database.added.connect(commands.append)
         database.load(commands.append)
