@@ -40,16 +40,27 @@ void CommandEngine::exec(QString cmd, bool emitOutput)
     {
         throw;
     }
-    waitpid(pid, NULL, 0);
+    int status;
+    waitpid(pid, &status, 0);
+
+    char buffer[128] = "";
 
     QString result = "";
-    char buffer[128] = "";
     while (read(main[1], &buffer, 128) > 0)
     {
         result += buffer;
     }
+    QString errors = "";
+    while (read(main[2], &buffer, 128) > 0)
+    {
+        errors += buffer;
+    }
     if (emitOutput) {
         emit output(result);
+        if (status || errors != "")
+        {
+            emit error(errors);
+        }
     }
 }
 

@@ -75,8 +75,33 @@
 <context>
     <name>ResultPage</name>
     <message>
-        <location filename="../qml/pages/ResultPage.qml" line="33"/>
+        <location filename="../qml/pages/ResultPage.qml" line="45"/>
         <source>output</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ResultPage.qml" line="45"/>
+        <source>errors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ResultPage.qml" line="51"/>
+        <source>no output provided</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ResultPage.qml" line="59"/>
+        <source>no messages provided</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ResultPage.qml" line="69"/>
+        <source>show errors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ResultPage.qml" line="77"/>
+        <source>show output</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -64,5 +64,25 @@
         <source>output</source>
         <translation>Ausgabe</translation>
     </message>
+    <message>
+        <source>errors</source>
+        <translation>Fehler</translation>
+    </message>
+    <message>
+        <source>no output provided</source>
+        <translation>es wurde nichts ausgegeben</translation>
+    </message>
+    <message>
+        <source>no messages provided</source>
+        <translation>es wurden keine Meldungen ausgegeben</translation>
+    </message>
+    <message>
+        <source>show errors</source>
+        <translation>Fehler anzeigen</translation>
+    </message>
+    <message>
+        <source>show output</source>
+        <translation>Ausgabe anzeigen</translation>
+    </message>
 </context>
 </TS>

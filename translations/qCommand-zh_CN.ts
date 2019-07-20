@@ -64,5 +64,25 @@
         <source>output</source>
         <translation>输出</translation>
     </message>
+    <message>
+        <source>errors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>no output provided</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>no messages provided</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>show errors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>show output</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>

@@ -20,6 +20,7 @@ private:
 
 signals:
     void output(QString data);
+    void error(QString data);
 
 public slots:
     void exec(QString cmd, bool emitOutput);
