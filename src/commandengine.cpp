@@ -1,83 +1,56 @@
 #include "commandengine.h"
-#include <unistd.h>
-#include <fcntl.h>
-#include <sys/wait.h>
 
 CommandEngine::CommandEngine(QObject *parent) : QObject(parent)
 {
-    int fd[2];
-    if (pipe(fd) < 0)
-    {
-        throw;
-    }
-    main[0] = fd[1];
-    child[0] = fd[0];
-    for (int i = 1; i < 3; i++)
-    {
-        if (pipe(fd) < 0)
-        {
-            throw;
-        }
-        main[i] = fd[0];
-        child[i] = fd[1];
-        fcntl(main[i], F_SETFL, O_NONBLOCK);
-    }
-}
-
-CommandEngine::~CommandEngine()
-{
-    for (int i = 0; i < 3; i++)
-    {
-        close(main[i]);
-        close(child[i]);
-    }
+    process = nullptr;
 }
 
 void CommandEngine::exec(QString cmd, bool emitOutput)
 {
-    int pid = run(cmd);
-    if (!pid)
-    {
-        throw;
-    }
-    int status;
-    waitpid(pid, &status, 0);
+    create(emitOutput);
+    QStringList args;
+    args << "-c" << cmd;
+    process->start("sh", args, QProcess::ReadOnly);
+    process->closeWriteChannel();
+}
 
-    char buffer[128] = "";
+void CommandEngine::execAsRoot(QString cmd, bool emitOutput, QString password)
+{
+    create(emitOutput);
+    process->start("devel-su");
+    process->write((password + "\n").toUtf8().data());
 
-    QString result = "";
-    while (read(main[1], &buffer, 128) > 0)
+    process->waitForReadyRead(500);
+    process->readAllStandardError();
+
+    process->write((cmd + "\n").toUtf8().data());
+    process->closeWriteChannel();
+}
+
+void CommandEngine::create(bool emitOutput)
+{
+    if (process)
     {
-        result += buffer;
+        process->disconnect();
     }
-    QString errors = "";
-    while (read(main[2], &buffer, 128) > 0)
+    process = new QProcess();
+    process->setReadChannel(QProcess::ProcessChannel::StandardError);
+    if (emitOutput)
     {
-        errors += buffer;
-    }
-    if (emitOutput) {
-        emit output(result);
-        if (status || errors != "")
-        {
-            emit error(errors);
-        }
+        QObject::connect(process, SIGNAL(finished(int)), this, SLOT(finished(int)));
     }
 }
 
-int CommandEngine::run(QString command)
+void CommandEngine::finished(int status)
 {
-    int pid = fork();
-    if (pid > 0)
+    if (!process)
     {
-        return pid;
+        return;
     }
-    if (pid < 0)
+    emit output(process->readAllStandardOutput());
+    QString errors = process->readAllStandardError();
+    if (status || errors != "")
     {
-        return 0;
+        emit error(errors);
     }
-    close(0);
-    dup2(child[1], 1);
-    dup2(child[2], 2);
-    execl("/bin/sh", "sh", "-c", command.toUtf8().data(), NULL);
-    exit(errno);
 }

@@ -57,6 +57,14 @@
         <source>none</source>
         <translation>无</translation>
     </message>
+    <message>
+        <source>password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>run as root</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ResultPage</name>

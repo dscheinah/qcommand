@@ -1,7 +1,7 @@
 #include <QtQuick>
-
 #include <sailfishapp.h>
 #include "commandengine.h"
+#include "develsu.h"
 
 QObject* recursiveFind(QObject* item, QString name)
 {
@@ -27,6 +27,8 @@ int main(int argc, char *argv[])
 {
     QGuiApplication* app = SailfishApp::application(argc, argv);
 
+    qmlRegisterType<DevelSu>("qCommand", 1, 0, "DevelSu");
+
     QQuickView* view = SailfishApp::createView();
     view->setSource(SailfishApp::pathTo("qml/qCommand.qml"));
     view->show();
@@ -37,6 +39,7 @@ int main(int argc, char *argv[])
     view->rootContext()->setContextProperty("cengine", engine);
 
     QObject::connect(emitter, SIGNAL(exec(QString, bool)), engine, SLOT(exec(QString, bool)));
+    QObject::connect(emitter, SIGNAL(execAsRoot(QString, bool, QString)), engine, SLOT(execAsRoot(QString, bool, QString)));
 
     return app->exec();
 }

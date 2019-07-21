@@ -57,6 +57,14 @@
         <source>none</source>
         <translation>keiner</translation>
     </message>
+    <message>
+        <source>password</source>
+        <translation>Passwort</translation>
+    </message>
+    <message>
+        <source>run as root</source>
+        <translation>als root ausführen</translation>
+    </message>
 </context>
 <context>
     <name>ResultPage</name>

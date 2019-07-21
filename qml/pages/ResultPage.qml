@@ -4,8 +4,11 @@ import '../src'
 
 Page {
     id: page
+    allowedOrientations: Orientation.All
+
     property string result
     property string errors
+    property bool output: false
     property bool error: false
     property bool errorMode: false
 
@@ -13,20 +16,18 @@ Page {
         target: cengine
         onOutput: {
             result = data
-            loading.running = false
+            output = true
         }
         onError: {
             errors = data
             error = true
-            loading.running = false
         }
     }
 
     BusyIndicator {
-        id: loading
         size: BusyIndicatorSize.Large
         anchors.centerIn: page
-        running: true
+        running: !output && !error
     }
 
     SilicaFlickable {
@@ -36,6 +37,7 @@ Page {
         Column {
             id: content
             width: parent.width
+            visible: output || error
 
             onHeightChanged: {
                 parent.contentHeight = content.height

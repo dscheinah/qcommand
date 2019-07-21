@@ -4,6 +4,8 @@ import QtQuick.LocalStorage 2.0
 import '../src'
 
 Page {
+    allowedOrientations: Orientation.All
+
     property Database database
     property CommandEngine engine
 
@@ -52,10 +54,8 @@ Page {
                 load(commandLabel.mapToItem(list, 0, 0), commandLabel.height)
                 database.read(commands.get(index), function(item) {
                     loading.running = false
-                    var dialog = pageStack.push(Qt.resolvedUrl('ExecPage.qml'), item)
-                    dialog.accepted.connect(function() {
-                        engine.exec(dialog.command, dialog.has_output)
-                    })
+                    item.engine = engine;
+                    pageStack.push(Qt.resolvedUrl('ExecPage.qml'), item)
                 })
             }
 
