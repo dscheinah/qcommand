@@ -50,7 +50,7 @@ Dialog {
                 placeholderText: qsTr('command')
                 label: qsTr('command')
                 text: command
-                inputMethodHints: Qt.ImhNoPredictiveText
+                inputMethodHints: Qt.ImhNoPredictiveText | Qt.ImhNoAutoUppercase
             }
 
             TextSwitch {
