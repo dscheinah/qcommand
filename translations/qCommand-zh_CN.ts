@@ -4,53 +4,53 @@
 <context>
     <name>CommandPage</name>
     <message>
-        <source>available commands</source>
+        <source>Available commands</source>
         <translation>可用命令</translation>
     </message>
     <message>
-        <source>remove</source>
+        <source>Remove</source>
         <translation>移出</translation>
     </message>
     <message>
-        <source>edit</source>
+        <source>Edit</source>
         <translation>编辑</translation>
     </message>
     <message>
-        <source>add command</source>
+        <source>Add command</source>
         <translation>添加命令</translation>
     </message>
     <message>
-        <source>deleting</source>
+        <source>Deleting</source>
         <translation>正在删除</translation>
     </message>
 </context>
 <context>
     <name>EditPage</name>
     <message>
-        <source>edit command</source>
+        <source>Edit command</source>
         <translation>编辑命令</translation>
     </message>
     <message>
-        <source>add command</source>
+        <source>Add command</source>
         <translation>添加命令</translation>
     </message>
     <message>
-        <source>name</source>
+        <source>Name</source>
         <translation>名称</translation>
     </message>
     <message>
-        <source>command</source>
+        <source>Command</source>
         <translation>命令</translation>
     </message>
     <message>
-        <source>show output</source>
+        <source>Show output</source>
         <translation>显示输出</translation>
     </message>
 </context>
 <context>
     <name>ExecPage</name>
     <message>
-        <source>run command</source>
+        <source>Run command</source>
         <translation>运行命令</translation>
     </message>
     <message>
@@ -58,22 +58,22 @@
         <translation>无</translation>
     </message>
     <message>
-        <source>password</source>
+        <source>Password</source>
         <translation>密码</translation>
     </message>
     <message>
-        <source>run as root</source>
+        <source>Run as root</source>
         <translation>在Root下运行</translation>
     </message>
 </context>
 <context>
     <name>ResultPage</name>
     <message>
-        <source>output</source>
+        <source>Output</source>
         <translation>输出</translation>
     </message>
     <message>
-        <source>errors</source>
+        <source>Errors</source>
         <translation>错误</translation>
     </message>
     <message>
@@ -85,11 +85,11 @@
         <translation>无提供信息</translation>
     </message>
     <message>
-        <source>show errors</source>
+        <source>Show errors</source>
         <translation>显示错误</translation>
     </message>
     <message>
-        <source>show output</source>
+        <source>Show output</source>
         <translation>显示输出</translation>
     </message>
 </context>

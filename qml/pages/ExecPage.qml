@@ -34,7 +34,7 @@ Dialog {
             width: parent.width
 
             DialogHeader {
-                title: qsTr('run command')
+                title: qsTr('Run command')
             }
 
             TextArea {
@@ -48,7 +48,7 @@ Dialog {
 
             TextSwitch {
                 id: root
-                text: qsTr('run as root')
+                text: qsTr('Run as root')
                 enabled: checker.available
                 onCheckedChanged: {
                     if (checked) {
@@ -59,8 +59,8 @@ Dialog {
 
             PasswordField {
                 id: password
-                label: qsTr('password')
-                placeholderText: qsTr('password')
+                label: qsTr('Password')
+                placeholderText: qsTr('Password')
                 visible: root.checked
                 validator: checker
 

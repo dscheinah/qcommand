@@ -5,27 +5,27 @@
     <name>CommandPage</name>
     <message>
         <location filename="../qml/pages/CommandPage.qml" line="17"/>
-        <source>available commands</source>
+        <source>Available commands</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/CommandPage.qml" line="29"/>
-        <source>edit</source>
+        <source>Edit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/CommandPage.qml" line="43"/>
-        <source>remove</source>
+        <source>Remove</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/CommandPage.qml" line="45"/>
-        <source>deleting</source>
+        <source>Deleting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/CommandPage.qml" line="82"/>
-        <source>add command</source>
+        <source>Add command</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -33,43 +33,37 @@
     <name>EditPage</name>
     <message>
         <location filename="../qml/pages/EditPage.qml" line="29"/>
-        <source>edit command</source>
+        <source>Edit command</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/EditPage.qml" line="29"/>
-        <source>add command</source>
+        <source>Add command</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/EditPage.qml" line="35"/>
         <location filename="../qml/pages/EditPage.qml" line="36"/>
-        <source>name</source>
+        <source>Name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/EditPage.qml" line="50"/>
         <location filename="../qml/pages/EditPage.qml" line="51"/>
-        <source>command</source>
+        <source>Command</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/EditPage.qml" line="59"/>
-        <source>show output</source>
+        <source>Show output</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>ExecPage</name>
     <message>
-        <location filename="../qml/pages/ExecPage.qml" line="62"/>
-        <location filename="../qml/pages/ExecPage.qml" line="63"/>
-        <source>password</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../qml/pages/ExecPage.qml" line="37"/>
-        <source>run command</source>
+        <source>Run command</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -79,7 +73,13 @@
     </message>
     <message>
         <location filename="../qml/pages/ExecPage.qml" line="51"/>
-        <source>run as root</source>
+        <source>Run as root</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ExecPage.qml" line="62"/>
+        <location filename="../qml/pages/ExecPage.qml" line="63"/>
+        <source>Password</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -87,12 +87,12 @@
     <name>ResultPage</name>
     <message>
         <location filename="../qml/pages/ResultPage.qml" line="47"/>
-        <source>output</source>
+        <source>Errors</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/ResultPage.qml" line="47"/>
-        <source>errors</source>
+        <source>Output</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -107,12 +107,12 @@
     </message>
     <message>
         <location filename="../qml/pages/ResultPage.qml" line="71"/>
-        <source>show errors</source>
+        <source>Show errors</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/ResultPage.qml" line="79"/>
-        <source>show output</source>
+        <source>Show output</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

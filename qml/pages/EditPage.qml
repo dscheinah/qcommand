@@ -26,14 +26,14 @@ Dialog {
             width: parent.width
 
             DialogHeader {
-                title: rowid ? qsTr('edit command') : qsTr('add command')
+                title: rowid ? qsTr('Edit command') : qsTr('Add command')
             }
 
             TextField {
                 id: nameField
                 width: parent.width
-                placeholderText: qsTr('name')
-                label: qsTr('name')
+                placeholderText: qsTr('Name')
+                label: qsTr('Name')
                 text: name
                 focus: !rowid
 
@@ -47,8 +47,8 @@ Dialog {
             TextArea {
                 id: commandField
                 width: parent.width
-                placeholderText: qsTr('command')
-                label: qsTr('command')
+                placeholderText: qsTr('Command')
+                label: qsTr('Command')
                 text: command
                 inputMethodHints: Qt.ImhNoPredictiveText | Qt.ImhNoAutoUppercase
             }
@@ -56,7 +56,7 @@ Dialog {
             TextSwitch {
                 id: hasOutputField
                 checked: has_output
-                text: qsTr('show output')
+                text: qsTr('Show output')
             }
         }
 

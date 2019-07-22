@@ -14,7 +14,7 @@ Page {
         anchors.fill: parent
 
         header: PageHeader {
-            title: qsTr('available commands')
+            title: qsTr('Available commands')
         }
 
         model: ListModel {
@@ -26,7 +26,7 @@ Page {
 
             menu: ContextMenu {
                 MenuItem {
-                    text: qsTr('edit')
+                    text: qsTr('Edit')
                     onClicked: {
                         load(commandLabel.mapToItem(list, 0, 0), commandLabel.height)
                         database.read(commands.get(index), function(item) {
@@ -40,9 +40,9 @@ Page {
                     }
                 }
                 MenuItem {
-                    text: qsTr('remove')
+                    text: qsTr('Remove')
                     onClicked: {
-                        command.remorseAction(qsTr('deleting'), function() {
+                        command.remorseAction(qsTr('Deleting'), function() {
                             load(commandLabel.mapToItem(list, 0, 0), commandLabel.height)
                             database.remove(commands.get(index))
                         })
@@ -79,7 +79,7 @@ Page {
 
         PullDownMenu {
             MenuItem {
-                text: qsTr('add command')
+                text: qsTr('Add command')
                 onClicked: {
                     var dialog = pageStack.push(Qt.resolvedUrl('EditPage.qml'))
                     dialog.accepted.connect(function() {

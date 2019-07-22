@@ -44,7 +44,7 @@ Page {
             }
 
             PageHeader {
-                title: errorMode ? qsTr('errors') : qsTr('output')
+                title: errorMode ? qsTr('Errors') : qsTr('Output')
             }
 
             TextArea {
@@ -68,7 +68,7 @@ Page {
             visible: error
 
             MenuItem {
-                text: qsTr('show errors')
+                text: qsTr('Show errors')
                 visible: !errorMode
                 onClicked: {
                     errorMode = true
@@ -76,7 +76,7 @@ Page {
             }
 
             MenuItem {
-                text: qsTr('show output')
+                text: qsTr('Show output')
                 visible: errorMode
                 onClicked: {
                     errorMode = false

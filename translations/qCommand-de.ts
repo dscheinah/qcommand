@@ -4,53 +4,53 @@
 <context>
     <name>CommandPage</name>
     <message>
-        <source>available commands</source>
-        <translation>verfügbare Befehle</translation>
+        <source>Available commands</source>
+        <translation>Verfügbare Befehle</translation>
     </message>
     <message>
-        <source>remove</source>
-        <translation>entfernen</translation>
+        <source>Remove</source>
+        <translation>Entfernen</translation>
     </message>
     <message>
-        <source>edit</source>
-        <translation>bearbeiten</translation>
+        <source>Edit</source>
+        <translation>Bearbeiten</translation>
     </message>
     <message>
-        <source>add command</source>
+        <source>Add command</source>
         <translation>Befehl hinzufügen</translation>
     </message>
     <message>
-        <source>deleting</source>
-        <translation>löschen</translation>
+        <source>Deleting</source>
+        <translation>Löschen</translation>
     </message>
 </context>
 <context>
     <name>EditPage</name>
     <message>
-        <source>edit command</source>
+        <source>Edit command</source>
         <translation>Befehl bearbeiten</translation>
     </message>
     <message>
-        <source>add command</source>
+        <source>Add command</source>
         <translation>Befehl hinzufügen</translation>
     </message>
     <message>
-        <source>name</source>
+        <source>Name</source>
         <translation>Name</translation>
     </message>
     <message>
-        <source>command</source>
+        <source>Command</source>
         <translation>Befehl</translation>
     </message>
     <message>
-        <source>show output</source>
+        <source>Show output</source>
         <translation>Ausgabe anzeigen</translation>
     </message>
 </context>
 <context>
     <name>ExecPage</name>
     <message>
-        <source>run command</source>
+        <source>Run command</source>
         <translation>Befehl ausführen</translation>
     </message>
     <message>
@@ -58,22 +58,22 @@
         <translation>keiner</translation>
     </message>
     <message>
-        <source>password</source>
+        <source>Password</source>
         <translation>Passwort</translation>
     </message>
     <message>
-        <source>run as root</source>
-        <translation>als root ausführen</translation>
+        <source>Run as root</source>
+        <translation>Als root ausführen</translation>
     </message>
 </context>
 <context>
     <name>ResultPage</name>
     <message>
-        <source>output</source>
+        <source>Output</source>
         <translation>Ausgabe</translation>
     </message>
     <message>
-        <source>errors</source>
+        <source>Errors</source>
         <translation>Fehler</translation>
     </message>
     <message>
@@ -85,11 +85,11 @@
         <translation>es wurden keine Meldungen ausgegeben</translation>
     </message>
     <message>
-        <source>show errors</source>
+        <source>Show errors</source>
         <translation>Fehler anzeigen</translation>
     </message>
     <message>
-        <source>show output</source>
+        <source>Show output</source>
         <translation>Ausgabe anzeigen</translation>
     </message>
 </context>
