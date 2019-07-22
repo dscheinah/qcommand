@@ -21,7 +21,7 @@
     </message>
     <message>
         <source>deleting</source>
-        <translation type="unfinished"></translation>
+        <translation>正在删除</translation>
     </message>
 </context>
 <context>
@@ -44,7 +44,7 @@
     </message>
     <message>
         <source>show output</source>
-        <translation type="unfinished"></translation>
+        <translation>显示输出</translation>
     </message>
 </context>
 <context>
@@ -59,11 +59,11 @@
     </message>
     <message>
         <source>password</source>
-        <translation type="unfinished"></translation>
+        <translation>密码</translation>
     </message>
     <message>
         <source>run as root</source>
-        <translation type="unfinished"></translation>
+        <translation>在Root下运行</translation>
     </message>
 </context>
 <context>
@@ -74,23 +74,23 @@
     </message>
     <message>
         <source>errors</source>
-        <translation type="unfinished"></translation>
+        <translation>错误</translation>
     </message>
     <message>
         <source>no output provided</source>
-        <translation type="unfinished"></translation>
+        <translation>无提供的输出</translation>
     </message>
     <message>
         <source>no messages provided</source>
-        <translation type="unfinished"></translation>
+        <translation>无提供信息</translation>
     </message>
     <message>
         <source>show errors</source>
-        <translation type="unfinished"></translation>
+        <translation>显示错误</translation>
     </message>
     <message>
         <source>show output</source>
-        <translation type="unfinished"></translation>
+        <translation>显示输出</translation>
     </message>
 </context>
 </TS>
