@@ -6,7 +6,7 @@ CoverBackground {
     id: cover
     property Database database
     property CommandEngine engine
-    property int rowid
+    property int rowid: -1
     property string name
     property string command
 

@@ -48,7 +48,8 @@ QtObject {
 
     function load(callback) {
         database.transaction(function(tx) {
-            var result = tx.executeSql('SELECT rowid, * from commands ORDER BY name'), length = result.rows.length
+            var result = tx.executeSql('SELECT rowid, * from commands ORDER BY name')
+            var length = result.rows.length
             for (var i = 0; i < length; i++) {
                 callback(result.rows.item(i))
             }
@@ -57,7 +58,11 @@ QtObject {
 
     function read(data, callback) {
         database.transaction(function(tx) {
-            var result = tx.executeSql('SELECT rowid, * FROM commands WHERE rowid = ?', [data.rowid]), item = result.rows.item(0)
+            var result = tx.executeSql(
+                'SELECT rowid, * FROM commands WHERE rowid = ?',
+                [data.rowid]
+            )
+            var item = result.rows.item(0)
             if (item) {
                 callback(item)
             }
@@ -66,7 +71,16 @@ QtObject {
 
     function readNext(data, callback) {
         database.transaction(function(tx) {
-            var result = tx.executeSql('SELECT rowid, * FROM commands WHERE rowid > ? LIMIT 1', [data.rowid]), item = result.rows.item(0)
+            var result
+            if (data.rowid < 0) {
+                result = tx.executeSql('SELECT rowid, * FROM commands ORDER BY name, rowid LIMIT 1')
+            } else {
+                result = tx.executeSql(
+                    'SELECT rowid, * FROM commands WHERE name > ? OR (name = ? AND rowid > ?) ORDER BY name, rowid LIMIT 1',
+                    [data.name, data.name, data.rowid]
+                )
+            }
+            var item = result.rows.item(0)
             if (item) {
                 callback(item)
             } else if (data.rowid > -1) {
@@ -77,8 +91,12 @@ QtObject {
 
     function add(data) {
         database.transaction(function(tx) {
-            tx.executeSql('INSERT INTO commands(name, command, has_output) VALUES(?, ?, ?)', [data.name, data.command, data.has_output])
-            var result = tx.executeSql('SELECT rowid, * FROM commands WHERE rowid = last_insert_rowid()'), item = result.rows.item(0)
+            tx.executeSql(
+                'INSERT INTO commands(name, command, has_output) VALUES(?, ?, ?)',
+                [data.name, data.command, data.has_output]
+            )
+            var result = tx.executeSql('SELECT rowid, * FROM commands WHERE rowid = last_insert_rowid()')
+            var item = result.rows.item(0)
             if (item) {
                 added(item)
             }
@@ -87,7 +105,10 @@ QtObject {
 
     function edit(item, data) {
         database.transaction(function(tx) {
-            tx.executeSql('UPDATE commands SET name = ?, command = ?, has_output = ? WHERE rowid = ?', [data.name, data.command, data.has_output, item.rowid])
+            tx.executeSql(
+                'UPDATE commands SET name = ?, command = ?, has_output = ? WHERE rowid = ?',
+                [data.name, data.command, data.has_output, item.rowid]
+            )
             edited(item, data)
         })
     }
