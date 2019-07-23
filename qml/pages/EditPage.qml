@@ -1,5 +1,6 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import '../src'
 
 Dialog {
     allowedOrientations: Orientation.All
@@ -20,6 +21,7 @@ Dialog {
     SilicaFlickable {
         anchors.fill: parent
         contentHeight: content.height
+        bottomMargin: commandField.panel.height
 
         Column {
             id: content
@@ -44,13 +46,11 @@ Dialog {
                 }
             }
 
-            TextArea {
+            CodeField {
                 id: commandField
                 width: parent.width
-                placeholderText: qsTr('Command')
                 label: qsTr('Command')
                 text: command
-                inputMethodHints: Qt.ImhNoPredictiveText | Qt.ImhNoAutoUppercase
             }
 
             TextSwitch {

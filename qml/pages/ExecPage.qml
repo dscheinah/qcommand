@@ -28,6 +28,7 @@ Dialog {
     SilicaFlickable {
         anchors.fill: parent
         contentHeight: content.height
+        bottomMargin: commandField.panel.height
 
         Column {
             id: content
@@ -37,13 +38,12 @@ Dialog {
                 title: qsTr('Run command')
             }
 
-            TextArea {
+            CodeField {
+                id: commandField
                 width: parent.width
                 label: name
-                labelVisible: true
-                text: command || qsTr('none')
-                readOnly: true
-                font.italic: !command
+                text: command
+                placeholder: qsTr('none')
             }
 
             TextSwitch {

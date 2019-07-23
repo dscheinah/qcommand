@@ -10,7 +10,7 @@ void CommandEngine::exec(QString cmd, bool emitOutput)
     create(emitOutput);
     QStringList args;
     args << "-c" << cmd;
-    process->start("sh", args, QProcess::ReadOnly);
+    process->start("bash", args, QProcess::ReadOnly);
     process->closeWriteChannel();
 }
 

@@ -12,7 +12,7 @@ private:
     QProcess* process;
 
 public:
-    explicit CommandEngine(QObject *parent = 0);
+    explicit CommandEngine(QObject *parent = nullptr);
 
 private:
     void create(bool emitOutput);

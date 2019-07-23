@@ -17,7 +17,8 @@ CONFIG += sailfishapp
 SOURCES += \
     src/qCommand.cpp \
     src/commandengine.cpp \
-    src/develsu.cpp
+    src/develsu.cpp \
+    src/completion.cpp
 
 DISTFILES += \
     qml/qCommand.qml \
@@ -41,5 +42,6 @@ CONFIG += sailfishapp_i18n
 TRANSLATIONS += translations/*.ts
 
 HEADERS += \
-    src/commandengine.h \
-    src/develsu.h
+    src/commandengine.h \  
+    src/develsu.h \
+    src/completion.h

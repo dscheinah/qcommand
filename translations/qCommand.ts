@@ -32,24 +32,23 @@
 <context>
     <name>EditPage</name>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="29"/>
+        <location filename="../qml/pages/EditPage.qml" line="31"/>
         <source>Edit command</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="29"/>
+        <location filename="../qml/pages/EditPage.qml" line="31"/>
         <source>Add command</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="35"/>
-        <location filename="../qml/pages/EditPage.qml" line="36"/>
+        <location filename="../qml/pages/EditPage.qml" line="37"/>
+        <location filename="../qml/pages/EditPage.qml" line="38"/>
         <source>Name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="50"/>
-        <location filename="../qml/pages/EditPage.qml" line="51"/>
+        <location filename="../qml/pages/EditPage.qml" line="52"/>
         <source>Command</source>
         <translation type="unfinished"></translation>
     </message>
@@ -62,12 +61,12 @@
 <context>
     <name>ExecPage</name>
     <message>
-        <location filename="../qml/pages/ExecPage.qml" line="37"/>
+        <location filename="../qml/pages/ExecPage.qml" line="38"/>
         <source>Run command</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/ExecPage.qml" line="44"/>
+        <location filename="../qml/pages/ExecPage.qml" line="46"/>
         <source>none</source>
         <translation type="unfinished"></translation>
     </message>

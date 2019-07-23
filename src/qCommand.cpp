@@ -2,6 +2,7 @@
 #include <sailfishapp.h>
 #include "commandengine.h"
 #include "develsu.h"
+#include "completion.h"
 
 QObject* recursiveFind(QObject* item, QString name)
 {
@@ -28,6 +29,7 @@ int main(int argc, char *argv[])
     QGuiApplication* app = SailfishApp::application(argc, argv);
 
     qmlRegisterType<DevelSu>("qCommand", 1, 0, "DevelSu");
+    qmlRegisterType<Completion>("qCommand", 1, 0, "Completion");
 
     QQuickView* view = SailfishApp::createView();
     view->setSource(SailfishApp::pathTo("qml/qCommand.qml"));
