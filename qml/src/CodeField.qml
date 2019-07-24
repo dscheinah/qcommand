@@ -16,7 +16,7 @@ Item {
     }
 
     property DockedPanel panel: DockedPanel {
-        width: parent.width
+        width: pageStack.currentPage.width
         height: Theme.itemSizeExtraSmall - Theme.paddingLarge
         contentWidth: row.width
         dock: Dock.Bottom

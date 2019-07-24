@@ -8,20 +8,28 @@
         <translation>可用命令</translation>
     </message>
     <message>
-        <source>Remove</source>
-        <translation>移出</translation>
+        <source>Add command</source>
+        <translation>添加命令</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Edit</source>
         <translation>编辑</translation>
     </message>
     <message>
-        <source>Add command</source>
-        <translation>添加命令</translation>
+        <source>Remove</source>
+        <translation>移出</translation>
     </message>
     <message>
         <source>Deleting</source>
         <translation>正在删除</translation>
+    </message>
+    <message>
+        <source>Search results</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -8,20 +8,28 @@
         <translation>Verfügbare Befehle</translation>
     </message>
     <message>
-        <source>Remove</source>
-        <translation>Entfernen</translation>
+        <source>Add command</source>
+        <translation>Befehl hinzufügen</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Suchen</translation>
     </message>
     <message>
         <source>Edit</source>
         <translation>Bearbeiten</translation>
     </message>
     <message>
-        <source>Add command</source>
-        <translation>Befehl hinzufügen</translation>
+        <source>Remove</source>
+        <translation>Entfernen</translation>
     </message>
     <message>
         <source>Deleting</source>
         <translation>Löschen</translation>
+    </message>
+    <message>
+        <source>Search results</source>
+        <translation>Suchergebnisse</translation>
     </message>
 </context>
 <context>

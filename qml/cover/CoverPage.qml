@@ -60,7 +60,7 @@ CoverBackground {
         database.readNext(cover, function(item) {
             rowid = item.rowid
             name = item.name
-            command = item.command
+            command = item.command || ''
         })
     }
 

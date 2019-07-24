@@ -4,28 +4,39 @@
 <context>
     <name>CommandPage</name>
     <message>
-        <location filename="../qml/pages/CommandPage.qml" line="17"/>
+        <location filename="../qml/pages/CommandPage.qml" line="20"/>
         <source>Available commands</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommandPage.qml" line="29"/>
+        <location filename="../qml/pages/CommandPage.qml" line="89"/>
+        <location filename="../qml/pages/CommandPage.qml" line="113"/>
+        <source>Search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/CommandPage.qml" line="78"/>
+        <source>Add command</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/CommandPage.qml" line="32"/>
         <source>Edit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommandPage.qml" line="43"/>
+        <location filename="../qml/pages/CommandPage.qml" line="20"/>
+        <source>Search results</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/CommandPage.qml" line="46"/>
         <source>Remove</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommandPage.qml" line="45"/>
+        <location filename="../qml/pages/CommandPage.qml" line="48"/>
         <source>Deleting</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/CommandPage.qml" line="82"/>
-        <source>Add command</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -12,9 +12,11 @@ Page {
     SilicaListView {
         id: list
         anchors.fill: parent
+        anchors.bottomMargin: search.visible ? search.height : 0
+        clip: true
 
         header: PageHeader {
-            title: qsTr('Available commands')
+            title: search.text ? qsTr('Search results') : qsTr('Available commands')
         }
 
         model: ListModel {
@@ -70,16 +72,10 @@ Page {
             }
         }
 
-        BusyIndicator {
-            id: loading
-            anchors.horizontalCenter: parent.horizontalCenter
-            size: BusyIndicatorSize.Small
-            running: false
-        }
-
         PullDownMenu {
             MenuItem {
                 text: qsTr('Add command')
+
                 onClicked: {
                     var dialog = pageStack.push(Qt.resolvedUrl('EditPage.qml'))
                     dialog.accepted.connect(function() {
@@ -87,9 +83,83 @@ Page {
                     })
                 }
             }
+
+            MenuItem {
+                text: qsTr('Search')
+
+                onClicked: {
+                    search.visible = true
+                    search.forceActiveFocus()
+                }
+            }
+        }
+
+        BusyIndicator {
+            id: loading
+            anchors.horizontalCenter: parent.horizontalCenter
+            size: BusyIndicatorSize.Small
+            running: false
         }
 
         VerticalScrollDecorator {
+        }
+    }
+
+    SearchField {
+        id: search
+        anchors.bottom: parent.bottom
+        width: parent.width
+        placeholderText: qsTr('Search')
+        visible: false
+
+        background: Rectangle {
+            width: parent.width
+            height: parent.height
+            color: Theme.rgba(Theme.highlightBackgroundColor, Theme.highlightBackgroundOpacity)
+        }
+
+        onTextChanged: {
+            async.stop()
+            async.text = text
+            async.start()
+        }
+
+        Item {
+            parent: search
+            anchors.fill: parent
+            z: 1
+
+            IconButton {
+                anchors {
+                    right: parent.right
+                    rightMargin: Theme.horizontalPageMargin
+                }
+                width: icon.width
+                height: parent.height
+                icon.source: 'image://theme/icon-m-close'
+                visible: !search.text
+
+                onClicked: {
+                    search.focus = false
+                    search.visible = false
+                }
+            }
+        }
+
+        Timer {
+            id: async
+            interval: 100
+            property string text
+
+            onTriggered: {
+                commands.clear()
+                database.load(
+                    function(item) {
+                        commands.append(item)
+                    },
+                    text
+                )
+            }
         }
     }
 

@@ -52,9 +52,15 @@ QtObject {
         create()
     }
 
-    function load(callback) {
+    function load(callback, search) {
         database.transaction(function(tx) {
-            var result = tx.executeSql('SELECT rowid, * from commands ORDER BY name')
+            var result
+            if (search) {
+                var escaped = search.replace(/([%_#])/, '#$1')
+                result = tx.executeSql('SELECT rowid, * FROM commands WHERE name LIKE ? ESCAPE "#" ORDER BY name', '%' + escaped + '%')
+            } else {
+                result = tx.executeSql('SELECT rowid, * FROM commands ORDER BY name')
+            }
             var length = result.rows.length
             for (var i = 0; i < length; i++) {
                 callback(result.rows.item(i))
