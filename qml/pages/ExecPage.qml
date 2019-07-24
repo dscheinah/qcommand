@@ -12,12 +12,13 @@ Dialog {
     property string name
     property string command
     property int has_output
+    property int is_template
 
     onAccepted: {
         if (root.checked) {
-            engine.execAsRoot(command, has_output, password.text)
+            engine.execAsRoot(commandField.text, has_output, password.text)
         } else {
-            engine.exec(command, has_output)
+            engine.exec(commandField.text, has_output)
         }
     }
 
@@ -43,7 +44,7 @@ Dialog {
                 width: parent.width
                 label: name
                 text: command
-                placeholder: qsTr('none')
+                placeholder: is_template ? '' : qsTr('none')
             }
 
             TextSwitch {

@@ -15,7 +15,7 @@ void Completion::complete(QString command)
         process->kill();
     }
 
-    QRegExp separator("[\\s\"'${}()#;&`,+:!@\\[\\]<>|=+%^\\\\]");
+    QRegExp separator("[\\s\"'${}()#;&`,:!@\\[\\]<>|=%^\\\\]");
     QStringList parts = command.split(separator);
     if (!parts.isEmpty())
     {
@@ -26,7 +26,7 @@ void Completion::complete(QString command)
             QObject::connect(process, SIGNAL(finished(int)), this, SLOT(ready()));
 
             QStringList args;
-            args << "-c" << "compgen -bcdf -- " + part;
+            args << "-c" << "compgen -bcdf -- '" + part + "'";
             process->start("bash", args, QProcess::ReadOnly);
         }
     }

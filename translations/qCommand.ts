@@ -32,52 +32,57 @@
 <context>
     <name>EditPage</name>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="31"/>
+        <location filename="../qml/pages/EditPage.qml" line="33"/>
         <source>Edit command</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="31"/>
+        <location filename="../qml/pages/EditPage.qml" line="33"/>
         <source>Add command</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="37"/>
-        <location filename="../qml/pages/EditPage.qml" line="38"/>
+        <location filename="../qml/pages/EditPage.qml" line="39"/>
+        <location filename="../qml/pages/EditPage.qml" line="40"/>
         <source>Name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="52"/>
+        <location filename="../qml/pages/EditPage.qml" line="54"/>
         <source>Command</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="59"/>
+        <location filename="../qml/pages/EditPage.qml" line="61"/>
         <source>Show output</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/EditPage.qml" line="67"/>
+        <source>Editable before execution</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>ExecPage</name>
     <message>
-        <location filename="../qml/pages/ExecPage.qml" line="38"/>
+        <location filename="../qml/pages/ExecPage.qml" line="39"/>
         <source>Run command</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/ExecPage.qml" line="46"/>
+        <location filename="../qml/pages/ExecPage.qml" line="47"/>
         <source>none</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/ExecPage.qml" line="51"/>
+        <location filename="../qml/pages/ExecPage.qml" line="52"/>
         <source>Run as root</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/ExecPage.qml" line="62"/>
         <location filename="../qml/pages/ExecPage.qml" line="63"/>
+        <location filename="../qml/pages/ExecPage.qml" line="64"/>
         <source>Password</source>
         <translation type="unfinished"></translation>
     </message>

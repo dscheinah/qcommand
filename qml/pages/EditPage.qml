@@ -9,13 +9,15 @@ Dialog {
     property string name
     property string command
     property int has_output
+    property int is_template
 
     onDone: {
-       if (result == DialogResult.Accepted) {
-           name = nameField.text
-           command = commandField.text
-           has_output = hasOutputField.checked
-       }
+        if (result == DialogResult.Accepted) {
+            name = nameField.text
+            command = commandField.text
+            has_output = hasOutputField.checked
+            is_template = isTemplateField.checked
+        }
     }
 
     SilicaFlickable {
@@ -57,6 +59,12 @@ Dialog {
                 id: hasOutputField
                 checked: has_output
                 text: qsTr('Show output')
+            }
+
+            TextSwitch {
+                id: isTemplateField
+                checked: is_template
+                text: qsTr('Editable before execution')
             }
         }
 

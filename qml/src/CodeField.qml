@@ -11,14 +11,11 @@ Item {
     property string text
     property string placeholder
 
-    Binding {
-        target: item
-        property: 'text'
+    Binding on text {
         value: input.text
     }
 
     property DockedPanel panel: DockedPanel {
-        parent: pageStack.currentPage
         width: parent.width
         height: Theme.itemSizeExtraSmall - Theme.paddingLarge
         contentWidth: row.width
@@ -31,6 +28,11 @@ Item {
         }
 
         property bool stayOpened
+
+        Binding on parent {
+            value: pageStack.currentPage
+            when: item.visible
+        }
 
         Row {
             id: row
@@ -65,21 +67,6 @@ Item {
                 height: panel.height
             }
         }
-
-        Timer {
-            id: refocus
-            interval: 10
-
-            property string text
-            property int position
-
-            onTriggered: {
-                input.text = text
-                input.cursorPosition = position
-                input.forceActiveFocus()
-                panel.stayOpened = false
-            }
-        }
     }
 
     Completion {
@@ -88,6 +75,21 @@ Item {
         onResult: {
             panel.contentX = 0
             completions.model = list
+        }
+    }
+
+    Timer {
+        id: refocus
+        interval: 10
+
+        property string text
+        property int position
+
+        onTriggered: {
+            input.text = text
+            input.cursorPosition = position
+            input.forceActiveFocus()
+            panel.stayOpened = false
         }
     }
 

@@ -46,6 +46,10 @@
         <source>Show output</source>
         <translation>Ausgabe anzeigen</translation>
     </message>
+    <message>
+        <source>Editable before execution</source>
+        <translation>Vor der Ausführung editierbar</translation>
+    </message>
 </context>
 <context>
     <name>ExecPage</name>

@@ -46,6 +46,10 @@
         <source>Show output</source>
         <translation>显示输出</translation>
     </message>
+    <message>
+        <source>Editable before execution</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ExecPage</name>

@@ -12,7 +12,7 @@ QtObject {
 
     function create() {
         database = LocalStorage.openDatabaseSync('qCommand', '', 'stored commands from qCommand')
-        if (database.version === '1.2') {
+        if (database.version === '1.3') {
             ready()
             return
         }
@@ -39,6 +39,12 @@ QtObject {
                     tx.executeSql('ALTER TABLE commands ADD has_output INTEGER')
                 }
                 break
+            case '1.2':
+                target = '1.3'
+                callback = function(tx) {
+                    tx.executeSql('ALTER TABLE commands ADD is_template INTEGER')
+                }
+                break;
             default:
                 return
         }
@@ -92,8 +98,8 @@ QtObject {
     function add(data) {
         database.transaction(function(tx) {
             tx.executeSql(
-                'INSERT INTO commands(name, command, has_output) VALUES(?, ?, ?)',
-                [data.name, data.command, data.has_output]
+                'INSERT INTO commands(name, command, has_output, is_template) VALUES(?, ?, ?, ?)',
+                [data.name, data.command, data.has_output, data.is_template]
             )
             var result = tx.executeSql('SELECT rowid, * FROM commands WHERE rowid = last_insert_rowid()')
             var item = result.rows.item(0)
@@ -106,8 +112,8 @@ QtObject {
     function edit(item, data) {
         database.transaction(function(tx) {
             tx.executeSql(
-                'UPDATE commands SET name = ?, command = ?, has_output = ? WHERE rowid = ?',
-                [data.name, data.command, data.has_output, item.rowid]
+                'UPDATE commands SET name = ?, command = ?, has_output = ?, is_template = ? WHERE rowid = ?',
+                [data.name, data.command, data.has_output, data.is_template, item.rowid]
             )
             edited(item, data)
         })
