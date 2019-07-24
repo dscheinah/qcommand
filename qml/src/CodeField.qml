@@ -24,6 +24,7 @@ Item {
         contentWidth: row.width
         dock: Dock.Bottom
         open: input.focus || stayOpened
+        flickableDirection: Flickable.HorizontalFlick
 
         background: Rectangle {
             color: Theme.highlightDimmerColor
@@ -90,6 +91,17 @@ Item {
         }
     }
 
+    Timer {
+        id: async
+        interval: 100
+
+        property string text
+
+        onTriggered: {
+            completion.complete(text)
+        }
+    }
+
     TextArea {
         id: input
         width: parent.width
@@ -103,14 +115,16 @@ Item {
         onTextChanged: {
             completions.model = []
             if (focus) {
-                completion.complete(text.substr(0, cursorPosition))
+                async.stop()
+                async.text = text.substr(0, cursorPosition)
+                async.start()
             }
         }
 
-        onFocusChanged: {
-            if (focus) {
-                completion.complete(text.substr(0, cursorPosition))
-            }
+        onCursorPositionChanged: {
+            async.stop()
+            async.text = text.substr(0, cursorPosition)
+            async.start()
         }
     }
 }

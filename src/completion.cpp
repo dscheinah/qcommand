@@ -1,7 +1,6 @@
 #include "completion.h"
 #include <QDir>
-
-#include <QDebug>
+#include <QSet>
 
 Completion::Completion(QObject *parent) : QObject(parent)
 {
@@ -21,13 +20,13 @@ void Completion::complete(QString command)
     if (!parts.isEmpty())
     {
         part = parts.last();
-        if (part != "" && part[0] != '-')
+        if (part != "")
         {
             process = new QProcess();
             QObject::connect(process, SIGNAL(finished(int)), this, SLOT(ready()));
 
             QStringList args;
-            args << "-c" << "compgen -c " + part;
+            args << "-c" << "compgen -bcdf -- " + part;
             process->start("bash", args, QProcess::ReadOnly);
         }
     }
@@ -40,18 +39,19 @@ void Completion::ready()
         return;
     }
 
-    QRegExp pattern("^.*/");
+    QRegExp pattern("^.+/");
     pattern.indexIn(part);
     QString replace = pattern.cap(0);
     if (!QDir(replace).exists())
     {
         replace = "";
     }
+    int replaceLength = replace.length();
 
-    part = part.replace(replace, "");
+    part = part.replace(0, replaceLength, "");
 
     QString output = process->readAll();
-    QStringList split = output.split("\n");
+    QStringList split = output.split("\n").toSet().toList();
 
     QStringList collected;
     for (QString output: split)
@@ -61,7 +61,11 @@ void Completion::ready()
             continue;
         }
         output += QDir(output).exists() ? "/" : " ";
-        collected << output.replace(replace, "");
+        if (output.indexOf(replace) == 0)
+        {
+            output.replace(0, replaceLength, "");
+        }
+        collected << output;
     }
     emit result(collected);
 }
