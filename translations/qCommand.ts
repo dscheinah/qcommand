@@ -4,38 +4,38 @@
 <context>
     <name>CommandPage</name>
     <message>
-        <location filename="../qml/pages/CommandPage.qml" line="20"/>
+        <location filename="../qml/pages/CommandPage.qml" line="28"/>
         <source>Available commands</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommandPage.qml" line="89"/>
-        <location filename="../qml/pages/CommandPage.qml" line="113"/>
+        <location filename="../qml/pages/CommandPage.qml" line="97"/>
+        <location filename="../qml/pages/CommandPage.qml" line="128"/>
         <source>Search</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommandPage.qml" line="78"/>
+        <location filename="../qml/pages/CommandPage.qml" line="86"/>
         <source>Add command</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommandPage.qml" line="32"/>
+        <location filename="../qml/pages/CommandPage.qml" line="40"/>
         <source>Edit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommandPage.qml" line="20"/>
+        <location filename="../qml/pages/CommandPage.qml" line="28"/>
         <source>Search results</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommandPage.qml" line="46"/>
+        <location filename="../qml/pages/CommandPage.qml" line="54"/>
         <source>Remove</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommandPage.qml" line="48"/>
+        <location filename="../qml/pages/CommandPage.qml" line="56"/>
         <source>Deleting</source>
         <translation type="unfinished"></translation>
     </message>

@@ -52,7 +52,7 @@ QtObject {
         create()
     }
 
-    function load(callback, search) {
+    function load(callback, callbackEmpty, search) {
         database.transaction(function(tx) {
             var result
             if (search) {
@@ -64,6 +64,9 @@ QtObject {
             var length = result.rows.length
             for (var i = 0; i < length; i++) {
                 callback(result.rows.item(i))
+            }
+            if (!length) {
+                callbackEmpty()
             }
         })
     }

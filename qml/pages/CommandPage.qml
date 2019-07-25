@@ -15,6 +15,15 @@ Page {
         anchors.bottomMargin: search.visible ? search.height : 0
         clip: true
 
+        layer.enabled: search.visible
+        layer.smooth: true
+        layer.effect: OpacityRampEffectBase {
+            direction: OpacityRamp.TopToBottom
+            slope: 8
+            offset: .9
+            source: list
+        }
+
         header: PageHeader {
             title: search.text ? qsTr('Search results') : qsTr('Available commands')
         }
@@ -32,7 +41,7 @@ Page {
                     onClicked: {
                         load(commandLabel.mapToItem(list, 0, 0), commandLabel.height)
                         database.read(commands.get(index), function(item) {
-                            loading.running = false
+                            elementLoader.running = false
                             var dialog = pageStack.push(Qt.resolvedUrl('EditPage.qml'), item)
                             dialog.accepted.connect(function() {
                                 load(commandLabel.mapToItem(list, 0, 0), commandLabel.height)
@@ -55,8 +64,8 @@ Page {
             onClicked: {
                 load(commandLabel.mapToItem(list, 0, 0), commandLabel.height)
                 database.read(commands.get(index), function(item) {
-                    loading.running = false
-                    item.engine = engine;
+                    elementLoader.running = false
+                    item.engine = engine
                     pageStack.push(Qt.resolvedUrl('ExecPage.qml'), item)
                 })
             }
@@ -95,10 +104,17 @@ Page {
         }
 
         BusyIndicator {
-            id: loading
+            id: elementLoader
             anchors.horizontalCenter: parent.horizontalCenter
             size: BusyIndicatorSize.Small
             running: false
+        }
+
+        BusyIndicator {
+            id: loading
+            size: BusyIndicatorSize.Medium
+            anchors.centerIn: list
+            running: true
         }
 
         VerticalScrollDecorator {
@@ -111,6 +127,9 @@ Page {
         width: parent.width
         placeholderText: qsTr('Search')
         visible: false
+
+        EnterKey.enabled: false
+        EnterKey.iconSource: 'image://'
 
         background: Rectangle {
             width: parent.width
@@ -152,20 +171,21 @@ Page {
             property string text
 
             onTriggered: {
+                loading.running = true
                 commands.clear()
-                database.load(
-                    function(item) {
-                        commands.append(item)
-                    },
-                    text
-                )
+                database.load(function(item) {
+                    loading.running = false
+                    commands.append(item)
+                }, function() {
+                    loading.running = false
+                }, text)
             }
         }
     }
 
     function load(position, height) {
-        loading.y = position.y + (height - loading.height) / 2
-        loading.running = true
+        elementLoader.y = position.y + (height - elementLoader.height) / 2
+        elementLoader.running = true
     }
 
     function getIndex(item) {
@@ -184,16 +204,21 @@ Page {
             if (index >= 0) {
                 commands.set(index, data)
             }
-            loading.running = false
+            elementLoader.running = false
         })
         database.removed.connect(function(item) {
             var index = getIndex(item)
             if (index >= 0) {
                 commands.remove(index)
             }
-            loading.running = false
+            elementLoader.running = false
         })
         database.added.connect(commands.append)
-        database.load(commands.append)
+        database.load(function(item) {
+            loading.running = false
+            commands.append(item)
+        }, function() {
+            loading.running = false
+        })
     }
 }
