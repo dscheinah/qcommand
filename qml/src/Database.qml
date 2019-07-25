@@ -9,10 +9,12 @@ QtObject {
     signal removed(variant item)
 
     property var database
+    property IntValidator intValidator: IntValidator {
+    }
 
     function create() {
         database = LocalStorage.openDatabaseSync('qCommand', '', 'stored commands from qCommand')
-        if (database.version === '1.3') {
+        if (database.version === '1.4') {
             ready()
             return
         }
@@ -43,6 +45,19 @@ QtObject {
                 target = '1.3'
                 callback = function(tx) {
                     tx.executeSql('ALTER TABLE commands ADD is_template INTEGER')
+                }
+                break;
+            case '1.3':
+                target = '1.4'
+                callback = function(tx) {
+                    tx.executeSql('ALTER TABLE commands ADD cover_group TEXT')
+                    var result = tx.executeSql('SELECT rowid, name FROM commands WHERE name != ""'), length = result.rows.length
+                    for (var i = 0; i < length; i++) {
+                        var item = result.rows.item(i), name = item.name.trim().split(/\s+/)
+                        if (name.length > 1) {
+                            tx.executeSql('UPDATE commands SET cover_group = ? WHERE rowid = ?', [name[0], item.rowid])
+                        }
+                    }
                 }
                 break;
             default:
@@ -107,8 +122,8 @@ QtObject {
     function add(data) {
         database.transaction(function(tx) {
             tx.executeSql(
-                'INSERT INTO commands(name, command, has_output, is_template) VALUES(?, ?, ?, ?)',
-                [data.name, data.command, data.has_output, data.is_template]
+                'INSERT INTO commands(name, command, has_output, is_template, cover_group) VALUES(?, ?, ?, ?, ?)',
+                [data.name, data.command, data.has_output, data.is_template, data.cover_group]
             )
             var result = tx.executeSql('SELECT rowid, * FROM commands WHERE rowid = last_insert_rowid()')
             var item = result.rows.item(0)
@@ -121,8 +136,8 @@ QtObject {
     function edit(item, data) {
         database.transaction(function(tx) {
             tx.executeSql(
-                'UPDATE commands SET name = ?, command = ?, has_output = ?, is_template = ? WHERE rowid = ?',
-                [data.name, data.command, data.has_output, data.is_template, item.rowid]
+                'UPDATE commands SET name = ?, command = ?, has_output = ?, is_template = ?, cover_group = ? WHERE rowid = ?',
+                [data.name, data.command, data.has_output, data.is_template, data.cover_group, item.rowid]
             )
             edited(item, data)
         })
@@ -132,6 +147,21 @@ QtObject {
         database.transaction(function(tx) {
             tx.executeSql('DELETE FROM commands WHERE rowid = ?', [item.rowid])
             removed(item)
+        })
+    }
+
+    function readCoverPosition(item, callback) {
+        database.transaction(function(tx) {
+            var resultMax = tx.executeSql(
+                'SELECT COUNT(*) AS max FROM commands WHERE cover_group = ? AND rowid != ?',
+                [item.cover_group, item.rowid]
+            )
+            var resultMin = tx.executeSql(
+                'SELECT COUNT(*) AS min FROM commands WHERE cover_group = ? AND (name < ? OR (name = ? AND rowid < ?)) AND rowid != ?',
+                [item.cover_group, item.name, item.name, item.rowid || intValidator.top, item.rowid]
+            )
+            var max = resultMax.rows.item(0).max
+            callback(resultMin.rows.item(0).min + 1, max + 1)
         })
     }
 }

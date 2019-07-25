@@ -9,6 +9,9 @@ CoverBackground {
     property int rowid: -1
     property string name
     property string command
+    property bool has_output
+    property string cover_group
+    property string visibleName
 
     Label {
         id: header
@@ -33,8 +36,8 @@ CoverBackground {
         width: parent.width - Theme.horizontalPageMargin * 2
         height: parent.height - header.height - cover.coverActionArea.height - Theme.horizontalPageMargin * 3
         wrapMode: Label.Wrap
-        truncationMode: TruncationMode.Fade
-        text: name
+        truncationMode: TruncationMode.Elide
+        text: visibleName
     }
 
     CoverActionList {
@@ -56,19 +59,29 @@ CoverBackground {
         }
     }
 
-    function next() {
-        database.readNext(cover, function(item) {
+    function set(item) {
+        if (item.rowid) {
             rowid = item.rowid
-            name = item.name
-            command = item.command || ''
-        })
+        }
+        name = item.name || ''
+        command = item.command || ''
+        has_output = item.has_output || false
+        cover_group = item.cover_group || ''
+        if (cover_group) {
+            visibleName = cover_group + '\n' + name.substr(cover_group.length).trim()
+        } else {
+            visibleName = name
+        }
+    }
+
+    function next() {
+        database.readNext(cover, set)
     }
 
     Component.onCompleted: {
         database.edited.connect(function(item, data) {
             if (item.rowid === rowid) {
-                name = data.name
-                command = data.command
+                set(data)
             }
         })
         database.removed.connect(function(item) {
@@ -78,9 +91,7 @@ CoverBackground {
         })
         database.added.connect(function(item) {
             if (!rowid) {
-                rowid = item.rowid
-                name = item.name
-                command= item.command
+                set(item)
             }
         })
     }

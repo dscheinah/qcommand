@@ -32,6 +32,11 @@ Page {
             id: commands
         }
 
+        section.property: 'cover_group'
+        section.delegate: SectionHeader {
+            text: section
+        }
+
         delegate: ListItem {
             id: command
 
@@ -42,6 +47,7 @@ Page {
                         load(commandLabel.mapToItem(list, 0, 0), commandLabel.height)
                         database.read(commands.get(index), function(item) {
                             elementLoader.running = false
+                            item.database = database
                             var dialog = pageStack.push(Qt.resolvedUrl('EditPage.qml'), item)
                             dialog.accepted.connect(function() {
                                 load(commandLabel.mapToItem(list, 0, 0), commandLabel.height)
@@ -86,7 +92,7 @@ Page {
                 text: qsTr('Add command')
 
                 onClicked: {
-                    var dialog = pageStack.push(Qt.resolvedUrl('EditPage.qml'))
+                    var dialog = pageStack.push(Qt.resolvedUrl('EditPage.qml'), {database: database})
                     dialog.accepted.connect(function() {
                         database.add(dialog)
                     })

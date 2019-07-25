@@ -4,12 +4,15 @@ import '../src'
 
 Dialog {
     allowedOrientations: Orientation.All
+    canAccept: nameField.text
 
+    property Database database
     property int rowid
     property string name
     property string command
     property int has_output
     property int is_template
+    property string cover_group
 
     onDone: {
         if (result == DialogResult.Accepted) {
@@ -17,6 +20,7 @@ Dialog {
             command = commandField.text
             has_output = hasOutputField.checked
             is_template = isTemplateField.checked
+            cover_group = groupField.checked ? groupField.group : ''
         }
     }
 
@@ -41,11 +45,85 @@ Dialog {
                 text: name
                 focus: !rowid
 
+                onTextChanged: {
+                    groupField.updateGroup(text)
+                }
+
                 EnterKey.enabled: text.length > 0
                 EnterKey.iconSource: 'image://theme/icon-m-enter-next'
                 EnterKey.onClicked: {
                     commandField.focus = true
                 }
+            }
+
+            TextSwitch {
+                id: groupField
+                checked: cover_group
+                enabled: group
+                text: qsTr('Use as cover action')
+
+                property string group: cover_group
+
+                function updateGroup(name) {
+                    var split = name.trim().split(/\s+/)
+                    if (split.length > 1) {
+                        group = split[0]
+                    } else {
+                        group = ''
+                    }
+                    updateLabel(name)
+                }
+
+                function updateLabel(name) {
+                    if (!group) {
+                        groupDetails.text = ''
+                    } else {
+                        groupDetails.text = group
+                        busy.running = true
+                        database.readCoverPosition(
+                            {
+                                name: name,
+                                cover_group: group,
+                                rowid: rowid,
+                            }, function(index, max) {
+                                groupDetails.text = '%1 (%2/%3)'.arg(group).arg(index).arg(max)
+                                busy.running = false
+                            }
+                        )
+                    }
+                }
+
+                Component.onCompleted: {
+                    updateLabel(name)
+                }
+            }
+
+            Row {
+                width: parent.width
+
+                Item {
+                    width: Theme.itemSizeExtraSmall
+                    height: Theme.itemSizeExtraSmall
+
+                    BusyIndicator {
+                        id: busy
+                        size: BusyIndicatorSize.Small
+                        running: false
+                        x: Theme.horizontalPageMargin - Theme.paddingSmall
+                    }
+                }
+
+                Label {
+                    id: groupDetails
+                    font.pixelSize: Theme.fontSizeExtraSmall
+                    width: parent.width - Theme.itemSizeExtraSmall - Theme.horizontalPageMargin * 2
+                    wrapMode: Label.Wrap
+                }
+            }
+
+            Row {
+                width: parent.width
+                height: Theme.paddingSmall
             }
 
             CodeField {

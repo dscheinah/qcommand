@@ -9,18 +9,18 @@
         <translation>Commandes disponibles</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommandPage.qml" line="97"/>
-        <location filename="../qml/pages/CommandPage.qml" line="128"/>
+        <location filename="../qml/pages/CommandPage.qml" line="103"/>
+        <location filename="../qml/pages/CommandPage.qml" line="134"/>
         <source>Search</source>
         <translation>Chercher</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommandPage.qml" line="86"/>
+        <location filename="../qml/pages/CommandPage.qml" line="92"/>
         <source>Add command</source>
         <translation>Ajouter une commande</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommandPage.qml" line="40"/>
+        <location filename="../qml/pages/CommandPage.qml" line="45"/>
         <source>Edit</source>
         <translation>Modifier</translation>
     </message>
@@ -30,12 +30,12 @@
         <translation>Résultats de la recherche</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommandPage.qml" line="54"/>
+        <location filename="../qml/pages/CommandPage.qml" line="60"/>
         <source>Remove</source>
         <translation>Supprimer</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommandPage.qml" line="56"/>
+        <location filename="../qml/pages/CommandPage.qml" line="62"/>
         <source>Deleting</source>
         <translation>Suppression</translation>
     </message>
@@ -43,33 +43,38 @@
 <context>
     <name>EditPage</name>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="33"/>
+        <location filename="../qml/pages/EditPage.qml" line="37"/>
         <source>Edit command</source>
         <translation>Modifier la commande</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="33"/>
+        <location filename="../qml/pages/EditPage.qml" line="37"/>
         <source>Add command</source>
         <translation>Ajouter la commande</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="39"/>
-        <location filename="../qml/pages/EditPage.qml" line="40"/>
+        <location filename="../qml/pages/EditPage.qml" line="43"/>
+        <location filename="../qml/pages/EditPage.qml" line="44"/>
         <source>Name</source>
         <translation>Nom</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="54"/>
+        <location filename="../qml/pages/EditPage.qml" line="63"/>
+        <source>Use as cover action</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/EditPage.qml" line="132"/>
         <source>Command</source>
         <translation>Commande</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="61"/>
+        <location filename="../qml/pages/EditPage.qml" line="139"/>
         <source>Show output</source>
         <translation>Afficher la sortie</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="67"/>
+        <location filename="../qml/pages/EditPage.qml" line="145"/>
         <source>Editable before execution</source>
         <translation>Modifiable avant exécution</translation>
     </message>
