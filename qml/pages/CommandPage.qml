@@ -128,8 +128,10 @@ Page {
         placeholderText: qsTr('Search')
         visible: false
 
-        EnterKey.enabled: false
-        EnterKey.iconSource: 'image://'
+        EnterKey.iconSource: 'image://theme/icon-m-enter-close'
+        EnterKey.onClicked: {
+            search.focus = false
+        }
 
         background: Rectangle {
             width: parent.width
