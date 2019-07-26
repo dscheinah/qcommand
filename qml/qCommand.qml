@@ -6,6 +6,7 @@ import 'src'
 
 ApplicationWindow
 {
+    id: app
     initialPage: loading
     cover: cover
     allowedOrientations: Orientation.All
@@ -24,7 +25,7 @@ ApplicationWindow
                 database: database,
                 engine: engine,
             })
-            cover.next()
+            cover.nextGroup()
         }
     }
 
@@ -34,6 +35,7 @@ ApplicationWindow
 
     CoverPage {
         id: cover
+        app: app
         database: database
         engine: engine
     }

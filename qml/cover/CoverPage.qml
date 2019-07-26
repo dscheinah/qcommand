@@ -4,9 +4,11 @@ import '../src'
 
 CoverBackground {
     id: cover
+
+    property ApplicationWindow app
     property Database database
     property CommandEngine engine
-    property int rowid: -1
+    property int rowid
     property string name
     property string command
     property bool has_output
@@ -46,7 +48,18 @@ CoverBackground {
         CoverAction {
             iconSource: 'image://theme/icon-cover-play'
             onTriggered: {
-                engine.exec(command, false)
+                if (has_output) {
+                    var resultPage = pageStack.find(function(page) {
+                        return page.objectName === 'result'
+                    })
+                    if (resultPage) {
+                        pageStack.pop(resultPage, true);
+                        pageStack.pop(null, true)
+                    }
+                    pageStack.push(Qt.resolvedUrl('../pages/ResultPage.qml'), {}, true)
+                    app.activate()
+                }
+                engine.exec(command, has_output)
                 next()
             }
         }
@@ -54,28 +67,31 @@ CoverBackground {
         CoverAction {
             iconSource: 'image://theme/icon-cover-next-song'
             onTriggered: {
-                next()
+                nextGroup()
             }
         }
     }
 
     function set(item) {
+        if (!item.cover_group) {
+            return;
+        }
         if (item.rowid) {
             rowid = item.rowid
         }
         name = item.name || ''
         command = item.command || ''
         has_output = item.has_output || false
-        cover_group = item.cover_group || ''
-        if (cover_group) {
-            visibleName = cover_group + '\n' + name.substr(cover_group.length).trim()
-        } else {
-            visibleName = name
-        }
+        cover_group = item.cover_group
+        visibleName = cover_group + '\n' + name.substr(cover_group.length).trim()
     }
 
     function next() {
-        database.readNext(cover, set)
+        database.readNext(cover, set, nextGroup)
+    }
+
+    function nextGroup() {
+        database.readNextGroup(cover, set)
     }
 
     Component.onCompleted: {

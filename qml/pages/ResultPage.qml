@@ -5,6 +5,7 @@ import '../src'
 Page {
     id: page
     allowedOrientations: Orientation.All
+    objectName: 'result'
 
     property string result
     property string errors

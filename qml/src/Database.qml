@@ -99,24 +99,54 @@ QtObject {
         })
     }
 
-    function readNext(data, callback) {
+    function readNextTemplate(sql, bind, callback, callbackEmpty) {
         database.transaction(function(tx) {
-            var result
-            if (data.rowid < 0) {
-                result = tx.executeSql('SELECT rowid, * FROM commands ORDER BY name, rowid LIMIT 1')
-            } else {
-                result = tx.executeSql(
-                    'SELECT rowid, * FROM commands WHERE name > ? OR (name = ? AND rowid > ?) ORDER BY name, rowid LIMIT 1',
-                    [data.name, data.name, data.rowid]
-                )
-            }
-            var item = result.rows.item(0)
+            var result = tx.executeSql(sql, bind), item = result.rows.item(0)
             if (item) {
                 callback(item)
-            } else if (data.rowid > -1) {
-                readNext({rowid: -1}, callback)
+            } else if (callbackEmpty) {
+                callbackEmpty()
             }
         })
+    }
+
+    function readNext(data, callback, callbackEmpty) {
+        if (!data.rowid) {
+            readNextTemplate(
+                'SELECT rowid, * FROM commands WHERE cover_group = ? ORDER BY name, rowid LIMIT 1',
+                [data.cover_group],
+                callback,
+                callbackEmpty
+            )
+            return
+        }
+        readNextTemplate(
+            'SELECT rowid, * FROM commands WHERE (name > ? OR (name = ? AND rowid > ?)) AND cover_group = ? ORDER BY name, rowid LIMIT 1',
+            [data.name, data.name, data.rowid, data.cover_group],
+            callback,
+            function() {
+                readNext({rowid: 0, name: '', cover_group: data.cover_group}, callback, callbackEmpty)
+            }
+        )
+    }
+
+    function readNextGroup(data, callback) {
+        if (!data.cover_group) {
+            readNextTemplate(
+               'SELECT rowid, * FROM commands WHERE cover_group != "" ORDER BY name, rowid LIMIT 1',
+                [],
+                callback
+            )
+            return
+        }
+        readNextTemplate(
+            'SELECT rowid, * FROM commands WHERE cover_group > ? AND cover_group != "" ORDER BY name, rowid LIMIT 1',
+            [data.cover_group],
+            callback,
+            function() {
+                readNextGroup({rowid: 0, name: '', cover_group: ''}, callback)
+            }
+        )
     }
 
     function add(data) {

@@ -106,32 +106,32 @@
 <context>
     <name>ResultPage</name>
     <message>
-        <location filename="../qml/pages/ResultPage.qml" line="47"/>
+        <location filename="../qml/pages/ResultPage.qml" line="48"/>
         <source>Errors</source>
         <translation>Fehler</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ResultPage.qml" line="47"/>
+        <location filename="../qml/pages/ResultPage.qml" line="48"/>
         <source>Output</source>
         <translation>Ausgabe</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ResultPage.qml" line="53"/>
+        <location filename="../qml/pages/ResultPage.qml" line="54"/>
         <source>no output provided</source>
         <translation>es wurde nichts ausgegeben</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ResultPage.qml" line="61"/>
+        <location filename="../qml/pages/ResultPage.qml" line="62"/>
         <source>no messages provided</source>
         <translation>es wurden keine Meldungen ausgegeben</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ResultPage.qml" line="71"/>
+        <location filename="../qml/pages/ResultPage.qml" line="72"/>
         <source>Show errors</source>
         <translation>Fehler anzeigen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ResultPage.qml" line="79"/>
+        <location filename="../qml/pages/ResultPage.qml" line="80"/>
         <source>Show output</source>
         <translation>Ausgabe anzeigen</translation>
     </message>
