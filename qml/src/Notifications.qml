@@ -18,35 +18,17 @@ Item {
         onOutput: {
             var result = getResultPage()
             if (result && Qt.application.state !== Qt.ApplicationActive) {
-                notification.remoteActions = [appAction]
-                notification.remoteActions.push({
-                    'name': 'default',
-                    'service': 'de.qcommand.dscheinah',
-                    'iface': 'de.qcommand.dscheinah',
-                    'path': '/app',
-                    'method': 'show',
-                })
                 notification.body = result.name
                 notification.publish()
             }
         }
         onErrorState: {
-            errorNotification.remoteActions = [appAction]
-            var result = getResultPage()
-            if (result) {
-                errorNotification.remoteActions.push({
-                    'name': 'default',
-                    'service': 'de.qcommand.dscheinah',
-                    'iface': 'de.qcommand.dscheinah',
-                    'path': '/app',
-                    'method': 'error',
-                })
-            }
             errorNotification.publish()
         }
     }
 
     DBusAdaptor {
+        bus: DBus.SessionBus
         service: 'de.qcommand.dscheinah'
         iface: 'de.qcommand.dscheinah'
         path: '/app'
@@ -74,6 +56,16 @@ Item {
         previewBody: body
         replacesId: 42
         urgency: Notification.Low
+        remoteActions: [
+            appAction,
+            {
+                'name': 'default',
+                'service': 'de.qcommand.dscheinah',
+                'iface': 'de.qcommand.dscheinah',
+                'path': '/app',
+                'method': 'show',
+            },
+        ]
     }
 
     Notification {
@@ -86,6 +78,16 @@ Item {
         previewBody: body
         isTransient: true
         urgency: Notification.Critical
+        remoteActions: [
+            appAction,
+            {
+                'name': 'default',
+                'service': 'de.qcommand.dscheinah',
+                'iface': 'de.qcommand.dscheinah',
+                'path': '/app',
+                'method': 'error',
+            },
+        ]
     }
 
     function getResultPage() {

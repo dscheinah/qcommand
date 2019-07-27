@@ -106,18 +106,18 @@
 <context>
     <name>Notifications</name>
     <message>
-        <location filename="../qml/src/Notifications.qml" line="72"/>
+        <location filename="../qml/src/Notifications.qml" line="54"/>
         <source>Command completed</source>
         <translation>Befehl abgeschlossen</translation>
     </message>
     <message>
-        <location filename="../qml/src/Notifications.qml" line="83"/>
+        <location filename="../qml/src/Notifications.qml" line="75"/>
         <source>Error</source>
         <translation>Fehler</translation>
     </message>
     <message>
-        <location filename="../qml/src/Notifications.qml" line="84"/>
-        <source>Command exited with error</source>
+        <location filename="../qml/src/Notifications.qml" line="76"/>
+        <source>Command exited with errors</source>
         <translation>Der Befehl wurde mit Fehlern beendet</translation>
     </message>
 </context>
