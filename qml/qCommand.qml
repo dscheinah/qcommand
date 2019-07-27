@@ -40,6 +40,10 @@ ApplicationWindow
         engine: engine
     }
 
+    Notifications {
+        app: app
+    }
+
     Component.onCompleted: {
         database.create()
     }

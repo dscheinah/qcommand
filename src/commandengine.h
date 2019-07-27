@@ -20,11 +20,13 @@ private:
 signals:
     void output(QString data);
     void error(QString data);
+    void errorState();
 
 public slots:
     void exec(QString cmd, bool emitOutput);
     void execAsRoot(QString cmd, bool emitOutput, QString password);
     void finished(int status);
+    void finishedErrorOnly(int status);
 };
 
 #endif // COMMANDENGINE_H

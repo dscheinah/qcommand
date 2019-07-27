@@ -12,6 +12,7 @@ Page {
     property bool output: false
     property bool error: false
     property bool errorMode: false
+    property string name
 
     Connections {
         target: cengine

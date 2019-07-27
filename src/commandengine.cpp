@@ -39,6 +39,10 @@ void CommandEngine::create(bool emitOutput)
     {
         QObject::connect(process, SIGNAL(finished(int)), this, SLOT(finished(int)));
     }
+    else
+    {
+        QObject::connect(process, SIGNAL(finished(int)), this, SLOT(finishedErrorOnly(int)));
+    }
 }
 
 void CommandEngine::finished(int status)
@@ -51,6 +55,21 @@ void CommandEngine::finished(int status)
     QString errors = process->readAllStandardError();
     if (status || errors != "")
     {
+        emit errorState();
         emit error(errors);
+    }
+}
+
+
+void CommandEngine::finishedErrorOnly(int status)
+{
+    if (!process)
+    {
+        return;
+    }
+    QString errors = process->readAllStandardError();
+    if (status || errors != "")
+    {
+        emit errorState();
     }
 }

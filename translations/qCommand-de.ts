@@ -104,34 +104,52 @@
     </message>
 </context>
 <context>
+    <name>Notifications</name>
+    <message>
+        <location filename="../qml/src/Notifications.qml" line="72"/>
+        <source>Command completed</source>
+        <translation>Befehl abgeschlossen</translation>
+    </message>
+    <message>
+        <location filename="../qml/src/Notifications.qml" line="83"/>
+        <source>Error</source>
+        <translation>Fehler</translation>
+    </message>
+    <message>
+        <location filename="../qml/src/Notifications.qml" line="84"/>
+        <source>Command exited with error</source>
+        <translation>Der Befehl wurde mit Fehlern beendet</translation>
+    </message>
+</context>
+<context>
     <name>ResultPage</name>
     <message>
-        <location filename="../qml/pages/ResultPage.qml" line="48"/>
+        <location filename="../qml/pages/ResultPage.qml" line="49"/>
         <source>Errors</source>
         <translation>Fehler</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ResultPage.qml" line="48"/>
+        <location filename="../qml/pages/ResultPage.qml" line="49"/>
         <source>Output</source>
         <translation>Ausgabe</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ResultPage.qml" line="54"/>
+        <location filename="../qml/pages/ResultPage.qml" line="55"/>
         <source>no output provided</source>
         <translation>es wurde nichts ausgegeben</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ResultPage.qml" line="62"/>
+        <location filename="../qml/pages/ResultPage.qml" line="63"/>
         <source>no messages provided</source>
         <translation>es wurden keine Meldungen ausgegeben</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ResultPage.qml" line="72"/>
+        <location filename="../qml/pages/ResultPage.qml" line="73"/>
         <source>Show errors</source>
         <translation>Fehler anzeigen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ResultPage.qml" line="80"/>
+        <location filename="../qml/pages/ResultPage.qml" line="81"/>
         <source>Show output</source>
         <translation>Ausgabe anzeigen</translation>
     </message>

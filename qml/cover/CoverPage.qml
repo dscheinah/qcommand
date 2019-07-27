@@ -56,7 +56,7 @@ CoverBackground {
                         pageStack.pop(resultPage, true);
                         pageStack.pop(null, true)
                     }
-                    pageStack.push(Qt.resolvedUrl('../pages/ResultPage.qml'), {}, true)
+                    pageStack.push(Qt.resolvedUrl('../pages/ResultPage.qml'), {name: name}, true)
                     app.activate()
                 }
                 engine.exec(command, has_output)

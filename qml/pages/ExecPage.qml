@@ -80,6 +80,7 @@ Dialog {
         if (has_output) {
             dialog.acceptDestination = Qt.resolvedUrl('ResultPage.qml')
             dialog.acceptDestinationAction = PageStackAction.Push
+            dialog.acceptDestinationProperties = {name: name}
         }
     }
 }
