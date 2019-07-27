@@ -6,7 +6,7 @@
     <message>
         <location filename="../qml/pages/CommandPage.qml" line="28"/>
         <source>Search results</source>
-        <translation type="unfinished"></translation>
+        <translation>搜索结果</translation>
     </message>
     <message>
         <location filename="../qml/pages/CommandPage.qml" line="28"/>
@@ -37,7 +37,7 @@
         <location filename="../qml/pages/CommandPage.qml" line="103"/>
         <location filename="../qml/pages/CommandPage.qml" line="134"/>
         <source>Search</source>
-        <translation type="unfinished"></translation>
+        <translation>搜索</translation>
     </message>
 </context>
 <context>
@@ -61,7 +61,7 @@
     <message>
         <location filename="../qml/pages/EditPage.qml" line="63"/>
         <source>Use as cover action</source>
-        <translation type="unfinished"></translation>
+        <translation>用作封面操作</translation>
     </message>
     <message>
         <location filename="../qml/pages/EditPage.qml" line="132"/>
@@ -76,7 +76,7 @@
     <message>
         <location filename="../qml/pages/EditPage.qml" line="145"/>
         <source>Editable before execution</source>
-        <translation type="unfinished"></translation>
+        <translation>执行前可编辑</translation>
     </message>
 </context>
 <context>
@@ -108,17 +108,17 @@
     <message>
         <location filename="../qml/src/Notifications.qml" line="54"/>
         <source>Command completed</source>
-        <translation type="unfinished"></translation>
+        <translation>命令已执行完毕</translation>
     </message>
     <message>
         <location filename="../qml/src/Notifications.qml" line="75"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation><错误>/translation>
     </message>
     <message>
         <location filename="../qml/src/Notifications.qml" line="76"/>
         <source>Command exited with errors</source>
-        <translation type="unfinished"></translation>
+        <translation>命令以错误状态退出</translation>
     </message>
 </context>
 <context>
