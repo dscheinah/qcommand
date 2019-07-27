@@ -21,22 +21,14 @@ CoverBackground {
         y: Theme.horizontalPageMargin
         font.pixelSize: Theme.fontSizeLarge
         text: 'qCommand'
-    }
-
-    Rectangle {
-        height: 2
-        x: Theme.horizontalPageMargin
-        y: header.height + Theme.horizontalPageMargin * 2
-        width: parent.width / 5 * 2
-
-        border.color: Theme.primaryColor
+        color: Theme.highlightColor
     }
 
     Label {
         x: Theme.horizontalPageMargin
-        y: header.height + Theme.horizontalPageMargin * 3
+        y: header.height + Theme.fontSizeLarge + Theme.paddingLarge
         width: parent.width - Theme.horizontalPageMargin * 2
-        height: parent.height - header.height - cover.coverActionArea.height - Theme.horizontalPageMargin * 3
+        height: parent.height - header.height - Theme.fontSizeLarge - Theme.paddingLarge - cover.coverActionArea.height
         wrapMode: Label.Wrap
         truncationMode: TruncationMode.Elide
         text: visibleName
