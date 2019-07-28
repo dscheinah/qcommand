@@ -1,8 +1,9 @@
 #include <QtQuick>
 #include <sailfishapp.h>
 #include "commandengine.h"
-#include "develsu.h"
+#include "developer.h"
 #include "completion.h"
+#include "fingerterm.h"
 
 QObject* recursiveFind(QObject* item, QString name)
 {
@@ -29,8 +30,9 @@ int main(int argc, char *argv[])
     QGuiApplication* app = SailfishApp::application(argc, argv);
 
     CommandEngine* engine = new CommandEngine();
+    Fingerterm* finger = new Fingerterm();
 
-    qmlRegisterType<DevelSu>("qCommand", 1, 0, "DevelSu");
+    qmlRegisterType<Developer>("qCommand", 1, 0, "Developer");
     qmlRegisterType<Completion>("qCommand", 1, 0, "Completion");
 
     QQuickView* view = SailfishApp::createView();
@@ -41,6 +43,8 @@ int main(int argc, char *argv[])
 
     QObject::connect(emitter, SIGNAL(exec(QString, bool)), engine, SLOT(exec(QString, bool)));
     QObject::connect(emitter, SIGNAL(execAsRoot(QString, bool, QString)), engine, SLOT(execAsRoot(QString, bool, QString)));
+    QObject::connect(emitter, SIGNAL(execInteractive(QString)), finger, SLOT(execInteractive(QString)));
+    QObject::connect(emitter, SIGNAL(execAsRootInteractive(QString)), finger, SLOT(execAsRootInteractive(QString)));
 
     view->show();
     return app->exec();

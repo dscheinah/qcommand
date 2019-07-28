@@ -1,5 +1,6 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import qCommand 1.0
 import '../src'
 
 Dialog {
@@ -13,6 +14,7 @@ Dialog {
     property int has_output
     property int is_template
     property string cover_group
+    property int is_interactive
 
     onDone: {
         if (result == DialogResult.Accepted) {
@@ -21,7 +23,12 @@ Dialog {
             has_output = hasOutputField.checked
             is_template = isTemplateField.checked
             cover_group = groupField.checked ? groupField.group : ''
+            is_interactive = isInteractiveField.checked
         }
+    }
+
+    Developer {
+        id: checker
     }
 
     SilicaFlickable {
@@ -134,9 +141,17 @@ Dialog {
             }
 
             TextSwitch {
+                id: isInteractiveField
+                checked: is_interactive
+                text: qsTr('Interactive')
+                enabled: checker.fingertermAvailable
+            }
+
+            TextSwitch {
                 id: hasOutputField
                 checked: has_output
                 text: qsTr('Show output')
+                enabled: !isInteractiveField.checked && isInteractiveField.enabled
             }
 
             TextSwitch {

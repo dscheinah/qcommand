@@ -1,18 +1,23 @@
-#include "develsu.h"
+#include "developer.h"
 #include <QFile>
 #include <QStandardPaths>
 
-DevelSu::DevelSu(QValidator *parent) : QValidator(parent)
+Developer::Developer(QObject *parent) : QValidator(parent)
 {
     validations = new QMap<QString, QProcess*>();
 }
 
-bool DevelSu::available()
+bool Developer::develSuAvailable()
 {
     return QFile::exists("/usr/bin/devel-su");
 }
 
-QValidator::State DevelSu::validate(QString& input, int& pos) const
+bool Developer::fingertermAvailable()
+{
+    return QFile::exists("/usr/bin/fingerterm");
+}
+
+QValidator::State Developer::validate(QString& input, int& pos) const
 {
     Q_UNUSED(pos)
     if (input == "")
@@ -41,7 +46,7 @@ QValidator::State DevelSu::validate(QString& input, int& pos) const
     return Intermediate;
 }
 
-void DevelSu::validated()
+void Developer::validated()
 {
     emit changed();
 }

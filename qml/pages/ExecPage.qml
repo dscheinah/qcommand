@@ -5,7 +5,7 @@ import '../src'
 
 Dialog {
     id: dialog
-    canAccept: command && (!root.checked || password.acceptableInput)
+    canAccept: command && (is_interactive || !root.checked || password.acceptableInput)
     allowedOrientations: Orientation.All
 
     property CommandEngine engine
@@ -13,16 +13,28 @@ Dialog {
     property string command
     property int has_output
     property int is_template
+    property int is_interactive
 
     onAccepted: {
-        if (root.checked) {
-            engine.execAsRoot(commandField.text, has_output, password.text)
+        if (!checker.fingertermAvailable)  {
+            is_interactive = false
+        }
+        if (root.checked && checker.develSuAvailable) {
+            if (is_interactive) {
+                engine.execAsRootInteractive(commandField.text)
+            } else {
+                engine.execAsRoot(commandField.text, has_output, password.text)
+            }
         } else {
-            engine.exec(commandField.text, has_output)
+            if (is_interactive) {
+                engine.execInteractive(commandField.text)
+            } else {
+                engine.exec(commandField.text, has_output)
+            }
         }
     }
 
-    DevelSu {
+    Developer {
         id: checker
     }
 
@@ -50,9 +62,9 @@ Dialog {
             TextSwitch {
                 id: root
                 text: qsTr('Run as root')
-                enabled: checker.available
+                enabled: checker.develSuAvailable
                 onCheckedChanged: {
-                    if (checked) {
+                    if (checked && !is_interactive) {
                         password.focus = true
                     }
                 }
@@ -62,7 +74,8 @@ Dialog {
                 id: password
                 label: qsTr('Password')
                 placeholderText: qsTr('Password')
-                visible: root.checked
+                visible: root.checked && !is_interactive
+                enabled: visible
                 validator: checker
 
                 EnterKey.iconSource: 'image://theme/icon-m-enter-accept'
@@ -77,7 +90,10 @@ Dialog {
     }
 
     Component.onCompleted: {
-        if (has_output) {
+        if (!checker.fingertermAvailable)  {
+            is_interactive = false
+        }
+        if (has_output && !is_interactive) {
             dialog.acceptDestination = Qt.resolvedUrl('ResultPage.qml')
             dialog.acceptDestinationAction = PageStackAction.Push
             dialog.acceptDestinationProperties = {name: name}

@@ -48,38 +48,43 @@
 <context>
     <name>EditPage</name>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="37"/>
+        <location filename="../qml/pages/EditPage.qml" line="44"/>
         <source>Edit command</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="37"/>
+        <location filename="../qml/pages/EditPage.qml" line="44"/>
         <source>Add command</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="43"/>
-        <location filename="../qml/pages/EditPage.qml" line="44"/>
+        <location filename="../qml/pages/EditPage.qml" line="50"/>
+        <location filename="../qml/pages/EditPage.qml" line="51"/>
         <source>Name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="63"/>
+        <location filename="../qml/pages/EditPage.qml" line="70"/>
         <source>Use as cover action</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="132"/>
+        <location filename="../qml/pages/EditPage.qml" line="139"/>
         <source>Command</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="139"/>
+        <location filename="../qml/pages/EditPage.qml" line="146"/>
+        <source>Interactive</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/EditPage.qml" line="153"/>
         <source>Show output</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="145"/>
+        <location filename="../qml/pages/EditPage.qml" line="160"/>
         <source>Editable before execution</source>
         <translation type="unfinished"></translation>
     </message>
@@ -87,23 +92,23 @@
 <context>
     <name>ExecPage</name>
     <message>
-        <location filename="../qml/pages/ExecPage.qml" line="39"/>
+        <location filename="../qml/pages/ExecPage.qml" line="51"/>
         <source>Run command</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/ExecPage.qml" line="47"/>
+        <location filename="../qml/pages/ExecPage.qml" line="59"/>
         <source>none</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/ExecPage.qml" line="52"/>
+        <location filename="../qml/pages/ExecPage.qml" line="64"/>
         <source>Run as root</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/ExecPage.qml" line="63"/>
-        <location filename="../qml/pages/ExecPage.qml" line="64"/>
+        <location filename="../qml/pages/ExecPage.qml" line="75"/>
+        <location filename="../qml/pages/ExecPage.qml" line="76"/>
         <source>Password</source>
         <translation type="unfinished"></translation>
     </message>

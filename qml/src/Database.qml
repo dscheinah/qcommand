@@ -14,7 +14,7 @@ QtObject {
 
     function create() {
         database = LocalStorage.openDatabaseSync('qCommand', '', 'stored commands from qCommand')
-        if (database.version === '1.4') {
+        if (database.version === '1.5') {
             ready()
             return
         }
@@ -58,6 +58,12 @@ QtObject {
                             tx.executeSql('UPDATE commands SET cover_group = ? WHERE rowid = ?', [name[0], item.rowid])
                         }
                     }
+                }
+                break;
+            case '1.4':
+                target = '1.5'
+                callback = function(tx) {
+                    tx.executeSql('ALTER TABLE commands ADD is_interactive INTEGER')
                 }
                 break;
             default:
@@ -152,8 +158,8 @@ QtObject {
     function add(data) {
         database.transaction(function(tx) {
             tx.executeSql(
-                'INSERT INTO commands(name, command, has_output, is_template, cover_group) VALUES(?, ?, ?, ?, ?)',
-                [data.name, data.command, data.has_output, data.is_template, data.cover_group]
+                'INSERT INTO commands(name, command, has_output, is_template, cover_group, is_interactive) VALUES(?, ?, ?, ?, ?, ?)',
+                [data.name, data.command, data.has_output, data.is_template, data.cover_group, data.is_interactive]
             )
             var result = tx.executeSql('SELECT rowid, * FROM commands WHERE rowid = last_insert_rowid()')
             var item = result.rows.item(0)
@@ -166,8 +172,8 @@ QtObject {
     function edit(item, data) {
         database.transaction(function(tx) {
             tx.executeSql(
-                'UPDATE commands SET name = ?, command = ?, has_output = ?, is_template = ?, cover_group = ? WHERE rowid = ?',
-                [data.name, data.command, data.has_output, data.is_template, data.cover_group, item.rowid]
+                'UPDATE commands SET name = ?, command = ?, has_output = ?, is_template = ?, cover_group = ?, is_interactive = ? WHERE rowid = ?',
+                [data.name, data.command, data.has_output, data.is_template, data.cover_group, data.is_interactive, item.rowid]
             )
             edited(item, data)
         })

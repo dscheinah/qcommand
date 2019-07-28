@@ -1,6 +1,6 @@
 #include "commandengine.h"
 
-CommandEngine::CommandEngine(QObject *parent) : QObject(parent)
+CommandEngine::CommandEngine() : QObject()
 {
     process = nullptr;
 }
@@ -17,14 +17,13 @@ void CommandEngine::exec(QString cmd, bool emitOutput)
 void CommandEngine::execAsRoot(QString cmd, bool emitOutput, QString password)
 {
     create(emitOutput);
-    process->start("devel-su");
+    QStringList args;
+    args << "bash" << "-c" << cmd;
+    process->start("devel-su", args);
     process->write((password + "\n").toUtf8().data());
-
+    process->closeWriteChannel();
     process->waitForReadyRead(500);
     process->readAllStandardError();
-
-    process->write((cmd + "\n").toUtf8().data());
-    process->closeWriteChannel();
 }
 
 void CommandEngine::create(bool emitOutput)

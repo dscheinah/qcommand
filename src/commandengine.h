@@ -8,13 +8,13 @@
 class CommandEngine : public QObject
 {
     Q_OBJECT
-private:
+protected:
     QProcess* process;
 
 public:
-    explicit CommandEngine(QObject *parent = nullptr);
+    CommandEngine();
 
-private:
+protected:
     void create(bool emitOutput);
 
 signals:
