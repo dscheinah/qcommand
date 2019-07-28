@@ -20,22 +20,27 @@
     </message>
     <message>
         <location filename="../qml/pages/CommandPage.qml" line="60"/>
+        <source>Duplicate</source>
+        <translation>Duplizieren</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/CommandPage.qml" line="75"/>
         <source>Remove</source>
         <translation>Entfernen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommandPage.qml" line="62"/>
+        <location filename="../qml/pages/CommandPage.qml" line="77"/>
         <source>Deleting</source>
         <translation>Löschen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommandPage.qml" line="92"/>
+        <location filename="../qml/pages/CommandPage.qml" line="107"/>
         <source>Add command</source>
         <translation>Befehl hinzufügen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommandPage.qml" line="103"/>
-        <location filename="../qml/pages/CommandPage.qml" line="134"/>
+        <location filename="../qml/pages/CommandPage.qml" line="118"/>
+        <location filename="../qml/pages/CommandPage.qml" line="149"/>
         <source>Search</source>
         <translation>Suchen</translation>
     </message>

@@ -57,6 +57,21 @@ Page {
                     }
                 }
                 MenuItem {
+                    text: qsTr('Duplicate')
+                    onClicked: {
+                        load(commandLabel.mapToItem(list, 0, 0), commandLabel.height)
+                        database.read(commands.get(index), function(item) {
+                            elementLoader.running = false
+                            item.database = database
+                            item.rowid = 0
+                            var dialog = pageStack.push(Qt.resolvedUrl('EditPage.qml'), item)
+                            dialog.accepted.connect(function() {
+                                database.add(dialog)
+                            })
+                        })
+                    }
+                }
+                MenuItem {
                     text: qsTr('Remove')
                     onClicked: {
                         command.remorseAction(qsTr('Deleting'), function() {

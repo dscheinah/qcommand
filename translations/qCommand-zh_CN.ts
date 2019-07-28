@@ -20,22 +20,27 @@
     </message>
     <message>
         <location filename="../qml/pages/CommandPage.qml" line="60"/>
+        <source>Duplicate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/CommandPage.qml" line="75"/>
         <source>Remove</source>
         <translation>移出</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommandPage.qml" line="62"/>
+        <location filename="../qml/pages/CommandPage.qml" line="77"/>
         <source>Deleting</source>
         <translation>正在删除</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommandPage.qml" line="92"/>
+        <location filename="../qml/pages/CommandPage.qml" line="107"/>
         <source>Add command</source>
         <translation>添加命令</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommandPage.qml" line="103"/>
-        <location filename="../qml/pages/CommandPage.qml" line="134"/>
+        <location filename="../qml/pages/CommandPage.qml" line="118"/>
+        <location filename="../qml/pages/CommandPage.qml" line="149"/>
         <source>Search</source>
         <translation>搜索</translation>
     </message>
@@ -113,7 +118,7 @@
     <message>
         <location filename="../qml/src/Notifications.qml" line="75"/>
         <source>Error</source>
-        <translation><错误>/translation>
+        <translation>错误</translation>
     </message>
     <message>
         <location filename="../qml/src/Notifications.qml" line="76"/>
