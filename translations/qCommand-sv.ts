@@ -32,7 +32,7 @@
     <message>
         <location filename="../qml/pages/CommandPage.qml" line="60"/>
         <source>Duplicate</source>
-        <translation type="unfinished"></translation>
+        <translation>Duplicera</translation>
     </message>
     <message>
         <location filename="../qml/pages/CommandPage.qml" line="75"/>
@@ -66,7 +66,7 @@
     <message>
         <location filename="../qml/pages/EditPage.qml" line="70"/>
         <source>Use as cover action</source>
-        <translation type="unfinished"></translation>
+        <translation>Använd som miniatyråtgärd</translation>
     </message>
     <message>
         <location filename="../qml/pages/EditPage.qml" line="139"/>
@@ -76,7 +76,7 @@
     <message>
         <location filename="../qml/pages/EditPage.qml" line="146"/>
         <source>Interactive</source>
-        <translation type="unfinished"></translation>
+        <translation>Interaktivt</translation>
     </message>
     <message>
         <location filename="../qml/pages/EditPage.qml" line="153"/>
@@ -118,17 +118,17 @@
     <message>
         <location filename="../qml/src/Notifications.qml" line="54"/>
         <source>Command completed</source>
-        <translation type="unfinished"></translation>
+        <translation>Kommandot slutfört</translation>
     </message>
     <message>
         <location filename="../qml/src/Notifications.qml" line="75"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Fel</translation>
     </message>
     <message>
         <location filename="../qml/src/Notifications.qml" line="76"/>
         <source>Command exited with errors</source>
-        <translation type="unfinished"></translation>
+        <translation>Kommandot avslutades med fel</translation>
     </message>
 </context>
 <context>
