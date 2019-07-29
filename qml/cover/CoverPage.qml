@@ -13,6 +13,7 @@ CoverBackground {
     property string command
     property bool has_output
     property string cover_group
+    property bool is_interactive
     property string visibleName
 
     Label {
@@ -51,7 +52,11 @@ CoverBackground {
                     pageStack.push(Qt.resolvedUrl('../pages/ResultPage.qml'), {name: name}, true)
                     app.activate()
                 }
-                engine.exec(command, has_output)
+                if (is_interactive) {
+                    engine.execInteractive(command)
+                } else {
+                    engine.exec(command, has_output)
+                }
                 next()
             }
         }
@@ -75,6 +80,7 @@ CoverBackground {
         command = item.command || ''
         has_output = item.has_output || false
         cover_group = item.cover_group
+        is_interactive = item.is_interactive
         visibleName = cover_group + '\n' + name.substr(cover_group.length).trim()
     }
 
