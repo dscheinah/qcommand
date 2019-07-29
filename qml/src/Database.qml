@@ -14,7 +14,7 @@ QtObject {
 
     function create() {
         database = LocalStorage.openDatabaseSync('qCommand', '', 'stored commands from qCommand')
-        if (database.version === '1.5') {
+        if (database.version === '1.6') {
             ready()
             return
         }
@@ -64,6 +64,13 @@ QtObject {
                 target = '1.5'
                 callback = function(tx) {
                     tx.executeSql('ALTER TABLE commands ADD is_interactive INTEGER')
+                }
+                break;
+            case '1.5':
+                target = '1.6'
+                callback = function(tx) {
+                    tx.executeSql('CREATE INDEX name_idx ON commands (name)')
+                    tx.executeSql('CREATE INDEX cover_group_idx ON commands (cover_group)')
                 }
                 break;
             default:

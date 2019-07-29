@@ -17,6 +17,14 @@ bool Developer::fingertermAvailable()
     return QFile::exists("/usr/bin/fingerterm");
 }
 
+void Developer::open(QString file)
+{
+    QProcess* process = new QProcess();
+    QStringList args;
+    args << file;
+    process->start("xdg-open", args);
+}
+
 QValidator::State Developer::validate(QString& input, int& pos) const
 {
     Q_UNUSED(pos)

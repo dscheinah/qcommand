@@ -4,6 +4,7 @@
 #include <QObject>
 #include <QProcess>
 #include <QString>
+#include <QVariant>
 
 class CommandEngine : public QObject
 {
@@ -17,9 +18,12 @@ public:
 protected:
     void create(bool emitOutput);
 
+private:
+    QVariantList parse(QString output);
+
 signals:
-    void output(QString data);
-    void error(QString data);
+    void output(QVariantList data);
+    void error(QVariantList data);
     void errorState();
 
 public slots:

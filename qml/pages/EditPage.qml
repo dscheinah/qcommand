@@ -77,24 +77,25 @@ Dialog {
                         group = split[0]
                     } else {
                         group = ''
+                        description = qsTr('hint_group_disabled')
                     }
                     updateLabel(name)
                 }
 
                 function updateLabel(name) {
                     if (!group) {
-                        groupDetails.text = ''
+                        description = qsTr('hint_group_disabled')
                     } else {
-                        groupDetails.text = group
-                        busy.running = true
+                        description = group
+                        busy = true
                         database.readCoverPosition(
                             {
                                 name: name,
                                 cover_group: group,
                                 rowid: rowid,
                             }, function(index, max) {
-                                groupDetails.text = '%1 (%2/%3)'.arg(group).arg(index).arg(max)
-                                busy.running = false
+                                description = '%1 (%2/%3)'.arg(group).arg(index).arg(max)
+                                busy = false
                             }
                         )
                     }
@@ -105,34 +106,6 @@ Dialog {
                 }
             }
 
-            Row {
-                width: parent.width
-
-                Item {
-                    width: Theme.itemSizeExtraSmall
-                    height: Theme.itemSizeExtraSmall
-
-                    BusyIndicator {
-                        id: busy
-                        size: BusyIndicatorSize.Small
-                        running: false
-                        x: Theme.horizontalPageMargin - Theme.paddingSmall
-                    }
-                }
-
-                Label {
-                    id: groupDetails
-                    font.pixelSize: Theme.fontSizeExtraSmall
-                    width: parent.width - Theme.itemSizeExtraSmall - Theme.horizontalPageMargin * 2
-                    wrapMode: Label.Wrap
-                }
-            }
-
-            Row {
-                width: parent.width
-                height: Theme.paddingSmall
-            }
-
             CodeField {
                 id: commandField
                 width: parent.width
@@ -141,9 +114,16 @@ Dialog {
             }
 
             TextSwitch {
+                id: isTemplateField
+                checked: is_template
+                text: qsTr('Editable before execution')
+            }
+
+            TextSwitch {
                 id: isInteractiveField
                 checked: is_interactive
                 text: qsTr('Interactive')
+                description: enabled ? qsTr('hint_interactive') : qsTr('hint_interactive_disabled')
                 enabled: checker.fingertermAvailable
             }
 
@@ -151,13 +131,8 @@ Dialog {
                 id: hasOutputField
                 checked: has_output
                 text: qsTr('Show output')
+                description: enabled ? qsTr('hint_output') : qsTr('hint_output_disabled')
                 enabled: !isInteractiveField.checked && isInteractiveField.enabled
-            }
-
-            TextSwitch {
-                id: isTemplateField
-                checked: is_template
-                text: qsTr('Editable before execution')
             }
         }
 

@@ -1,4 +1,6 @@
 #include "commandengine.h"
+#include <QFile>
+#include <QDir>
 
 CommandEngine::CommandEngine() : QObject()
 {
@@ -50,12 +52,12 @@ void CommandEngine::finished(int status)
     {
         return;
     }
-    emit output(process->readAllStandardOutput());
+    emit output(parse(process->readAllStandardOutput()));
     QString errors = process->readAllStandardError();
     if (status || errors != "")
     {
         emit errorState();
-        emit error(errors);
+        emit error(parse(errors));
     }
 }
 
@@ -71,4 +73,21 @@ void CommandEngine::finishedErrorOnly(int status)
     {
         emit errorState();
     }
+}
+
+QVariantList CommandEngine::parse(QString output)
+{
+    QVariantList list;
+    for (QString line: output.split("\n"))
+    {
+        QVariantMap variant;
+        variant.insert("line", line);
+        QString file = line[0] == '/' ? line : "/" + line;
+        if (QFile(file).exists() && !QDir(file).exists())
+        {
+            variant.insert("file", file);
+        }
+        list.append(qVariantFromValue(variant));
+    }
+    return list;
 }

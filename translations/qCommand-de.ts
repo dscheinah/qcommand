@@ -69,22 +69,48 @@
         <translation>Als Cover-Action verwenden</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="139"/>
+        <location filename="../qml/pages/EditPage.qml" line="80"/>
+        <location filename="../qml/pages/EditPage.qml" line="87"/>
+        <source>hint_group_disabled</source>
+        <translation>Fülle den Namen mit mindestens zwei Worten, um das erste als Bezeichnung für die Gruppe zu verwenden.</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/EditPage.qml" line="112"/>
         <source>Command</source>
         <translation>Befehl</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="146"/>
+        <location filename="../qml/pages/EditPage.qml" line="125"/>
         <source>Interactive</source>
         <translation>Interaktiv</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="153"/>
+        <location filename="../qml/pages/EditPage.qml" line="126"/>
+        <source>hint_interactive</source>
+        <translation>Öffnet den Befehler mit der Terminal App, um Nutzer-Interaktion zu ermöglichen.</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/EditPage.qml" line="126"/>
+        <source>hint_interactive_disabled</source>
+        <translation>Aktiviere den Entwickler-Modus oder installiere &quot;fingerterm&quot; zur Verwendung des interaktiven Modus.</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/EditPage.qml" line="133"/>
         <source>Show output</source>
         <translation>Ausgabe anzeigen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="160"/>
+        <location filename="../qml/pages/EditPage.qml" line="134"/>
+        <source>hint_output</source>
+        <translation>Ermöglich die Ausgabe der Befehle sehen, darin erkannte Dateien öffnen oder zeilenweise kopieren zu können.</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/EditPage.qml" line="134"/>
+        <source>hint_output_disabled</source>
+        <translation>Die Ausgabe kann im interaktiven Modus nicht verwaltet werden.</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/EditPage.qml" line="119"/>
         <source>Editable before execution</source>
         <translation>Vor der Ausführung editierbar</translation>
     </message>
@@ -92,23 +118,28 @@
 <context>
     <name>ExecPage</name>
     <message>
-        <location filename="../qml/pages/ExecPage.qml" line="51"/>
+        <location filename="../qml/pages/ExecPage.qml" line="55"/>
         <source>Run command</source>
         <translation>Befehl ausführen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ExecPage.qml" line="59"/>
+        <location filename="../qml/pages/ExecPage.qml" line="63"/>
         <source>none</source>
         <translation>keiner</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ExecPage.qml" line="64"/>
+        <location filename="../qml/pages/ExecPage.qml" line="68"/>
         <source>Run as root</source>
         <translation>Als root ausführen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ExecPage.qml" line="75"/>
-        <location filename="../qml/pages/ExecPage.qml" line="76"/>
+        <location filename="../qml/pages/ExecPage.qml" line="69"/>
+        <source>hint_root_disabled</source>
+        <translation>Aktiviere den Entwickler-Modus und setze ein Passwort, um die Befehle als root ausführen zu können.</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ExecPage.qml" line="80"/>
+        <location filename="../qml/pages/ExecPage.qml" line="81"/>
         <source>Password</source>
         <translation>Passwort</translation>
     </message>
@@ -134,32 +165,47 @@
 <context>
     <name>ResultPage</name>
     <message>
-        <location filename="../qml/pages/ResultPage.qml" line="49"/>
+        <location filename="../qml/pages/ResultPage.qml" line="92"/>
         <source>Errors</source>
         <translation>Fehler</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ResultPage.qml" line="49"/>
+        <location filename="../qml/pages/ResultPage.qml" line="92"/>
         <source>Output</source>
         <translation>Ausgabe</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ResultPage.qml" line="55"/>
+        <location filename="../qml/pages/ResultPage.qml" line="20"/>
         <source>no output provided</source>
         <translation>es wurde nichts ausgegeben</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ResultPage.qml" line="63"/>
+        <location filename="../qml/pages/ResultPage.qml" line="24"/>
         <source>no messages provided</source>
         <translation>es wurden keine Meldungen ausgegeben</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ResultPage.qml" line="73"/>
+        <location filename="../qml/pages/ResultPage.qml" line="102"/>
+        <source>Copy</source>
+        <translation>Kopieren</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ResultPage.qml" line="109"/>
+        <source>Open</source>
+        <translation>Öffnen</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ResultPage.qml" line="68"/>
+        <source>Copy all</source>
+        <translation>Alles kopieren</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ResultPage.qml" line="75"/>
         <source>Show errors</source>
         <translation>Fehler anzeigen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ResultPage.qml" line="81"/>
+        <location filename="../qml/pages/ResultPage.qml" line="83"/>
         <source>Show output</source>
         <translation>Ausgabe anzeigen</translation>
     </message>

@@ -15,6 +15,10 @@ Dialog {
     property int is_template
     property int is_interactive
 
+    onDone: {
+        commandField.focus = false
+    }
+
     onAccepted: {
         if (!checker.fingertermAvailable)  {
             is_interactive = false
@@ -62,6 +66,7 @@ Dialog {
             TextSwitch {
                 id: root
                 text: qsTr('Run as root')
+                description: enabled ? '' : qsTr('hint_root_disabled')
                 enabled: checker.develSuAvailable
                 onCheckedChanged: {
                     if (checked && !is_interactive) {
@@ -96,7 +101,9 @@ Dialog {
         if (has_output && !is_interactive) {
             dialog.acceptDestination = Qt.resolvedUrl('ResultPage.qml')
             dialog.acceptDestinationAction = PageStackAction.Push
-            dialog.acceptDestinationProperties = {name: name}
+            dialog.acceptDestinationProperties = {
+                name: name,
+            }
         }
     }
 }

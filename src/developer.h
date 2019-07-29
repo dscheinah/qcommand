@@ -19,6 +19,7 @@ public:
     virtual State validate(QString& input, int& pos) const;
     bool develSuAvailable();
     bool fingertermAvailable();
+    Q_INVOKABLE void open(QString file);
 
 public slots:
     void validated();

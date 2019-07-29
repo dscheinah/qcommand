@@ -66,25 +66,51 @@
     <message>
         <location filename="../qml/pages/EditPage.qml" line="70"/>
         <source>Use as cover action</source>
-        <translation>Ajouter à l'écran d'accueil</translation>
+        <translation>Ajouter à l&apos;écran d&apos;accueil</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="139"/>
+        <location filename="../qml/pages/EditPage.qml" line="80"/>
+        <location filename="../qml/pages/EditPage.qml" line="87"/>
+        <source>hint_group_disabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/EditPage.qml" line="112"/>
         <source>Command</source>
         <translation>Commande</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="146"/>
+        <location filename="../qml/pages/EditPage.qml" line="125"/>
         <source>Interactive</source>
         <translation>Interactive</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="153"/>
+        <location filename="../qml/pages/EditPage.qml" line="126"/>
+        <source>hint_interactive</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/EditPage.qml" line="126"/>
+        <source>hint_interactive_disabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/EditPage.qml" line="133"/>
         <source>Show output</source>
         <translation>Afficher la sortie</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="160"/>
+        <location filename="../qml/pages/EditPage.qml" line="134"/>
+        <source>hint_output</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/EditPage.qml" line="134"/>
+        <source>hint_output_disabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/EditPage.qml" line="119"/>
         <source>Editable before execution</source>
         <translation>Modifiable avant exécution</translation>
     </message>
@@ -92,23 +118,28 @@
 <context>
     <name>ExecPage</name>
     <message>
-        <location filename="../qml/pages/ExecPage.qml" line="51"/>
+        <location filename="../qml/pages/ExecPage.qml" line="55"/>
         <source>Run command</source>
         <translation>Lancer la commande</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ExecPage.qml" line="59"/>
+        <location filename="../qml/pages/ExecPage.qml" line="63"/>
         <source>none</source>
         <translation>aucun</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ExecPage.qml" line="64"/>
+        <location filename="../qml/pages/ExecPage.qml" line="68"/>
         <source>Run as root</source>
         <translation>Exécuter en tant que root</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ExecPage.qml" line="75"/>
-        <location filename="../qml/pages/ExecPage.qml" line="76"/>
+        <location filename="../qml/pages/ExecPage.qml" line="69"/>
+        <source>hint_root_disabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ExecPage.qml" line="80"/>
+        <location filename="../qml/pages/ExecPage.qml" line="81"/>
         <source>Password</source>
         <translation>Mot de passe</translation>
     </message>
@@ -134,32 +165,47 @@
 <context>
     <name>ResultPage</name>
     <message>
-        <location filename="../qml/pages/ResultPage.qml" line="49"/>
+        <location filename="../qml/pages/ResultPage.qml" line="92"/>
         <source>Errors</source>
         <translation>Erreurs</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ResultPage.qml" line="49"/>
+        <location filename="../qml/pages/ResultPage.qml" line="92"/>
         <source>Output</source>
         <translation>Sortie</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ResultPage.qml" line="55"/>
+        <location filename="../qml/pages/ResultPage.qml" line="20"/>
         <source>no output provided</source>
         <translation>aucune sortie fournie</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ResultPage.qml" line="63"/>
+        <location filename="../qml/pages/ResultPage.qml" line="24"/>
         <source>no messages provided</source>
         <translation>aucun message fourni</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ResultPage.qml" line="73"/>
+        <location filename="../qml/pages/ResultPage.qml" line="102"/>
+        <source>Copy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ResultPage.qml" line="109"/>
+        <source>Open</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ResultPage.qml" line="68"/>
+        <source>Copy all</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ResultPage.qml" line="75"/>
         <source>Show errors</source>
         <translation>Afficher les erreurs</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ResultPage.qml" line="81"/>
+        <location filename="../qml/pages/ResultPage.qml" line="83"/>
         <source>Show output</source>
         <translation>Afficher la sortie</translation>
     </message>
