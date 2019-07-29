@@ -21,7 +21,7 @@
     <message>
         <location filename="../qml/pages/CommandPage.qml" line="60"/>
         <source>Duplicate</source>
-        <translation type="unfinished"></translation>
+        <translation>副本</translation>
     </message>
     <message>
         <location filename="../qml/pages/CommandPage.qml" line="75"/>
@@ -76,7 +76,7 @@
     <message>
         <location filename="../qml/pages/EditPage.qml" line="146"/>
         <source>Interactive</source>
-        <translation type="unfinished"></translation>
+        <translation>交互</translation>
     </message>
     <message>
         <location filename="../qml/pages/EditPage.qml" line="153"/>
