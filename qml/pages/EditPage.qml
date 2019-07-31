@@ -17,7 +17,7 @@ Dialog {
     property int is_interactive
 
     onDone: {
-        if (result == DialogResult.Accepted) {
+        if (result === DialogResult.Accepted) {
             name = nameField.text
             command = commandField.text
             has_output = hasOutputField.checked

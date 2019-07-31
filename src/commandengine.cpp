@@ -61,7 +61,6 @@ void CommandEngine::finished(int status)
     }
 }
 
-
 void CommandEngine::finishedErrorOnly(int status)
 {
     if (!process)

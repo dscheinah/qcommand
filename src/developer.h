@@ -5,6 +5,7 @@
 #include <QMap>
 #include <QString>
 #include <QProcess>
+#include <QMimeDatabase>
 
 class Developer : public QValidator
 {
@@ -13,6 +14,8 @@ class Developer : public QValidator
     Q_PROPERTY(bool fingertermAvailable READ fingertermAvailable CONSTANT)
 private:
     QMap<QString, QProcess*>* validations;
+    QMap<QString, bool> readyToOpen;
+    QMimeDatabase mimeDb;
 
 public:
     explicit Developer(QObject *parent = nullptr);
@@ -20,6 +23,7 @@ public:
     bool develSuAvailable();
     bool fingertermAvailable();
     Q_INVOKABLE void open(QString file);
+    Q_INVOKABLE bool isReadyToOpen(QString file);
 
 public slots:
     void validated();

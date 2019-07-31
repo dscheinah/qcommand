@@ -107,7 +107,7 @@ Page {
 
                 MenuItem {
                     text: qsTr('Open')
-                    visible: file
+                    visible: file && handler.isReadyToOpen(file)
                     onClicked: {
                         handler.open(file)
                     }
