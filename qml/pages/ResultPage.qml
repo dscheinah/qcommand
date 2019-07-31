@@ -66,6 +66,8 @@ Page {
         contentHeight: content.height
 
         PullDownMenu {
+            visible: error || output
+
             MenuItem {
                 text: qsTr('Copy all')
                 visible: (errorMode && errors) || (!errorMode && output)
@@ -98,7 +100,7 @@ Page {
         model: errorMode ? errorModel : outputModel
 
         delegate: ListItem {
-            contentItem.height: (label.visible ? label.contentHeight : row.height) + Theme.paddingSmall
+            contentItem.height: row.height + Theme.paddingSmall
 
             menu: ContextMenu {
                 id: menu
@@ -157,19 +159,6 @@ Page {
                 }
             }
 
-            Label {
-                id: label
-                x: Theme.horizontalPageMargin
-                width: parent.width - Theme.horizontalPageMargin * 2
-                anchors.verticalCenter: parent.verticalCenter
-                color: highlighted ? Theme.highlightColor : Theme.primaryColor
-                text: line
-                wrapMode: Label.Wrap
-                lineHeight: 1
-                font.italic: placeholder
-                visible: false
-            }
-
             onClicked: {
                 openMenu()
             }
@@ -186,8 +175,8 @@ Page {
                         offsets[i] = offset
                     }
                 }
-                var sum = offsets.reduce(function(pv, cv) { return pv + cv; })
-                columns = offsets.map(function(v) { return v / sum; })
+                var sum = offsets.reduce(function(pv, cv) { return pv + cv })
+                columns = offsets.map(function(v) { return v / sum })
             }
         }
 

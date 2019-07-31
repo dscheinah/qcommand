@@ -80,7 +80,9 @@ void CommandEngine::finishedErrorOnly(int status)
 
 QStringList CommandEngine::parse(QString output)
 {
-    return output.split("\n");
+    QStringList split = output.split("\n");
+    split.removeAll("");
+    return split;
 }
 
 void CommandEngine::cleanup()

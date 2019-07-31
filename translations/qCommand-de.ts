@@ -165,12 +165,12 @@
 <context>
     <name>ResultPage</name>
     <message>
-        <location filename="../qml/pages/ResultPage.qml" line="95"/>
+        <location filename="../qml/pages/ResultPage.qml" line="97"/>
         <source>Errors</source>
         <translation>Fehler</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ResultPage.qml" line="95"/>
+        <location filename="../qml/pages/ResultPage.qml" line="97"/>
         <source>Output</source>
         <translation>Ausgabe</translation>
     </message>
@@ -185,27 +185,27 @@
         <translation>es wurden keine Meldungen ausgegeben</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ResultPage.qml" line="114"/>
+        <location filename="../qml/pages/ResultPage.qml" line="116"/>
         <source>Copy</source>
         <translation>Kopieren</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ResultPage.qml" line="121"/>
+        <location filename="../qml/pages/ResultPage.qml" line="123"/>
         <source>Open</source>
         <translation>Öffnen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ResultPage.qml" line="70"/>
+        <location filename="../qml/pages/ResultPage.qml" line="72"/>
         <source>Copy all</source>
         <translation>Alles kopieren</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ResultPage.qml" line="78"/>
+        <location filename="../qml/pages/ResultPage.qml" line="80"/>
         <source>Show errors</source>
         <translation>Fehler anzeigen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ResultPage.qml" line="86"/>
+        <location filename="../qml/pages/ResultPage.qml" line="88"/>
         <source>Show output</source>
         <translation>Ausgabe anzeigen</translation>
     </message>
