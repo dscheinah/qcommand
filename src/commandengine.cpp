@@ -1,6 +1,4 @@
 #include "commandengine.h"
-#include <QFile>
-#include <QDir>
 
 CommandEngine::CommandEngine() : QObject()
 {
@@ -33,6 +31,12 @@ void CommandEngine::create(bool emitOutput)
     if (process)
     {
         process->disconnect();
+        QObject::connect(process, SIGNAL(finished(int)), this, SLOT(cleanup()));
+        if (process->state() != QProcess::ProcessState::Running)
+        {
+            delete process;
+        }
+        process = nullptr;
     }
     process = new QProcess();
     process->setReadChannel(QProcess::ProcessChannel::StandardError);
@@ -74,19 +78,12 @@ void CommandEngine::finishedErrorOnly(int status)
     }
 }
 
-QVariantList CommandEngine::parse(QString output)
+QStringList CommandEngine::parse(QString output)
 {
-    QVariantList list;
-    for (QString line: output.split("\n"))
-    {
-        QVariantMap variant;
-        variant.insert("line", line);
-        QString file = line[0] == '/' ? line : "/" + line;
-        if (QFile(file).exists() && !QDir(file).exists())
-        {
-            variant.insert("file", file);
-        }
-        list.append(qVariantFromValue(variant));
-    }
-    return list;
+    return output.split("\n");
+}
+
+void CommandEngine::cleanup()
+{
+    delete QObject::sender();
 }

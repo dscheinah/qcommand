@@ -12,9 +12,17 @@ void Completion::complete(QString command)
     if (process)
     {
         process->disconnect();
-        process->kill();
+        QObject::connect(process, SIGNAL(finished(int)), this, SLOT(cleanup()));
+        if (process->state() == QProcess::ProcessState::Running)
+        {
+            process->kill();
+        }
+        else
+        {
+            delete process;
+        }
+        process = nullptr;
     }
-
     QRegExp separator("[\\s\"'${}()#;&`,:!@\\[\\]<>|=%^\\\\]");
     QStringList parts = command.split(separator);
     if (!parts.isEmpty())
@@ -26,7 +34,7 @@ void Completion::complete(QString command)
             QObject::connect(process, SIGNAL(finished(int)), this, SLOT(ready()));
 
             QStringList args;
-            args << "-c" << "compgen -bcdf -- '" + part + "'";
+            args << "-c" << "compgen -bcdf -- '" + part + "' | head -n23";
             process->start("bash", args, QProcess::ReadOnly);
         }
     }
@@ -68,4 +76,9 @@ void Completion::ready()
         collected << output;
     }
     emit result(collected);
+}
+
+void Completion::cleanup()
+{
+    delete QObject::sender();
 }

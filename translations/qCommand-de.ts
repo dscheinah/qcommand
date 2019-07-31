@@ -48,69 +48,69 @@
 <context>
     <name>EditPage</name>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="44"/>
+        <location filename="../qml/pages/EditPage.qml" line="45"/>
         <source>Edit command</source>
         <translation>Befehl bearbeiten</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="44"/>
+        <location filename="../qml/pages/EditPage.qml" line="45"/>
         <source>Add command</source>
         <translation>Befehl hinzufügen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="50"/>
         <location filename="../qml/pages/EditPage.qml" line="51"/>
+        <location filename="../qml/pages/EditPage.qml" line="52"/>
         <source>Name</source>
         <translation>Name</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="70"/>
+        <location filename="../qml/pages/EditPage.qml" line="71"/>
         <source>Use as cover action</source>
         <translation>Als Cover-Action verwenden</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="80"/>
-        <location filename="../qml/pages/EditPage.qml" line="87"/>
+        <location filename="../qml/pages/EditPage.qml" line="81"/>
+        <location filename="../qml/pages/EditPage.qml" line="88"/>
         <source>hint_group_disabled</source>
         <translation>Fülle den Namen mit mindestens zwei Worten, um das erste als Bezeichnung für die Gruppe zu verwenden.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="112"/>
+        <location filename="../qml/pages/EditPage.qml" line="116"/>
         <source>Command</source>
         <translation>Befehl</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="125"/>
+        <location filename="../qml/pages/EditPage.qml" line="129"/>
         <source>Interactive</source>
         <translation>Interaktiv</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="126"/>
+        <location filename="../qml/pages/EditPage.qml" line="130"/>
         <source>hint_interactive</source>
         <translation>Öffnet den Befehler mit der Terminal App, um Nutzer-Interaktion zu ermöglichen.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="126"/>
+        <location filename="../qml/pages/EditPage.qml" line="130"/>
         <source>hint_interactive_disabled</source>
         <translation>Aktiviere den Entwickler-Modus oder installiere &quot;fingerterm&quot; zur Verwendung des interaktiven Modus.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="133"/>
+        <location filename="../qml/pages/EditPage.qml" line="137"/>
         <source>Show output</source>
         <translation>Ausgabe anzeigen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="134"/>
+        <location filename="../qml/pages/EditPage.qml" line="138"/>
         <source>hint_output</source>
         <translation>Ermöglich die Ausgabe der Befehle sehen, darin erkannte Dateien öffnen oder zeilenweise kopieren zu können.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="134"/>
+        <location filename="../qml/pages/EditPage.qml" line="138"/>
         <source>hint_output_disabled</source>
         <translation>Die Ausgabe kann im interaktiven Modus nicht verwaltet werden.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="119"/>
+        <location filename="../qml/pages/EditPage.qml" line="123"/>
         <source>Editable before execution</source>
         <translation>Vor der Ausführung editierbar</translation>
     </message>
@@ -165,47 +165,47 @@
 <context>
     <name>ResultPage</name>
     <message>
-        <location filename="../qml/pages/ResultPage.qml" line="92"/>
+        <location filename="../qml/pages/ResultPage.qml" line="95"/>
         <source>Errors</source>
         <translation>Fehler</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ResultPage.qml" line="92"/>
+        <location filename="../qml/pages/ResultPage.qml" line="95"/>
         <source>Output</source>
         <translation>Ausgabe</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ResultPage.qml" line="20"/>
+        <location filename="../qml/pages/ResultPage.qml" line="24"/>
         <source>no output provided</source>
         <translation>es wurde nichts ausgegeben</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ResultPage.qml" line="24"/>
+        <location filename="../qml/pages/ResultPage.qml" line="28"/>
         <source>no messages provided</source>
         <translation>es wurden keine Meldungen ausgegeben</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ResultPage.qml" line="102"/>
+        <location filename="../qml/pages/ResultPage.qml" line="114"/>
         <source>Copy</source>
         <translation>Kopieren</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ResultPage.qml" line="109"/>
+        <location filename="../qml/pages/ResultPage.qml" line="121"/>
         <source>Open</source>
         <translation>Öffnen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ResultPage.qml" line="68"/>
+        <location filename="../qml/pages/ResultPage.qml" line="70"/>
         <source>Copy all</source>
         <translation>Alles kopieren</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ResultPage.qml" line="75"/>
+        <location filename="../qml/pages/ResultPage.qml" line="78"/>
         <source>Show errors</source>
         <translation>Fehler anzeigen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ResultPage.qml" line="83"/>
+        <location filename="../qml/pages/ResultPage.qml" line="86"/>
         <source>Show output</source>
         <translation>Ausgabe anzeigen</translation>
     </message>

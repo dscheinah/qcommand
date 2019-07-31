@@ -14,6 +14,10 @@ Page {
     property bool errorMode: false
     property string name   
 
+    property variant offsets: []
+    property variant columns: []
+
+
     Connections {
         target: cengine
         onOutput: {
@@ -28,10 +32,9 @@ Page {
             var length = data.length, content = []
             if (length) {
                 for (var i = 0; i < length; i++) {
-                    var line = data[i].line
+                    var line = data[i]
                     model.append({
                         line: line,
-                        file: data[i].file || '',
                         placeholder: false,
                     })
                     content.push(line)
@@ -39,7 +42,6 @@ Page {
             } else {
                 model.append({
                     line: placeholder,
-                    file: '',
                     placeholder: true,
                 })
             }
@@ -66,6 +68,7 @@ Page {
         PullDownMenu {
             MenuItem {
                 text: qsTr('Copy all')
+                visible: (errorMode && errors) || (!errorMode && output)
                 onClicked: {
                     Clipboard.text = errorMode ? errors : output
                 }
@@ -95,9 +98,18 @@ Page {
         model: errorMode ? errorModel : outputModel
 
         delegate: ListItem {
-            contentItem.height: label.contentHeight + Theme.paddingSmall
+            contentItem.height: (label.visible ? label.contentHeight : row.height) + Theme.paddingSmall
 
             menu: ContextMenu {
+                id: menu
+                property string file
+
+                onActiveChanged: {
+                    if (active && !file) {
+                        file = handler.getFileToOpen(line)
+                    }
+                }
+
                 MenuItem {
                     text: qsTr('Copy')
                     onClicked: {
@@ -107,9 +119,40 @@ Page {
 
                 MenuItem {
                     text: qsTr('Open')
-                    visible: file && handler.isReadyToOpen(file)
+                    visible: menu.file
                     onClicked: {
-                        handler.open(file)
+                        busy.running = true
+                        handler.open(menu.file)
+                        busy.running = false
+                    }
+                }
+            }
+
+            Row {
+                id: row
+                x: Theme.horizontalPageMargin
+                width: parent.width - Theme.horizontalPageMargin * 2
+                anchors.verticalCenter: parent.verticalCenter
+
+                Repeater {
+                    id: tabRepeater
+
+                    Label {
+                        color: highlighted ? Theme.highlightColor : Theme.primaryColor
+                        text: modelData
+                        wrapMode: Label.Wrap
+                        lineHeight: 1
+                        font.italic: placeholder
+
+                        Binding on width {
+                            when: tabRepeater.count === columns.length
+                            value: parent.width * columns[index]
+                        }
+
+                        Binding on width {
+                            when: tabRepeater.count !== columns.length
+                            value: parent.width / tabRepeater.count
+                        }
                     }
                 }
             }
@@ -124,10 +167,27 @@ Page {
                 wrapMode: Label.Wrap
                 lineHeight: 1
                 font.italic: placeholder
+                visible: false
             }
 
             onClicked: {
                 openMenu()
+            }
+
+            Component.onCompleted: {
+                var split = line.trim().split(/\t\s*/), length = split.length
+                tabRepeater.model = split
+                if (length < 2 || (offsets.length && length < offsets.length)) {
+                    return
+                }
+                for (var i = 0; i < length; i++) {
+                    var offset = split[i].length / line.length
+                    if (!offsets[i] || offset > offsets[i]) {
+                        offsets[i] = offset
+                    }
+                }
+                var sum = offsets.reduce(function(pv, cv) { return pv + cv; })
+                columns = offsets.map(function(v) { return v / sum; })
             }
         }
 

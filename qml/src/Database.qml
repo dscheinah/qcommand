@@ -194,6 +194,7 @@ QtObject {
     }
 
     function readCoverPosition(item, callback) {
+        var name = item.name
         database.transaction(function(tx) {
             var resultMax = tx.executeSql(
                 'SELECT COUNT(*) AS max FROM commands WHERE cover_group = ? AND rowid != ?',
@@ -201,10 +202,10 @@ QtObject {
             )
             var resultMin = tx.executeSql(
                 'SELECT COUNT(*) AS min FROM commands WHERE cover_group = ? AND (name < ? OR (name = ? AND rowid < ?)) AND rowid != ?',
-                [item.cover_group, item.name, item.name, item.rowid || intValidator.top, item.rowid]
+                [item.cover_group, name, name, item.rowid || intValidator.top, item.rowid]
             )
             var max = resultMax.rows.item(0).max
-            callback(resultMin.rows.item(0).min + 1, max + 1)
+            callback(resultMin.rows.item(0).min + 1, max + 1, name)
         })
     }
 }

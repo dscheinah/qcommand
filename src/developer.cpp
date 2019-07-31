@@ -1,5 +1,6 @@
 #include "developer.h"
 #include <QFile>
+#include <QDir>
 
 Developer::Developer(QObject *parent) : QValidator(parent)
 {
@@ -17,31 +18,68 @@ bool Developer::fingertermAvailable()
 }
 
 
-bool Developer::isReadyToOpen(QString file)
+QString Developer::getFileToOpen(QString line)
 {
+    QString file = line[0] == '/' ? line : "/" + line;
+    if (!QFile(file).exists())
+    {
+        QList<QRegExp> expressions;
+        expressions << QRegExp("^\\S+\\s+") << QRegExp("\\s+\\S+$");
+        return replaceAndGetFile(line, expressions);
+    }
+    if (QDir(file).exists())
+    {
+        return "";
+    }
+
     QMimeType mime = mimeDb.mimeTypeForFile(file);
     QString type = mime.name();
-    if (readyToOpen.contains(type))
+
+    if (readyToOpen.contains(type) && readyToOpen.value(type))
     {
-        return readyToOpen.value(type);
+        return file;
     }
+
     QProcess* process = new QProcess();
     QStringList args;
     args << "query" << "default" << type;
     process->start("xdg-mime", args);
     process->waitForFinished();
-    if (process->readAllStandardOutput() != "")
+    QString output = process->readAllStandardOutput();
+    delete process;
+
+    if (output != "")
     {
         readyToOpen.insert(type, true);
-        return true;
+        return file;
     }
     readyToOpen.insert(type, false);
-    return false;
+    return "";
+}
+
+QString Developer::replaceAndGetFile(QString line, QList<QRegExp> expressions)
+{
+    QString reduced;
+    QString file;
+    for (QRegExp exp: expressions)
+    {
+        reduced = line;
+        reduced.replace(exp, "");
+        if (line != reduced)
+        {
+            file = getFileToOpen(reduced);
+            if (file != "")
+            {
+                return file;
+            }
+        }
+    }
+    return "";
 }
 
 void Developer::open(QString file)
 {
-    if (!isReadyToOpen(file))
+    if (getFileToOpen(file) == "")
     {
         return;
     }
@@ -49,6 +87,8 @@ void Developer::open(QString file)
     QStringList args;
     args << file;
     process->start("xdg-open", args);
+    process->waitForFinished();
+    delete process;
 }
 
 QValidator::State Developer::validate(QString& input, int& pos) const

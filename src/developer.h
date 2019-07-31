@@ -2,8 +2,6 @@
 #define DEVELOPER_H
 
 #include <QValidator>
-#include <QMap>
-#include <QString>
 #include <QProcess>
 #include <QMimeDatabase>
 
@@ -23,7 +21,10 @@ public:
     bool develSuAvailable();
     bool fingertermAvailable();
     Q_INVOKABLE void open(QString file);
-    Q_INVOKABLE bool isReadyToOpen(QString file);
+    Q_INVOKABLE QString getFileToOpen(QString line);
+
+private:
+    QString replaceAndGetFile(QString line, QList<QRegExp> expressions);
 
 public slots:
     void validated();

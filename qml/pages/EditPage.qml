@@ -22,8 +22,9 @@ Dialog {
             command = commandField.text
             has_output = hasOutputField.checked
             is_template = isTemplateField.checked
-            cover_group = groupField.checked ? groupField.group : ''
             is_interactive = isInteractiveField.checked
+            groupField.updateGroup(name)
+            cover_group = groupField.checked ? groupField.group : ''
         }
     }
 
@@ -93,7 +94,10 @@ Dialog {
                                 name: name,
                                 cover_group: group,
                                 rowid: rowid,
-                            }, function(index, max) {
+                            }, function(index, max, name) {
+                                if (name !== nameField.text) {
+                                    return
+                                }
                                 description = '%1 (%2/%3)'.arg(group).arg(index).arg(max)
                                 busy = false
                             }

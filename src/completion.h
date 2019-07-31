@@ -21,6 +21,7 @@ signals:
 
 public slots:
     void ready();
+    void cleanup();
 };
 
 #endif // COMPLETION_H
