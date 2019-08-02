@@ -72,7 +72,7 @@
         <location filename="../qml/pages/EditPage.qml" line="81"/>
         <location filename="../qml/pages/EditPage.qml" line="88"/>
         <source>hint_group_disabled</source>
-        <translation>Miniatyråtgärd inaktiverad</translation>
+        <translation>Namnge kommandot med minst två ord, för att använda det första som åtgärdsnamn.</translation>
     </message>
     <message>
         <location filename="../qml/pages/EditPage.qml" line="116"/>
@@ -87,12 +87,12 @@
     <message>
         <location filename="../qml/pages/EditPage.qml" line="130"/>
         <source>hint_interactive</source>
-        <translation>Interaktivitet av/på</translation>
+        <translation>Kommandot öppnas i terminal, för att låta användare interagera.</translation>
     </message>
     <message>
         <location filename="../qml/pages/EditPage.qml" line="130"/>
         <source>hint_interactive_disabled</source>
-        <translation>Interaktivitet inaktiverad</translation>
+        <translation>Aktivera utvecklarläge eller installera &quot;FingerTerm&quot; för att interagera.</translation>
     </message>
     <message>
         <location filename="../qml/pages/EditPage.qml" line="137"/>
@@ -102,12 +102,12 @@
     <message>
         <location filename="../qml/pages/EditPage.qml" line="138"/>
         <source>hint_output</source>
-        <translation>Utdata av/på</translation>
+        <translation>Låter dig se utdata och öppna analyserade filer eller kopiera enskilda rader.</translation>
     </message>
     <message>
         <location filename="../qml/pages/EditPage.qml" line="138"/>
         <source>hint_output_disabled</source>
-        <translation>Utdata inaktiverad</translation>
+        <translation>Utdatahantering är inaktiverad för kommandon markerade som interaktiva.</translation>
     </message>
     <message>
         <location filename="../qml/pages/EditPage.qml" line="123"/>
@@ -135,7 +135,7 @@
     <message>
         <location filename="../qml/pages/ExecPage.qml" line="69"/>
         <source>hint_root_disabled</source>
-        <translation>Root inaktiverad</translation>
+        <translation>Aktivera utvecklarläge och ange ett lösenord (aktivera även fjärranslutning), för att köra kommandon som root.</translation>
     </message>
     <message>
         <location filename="../qml/pages/ExecPage.qml" line="80"/>
