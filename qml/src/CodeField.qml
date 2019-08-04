@@ -42,7 +42,7 @@ Item {
                 model: []
 
                 TextField {
-                    text: modelData
+                    text: modelData.hint
                     font.pixelSize: Theme.fontSizeExtraSmall
                     cursorColor: 'transparent'
 
@@ -53,10 +53,10 @@ Item {
                     onClicked: {
                         panel.stayOpened = true
                         var position = input.cursorPosition
-                        var pre = input.text.substr(0, position - completion.part.length)
+                        var pre = input.text.substr(0, position - modelData.part.length)
                         var post = input.text.substr(position)
-                        refocus.text = pre + modelData + post
-                        refocus.position = position + modelData.length - completion.part.length
+                        refocus.text = pre + modelData.hint + post
+                        refocus.position = position + modelData.hint.length - modelData.part.length
                         refocus.start()
                     }
                 }
@@ -74,7 +74,38 @@ Item {
 
         onResult: {
             panel.contentX = 0
-            completions.model = list
+            var length = list.length
+            for (var i = 0; i < length; i++) {
+                async.add(list[i], part)
+            }
+            async.show()
+        }
+    }
+
+    QtObject {
+        id: localCompletion
+
+        property variant split: /[\s"'${}()#;&`,:!@\[\]<>|=%^\\]+/
+        property variant index: []
+
+        function complete(text) {
+            if (!text) {
+                return
+            }
+            if (text[text.length - 1].match(split)) {
+                index = input.text.split(split)
+            }
+            var part = text.split(split).pop()
+            if (part) {
+                var length = index.length
+                for (var i = 0; i < length; i++) {
+                    var current = index[i]
+                    if (current && current !== part && current.indexOf(part) === 0) {
+                        async.add(current, part)
+                    }
+                }
+            }
+            async.show()
         }
     }
 
@@ -97,10 +128,43 @@ Item {
         id: async
         interval: 100
 
-        property string text
+        property string text: ''
+        property variant list: []
 
         onTriggered: {
+            localCompletion.complete(text)
             completion.complete(text)
+        }
+
+        function complete(local) {
+            stop()
+            text = local
+            list = []
+            show()
+            start()
+        }
+
+        function add(hint, part) {
+            if (!hint) {
+                return
+            }
+            if (hint[hint.length - 1] !== '/') {
+                hint += ' '
+            }
+            var length = list.length
+            for (var i = 0; i < length; i++) {
+                if (list[i].hint === hint) {
+                    return
+                }
+            }
+            list.push({
+                hint: hint,
+                part: part,
+            })
+        }
+
+        function show() {
+            completions.model = list
         }
     }
 
@@ -115,18 +179,13 @@ Item {
         inputMethodHints: Qt.ImhNoPredictiveText | Qt.ImhNoAutoUppercase
 
         onTextChanged: {
-            completions.model = []
             if (focus) {
-                async.stop()
-                async.text = text.substr(0, cursorPosition)
-                async.start()
+                async.complete(text.substr(0, cursorPosition))
             }
         }
 
         onCursorPositionChanged: {
-            async.stop()
-            async.text = text.substr(0, cursorPosition)
-            async.start()
+            async.complete(text.substr(0, cursorPosition))
         }
     }
 }

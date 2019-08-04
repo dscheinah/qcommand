@@ -23,7 +23,7 @@ void Completion::complete(QString command)
         }
         process = nullptr;
     }
-    QRegExp separator("[\\s\"'${}()#;&`,:!@\\[\\]<>|=%^\\\\]");
+    QRegExp separator("[\\s\"'${}()#;&`,:!@\\[\\]<>|=%^\\\\]+");
     QStringList parts = command.split(separator);
     if (!parts.isEmpty())
     {
@@ -68,7 +68,9 @@ void Completion::ready()
         {
             continue;
         }
-        output += QDir(output).exists() ? "/" : " ";
+        if (QDir(output).exists()) {
+            output += "/";
+        }
         if (output.indexOf(replace) == 0)
         {
             output.replace(0, replaceLength, "");
