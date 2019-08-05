@@ -91,11 +91,12 @@ Item {
         property variant lastList: []
 
         function complete(text) {
-            if (!text || text[text.length - 1].match(split)) {
-                index = input.text.split(split)
+            if (!text || !index.length || text[text.length - 1].match(split)) {
+                index = lastList = input.text.split(split)
+                lastPart = ''
             }
             var part = text.split(split).pop(), localIndex
-            if (part.indexOf(lastPart) === 0) {
+            if (lastPart && part.indexOf(lastPart) === 0) {
                 localIndex = lastList
             } else {
                 localIndex = index
