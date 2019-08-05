@@ -87,22 +87,27 @@ Item {
 
         property variant split: /[\s"'${}()#;&`,:!@\[\]<>|=%^\\]+/
         property variant index: []
+        property string lastPart: ''
+        property variant lastList: []
 
         function complete(text) {
-            if (!text) {
-                return
-            }
-            if (text[text.length - 1].match(split)) {
+            if (!text || text[text.length - 1].match(split)) {
                 index = input.text.split(split)
             }
-            var part = text.split(split).pop()
-            if (part) {
-                var length = index.length
-                for (var i = 0; i < length; i++) {
-                    var current = index[i]
-                    if (current && current !== part && current.indexOf(part) === 0) {
-                        async.add(current, part)
-                    }
+            var part = text.split(split).pop(), localIndex
+            if (part.indexOf(lastPart) === 0) {
+                localIndex = lastList
+            } else {
+                localIndex = index
+            }
+            lastPart = part
+            lastList = []
+            var length = localIndex.length
+            for (var i = 0; i < length; i++) {
+                var current = localIndex[i]
+                if (current && current !== part && current.indexOf(part) === 0) {
+                    lastList.push(current)
+                    async.add(current, part)
                 }
             }
             async.show()
