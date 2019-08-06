@@ -14,7 +14,7 @@ QtObject {
 
     function create() {
         database = LocalStorage.openDatabaseSync('qCommand', '', 'stored commands from qCommand')
-        if (database.version === '1.6') {
+        if (database.version === '1.7') {
             ready()
             return
         }
@@ -71,6 +71,47 @@ QtObject {
                 callback = function(tx) {
                     tx.executeSql('CREATE INDEX name_idx ON commands (name)')
                     tx.executeSql('CREATE INDEX cover_group_idx ON commands (cover_group)')
+                }
+                break;
+            case '1.6':
+                target = '1.7'
+                callback = function(tx) {
+                    tx.executeSql(
+                        'INSERT INTO commands (name, command, cover_group) VALUES (?, ?, ?)',
+                        ['qC-Audio XA2 PulseAudio Speaker', 'pacmd set-sink-port sink.primary_output output-speaker', 'qC-Audio']
+                    )
+                    tx.executeSql(
+                        'INSERT INTO commands (name, command, cover_group) VALUES (?, ?, ?)',
+                        ['qC-Audio XA2 PulseAudio Headphone', 'pacmd set-sink-port sink.primary_output output-wired_headphone', 'qC-Audio']
+                    )
+                    tx.executeSql(
+                        'INSERT INTO commands (name, command, cover_group) VALUES (?, ?, ?)',
+                        ['qC-Display Auto off', 'mcetool -v -j disabled', 'qC-Display']
+                    )
+                    tx.executeSql(
+                        'INSERT INTO commands (name, command, cover_group) VALUES (?, ?, ?)',
+                        ['qC-Display Always on', 'mcetool -P -j enabled --set-blank-prevent-mode=keep-on', 'qC-Display']
+                    )
+                    tx.executeSql(
+                         'INSERT INTO commands (name, command, has_output) VALUES (?, ?, ?)',
+                        ['qC-Disk Usage top 42', "du -a /home/nemo 2> /dev/null | \\\nsort -nr | head -n42 | \\\ncut -f2 | xargs du -sh 2> /dev/null\nexit 0", 1]
+                    )
+                    tx.executeSql(
+                        'INSERT INTO commands (name, command, has_output, is_template) VALUES (?, ?, ?, ?)',
+                        ['qC-Find images in Android', "# *.jpg, *.jpeg, *.png, *.ico\nextension=\"*.\"\nfolder=/home/nemo/android_storage/\nfind \"$folder\" -type f -iname \"$extension\"", 1, 1]
+                    )
+                    tx.executeSql(
+                        'INSERT INTO commands (name, command, is_template, is_interactive) VALUES (?, ?, ?, ?)',
+                        ['qC--SSH with defaults', "host=\nuser=\nport=22\nssh -p $port \"$user@$host\"", 1, 1]
+                    )
+                    tx.executeSql(
+                        'INSERT INTO commands (name, command, has_output) VALUES (?, ?, ?)',
+                        ['qC-Update packages', "if [[ ! $(whoami) = \"root\" ]]; then\n  echo \"must be run as root\" >&2\n  exit 1\nfi\npkcon refresh && pkcon update -y", 1]
+                    )
+                    tx.executeSql(
+                        'INSERT INTO commands (name, command, cover_group) VALUES (?, ?, ?)',
+                        ['qC-Notification System resources', "title=\"System resources\"\npc=$(ps --no-headers x | wc -l)\nla=$(uptime | awk -F'[a-z]:' '{ print $2 }')\nmem=$(awk '/MemAvailable:/ { avail=$2/1024/1024 } /MemTotal:/ { total=$2/1024/1024 } END { printf \"%.2f/ %.2f GB\", total-avail, total }' /proc/meminfo)\nmessage=\"$pc processes with load average $la and $mem memory\"\ngdbus call --session --dest=org.freedesktop.Notifications --object-path /org/freedesktop/Notifications --method org.freedesktop.Notifications.Notify qCommand 0 \"\" \"$title\" \"$message\" [] \"{'x-nemo-preview-summary': <'$title'>, 'x-nemo-preview-body': <'$message'>}\" 0", 'qC-Notification']
+                    )
                 }
                 break;
             default:
