@@ -187,17 +187,17 @@
     <message>
         <location filename="../qml/pages/ResultPage.qml" line="116"/>
         <source>Copy</source>
-        <translation type="unfinished"></translation>
+        <translation>Copier</translation>
     </message>
     <message>
         <location filename="../qml/pages/ResultPage.qml" line="123"/>
         <source>Open</source>
-        <translation type="unfinished"></translation>
+        <translation>Ouvrir</translation>
     </message>
     <message>
         <location filename="../qml/pages/ResultPage.qml" line="72"/>
         <source>Copy all</source>
-        <translation type="unfinished"></translation>
+        <translation>Tout copier</translation>
     </message>
     <message>
         <location filename="../qml/pages/ResultPage.qml" line="80"/>
