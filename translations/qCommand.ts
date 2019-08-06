@@ -92,7 +92,7 @@
     <message>
         <location filename="../qml/pages/EditPage.qml" line="130"/>
         <source>hint_interactive_disabled</source>
-        <translation>Enable devloper mode or install &quot;fingerterm&quot; to use the interactive mode.</translation>
+        <translation>Enable developer mode or install &quot;fingerterm&quot; to use the interactive mode.</translation>
     </message>
     <message>
         <location filename="../qml/pages/EditPage.qml" line="137"/>

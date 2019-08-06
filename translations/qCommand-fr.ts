@@ -72,7 +72,7 @@
         <location filename="../qml/pages/EditPage.qml" line="81"/>
         <location filename="../qml/pages/EditPage.qml" line="88"/>
         <source>hint_group_disabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Remplissez le nom avec au moins deux mots pour utiliser le premier comme nom de groupe.</translation>
     </message>
     <message>
         <location filename="../qml/pages/EditPage.qml" line="116"/>
@@ -87,12 +87,12 @@
     <message>
         <location filename="../qml/pages/EditPage.qml" line="130"/>
         <source>hint_interactive</source>
-        <translation type="unfinished"></translation>
+        <translation>Ouvre les commandes avec l&apos;application Terminal pour permettre l&apos;interaction de l&apos;utilisateur.</translation>
     </message>
     <message>
         <location filename="../qml/pages/EditPage.qml" line="130"/>
         <source>hint_interactive_disabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Activez le mode développeur ou installez &quot;fingerterm&quot; pour utiliser le mode interactif.</translation>
     </message>
     <message>
         <location filename="../qml/pages/EditPage.qml" line="137"/>
@@ -102,12 +102,12 @@
     <message>
         <location filename="../qml/pages/EditPage.qml" line="138"/>
         <source>hint_output</source>
-        <translation type="unfinished"></translation>
+        <translation>Cela permet de voir la sortie et d&apos;ouvrir les fichiers analysés ou de copier ligne par ligne.</translation>
     </message>
     <message>
         <location filename="../qml/pages/EditPage.qml" line="138"/>
         <source>hint_output_disabled</source>
-        <translation type="unfinished"></translation>
+        <translation>La sorties est désactivée en mode interactif.</translation>
     </message>
     <message>
         <location filename="../qml/pages/EditPage.qml" line="123"/>
@@ -135,7 +135,7 @@
     <message>
         <location filename="../qml/pages/ExecPage.qml" line="69"/>
         <source>hint_root_disabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Activez le mode développeur et configurez un mot de passe pour exécuter les commandes en tant que root.</translation>
     </message>
     <message>
         <location filename="../qml/pages/ExecPage.qml" line="80"/>

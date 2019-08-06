@@ -87,7 +87,7 @@
     <message>
         <location filename="../qml/pages/EditPage.qml" line="130"/>
         <source>hint_interactive</source>
-        <translation>Öffnet den Befehler mit der Terminal App, um Nutzer-Interaktion zu ermöglichen.</translation>
+        <translation>Öffnet den Befehle mit der Terminal App, um Nutzer-Interaktion zu ermöglichen.</translation>
     </message>
     <message>
         <location filename="../qml/pages/EditPage.qml" line="130"/>
