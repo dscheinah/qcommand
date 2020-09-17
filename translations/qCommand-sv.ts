@@ -9,13 +9,13 @@
         <translation>Tillgängliga kommandon</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommandPage.qml" line="118"/>
-        <location filename="../qml/pages/CommandPage.qml" line="149"/>
+        <location filename="../qml/pages/CommandPage.qml" line="119"/>
+        <location filename="../qml/pages/CommandPage.qml" line="150"/>
         <source>Search</source>
         <translation>Sök</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommandPage.qml" line="107"/>
+        <location filename="../qml/pages/CommandPage.qml" line="108"/>
         <source>Add command</source>
         <translation>Lägg till kommando</translation>
     </message>
@@ -118,30 +118,35 @@
 <context>
     <name>ExecPage</name>
     <message>
-        <location filename="../qml/pages/ExecPage.qml" line="55"/>
+        <location filename="../qml/pages/ExecPage.qml" line="79"/>
         <source>Run command</source>
         <translation>Kör kommando</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ExecPage.qml" line="63"/>
+        <location filename="../qml/pages/ExecPage.qml" line="87"/>
         <source>none</source>
         <translation>ingen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ExecPage.qml" line="68"/>
+        <location filename="../qml/pages/ExecPage.qml" line="92"/>
         <source>Run as root</source>
         <translation>Kör som root</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ExecPage.qml" line="69"/>
+        <location filename="../qml/pages/ExecPage.qml" line="93"/>
         <source>hint_root_disabled</source>
         <translation>Aktivera utvecklarläge och ange ett lösenord (aktivera även fjärranslutning), för att köra kommandon som root.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ExecPage.qml" line="80"/>
-        <location filename="../qml/pages/ExecPage.qml" line="81"/>
+        <location filename="../qml/pages/ExecPage.qml" line="109"/>
+        <location filename="../qml/pages/ExecPage.qml" line="110"/>
         <source>Password</source>
         <translation>Lösenord</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ExecPage.qml" line="124"/>
+        <source>Store password</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

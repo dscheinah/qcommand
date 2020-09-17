@@ -4,6 +4,7 @@
 #include "developer.h"
 #include "completion.h"
 #include "fingerterm.h"
+#include "secrets.h"
 
 QObject* recursiveFind(QObject* item, QString name)
 {
@@ -35,6 +36,7 @@ int main(int argc, char *argv[])
 
     qmlRegisterType<Developer>("qCommand", 1, 0, "Developer");
     qmlRegisterType<Completion>("qCommand", 1, 0, "Completion");
+    qmlRegisterType<Secrets>("qCommand", 1, 0, "Secrets");
 
     QQuickView* view = SailfishApp::createView();
     view->rootContext()->setContextProperty("cengine", engine);

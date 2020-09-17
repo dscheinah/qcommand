@@ -87,6 +87,7 @@ Page {
                 database.read(commands.get(index), function(item) {
                     elementLoader.running = false
                     item.engine = engine
+                    item.database = database
                     pageStack.push(Qt.resolvedUrl('ExecPage.qml'), item)
                 })
             }

@@ -14,12 +14,16 @@ TARGET = qCommand
 
 CONFIG += sailfishapp
 
+PKGCONFIG += \
+    sailfishsecrets
+
 SOURCES += \
     src/qCommand.cpp \
     src/commandengine.cpp \
     src/completion.cpp \
     src/fingerterm.cpp \
-    src/developer.cpp
+    src/developer.cpp \
+    src/secrets.cpp
 
 DISTFILES += \
     qml/qCommand.qml \
@@ -43,7 +47,8 @@ CONFIG += sailfishapp_i18n
 TRANSLATIONS += translations/*.ts
 
 HEADERS += \
-    src/commandengine.h \  
+    src/commandengine.h \
+    src/secrets.h \
     src/completion.h \
     src/fingerterm.h \
     src/developer.h

@@ -9,11 +9,15 @@ Dialog {
     allowedOrientations: Orientation.All
 
     property CommandEngine engine
+    property Database database
     property string name
     property string command
     property int has_output
     property int is_template
     property int is_interactive
+    property int is_stored
+    property int rowid
+    property string lastPassword: ''
 
     onDone: {
         commandField.focus = false
@@ -23,11 +27,27 @@ Dialog {
         if (!checker.fingertermAvailable)  {
             is_interactive = false
         }
-        if (root.checked && checker.develSuAvailable) {
-            if (is_interactive) {
-                engine.execAsRootInteractive(commandField.text)
+        if (root.checked) {
+            var success = false
+            if (store.checked) {
+                success = true
+                if (password.text != lastPassword) {
+                    success = secrets.store(password.text)
+                }
+            }
+            if (success) {
+                database.setStored(rowid, true)
+                lastPassword = password.text
             } else {
-                engine.execAsRoot(commandField.text, has_output, password.text)
+                database.setStored(rowid, false)
+                lastPassword = ''
+            }
+            if (checker.develSuAvailable) {
+                if (is_interactive) {
+                    engine.execAsRootInteractive(commandField.text)
+                } else {
+                    engine.execAsRoot(commandField.text, has_output, password.text)
+                }
             }
         } else {
             if (is_interactive) {
@@ -40,6 +60,10 @@ Dialog {
 
     Developer {
         id: checker
+    }
+
+    Secrets {
+        id: secrets
     }
 
     SilicaFlickable {
@@ -70,7 +94,12 @@ Dialog {
                 enabled: checker.develSuAvailable
                 onCheckedChanged: {
                     if (checked && !is_interactive) {
-                        password.focus = true
+                        if (!password.text && is_stored) {
+                            password.text = lastPassword = secrets.read();
+                        }
+                        if (!password.text) {
+                            password.focus = true
+                        }
                     }
                 }
             }
@@ -82,11 +111,19 @@ Dialog {
                 visible: root.checked && !is_interactive
                 enabled: visible
                 validator: checker
+                showEchoModeToggle: !is_stored
 
                 EnterKey.iconSource: 'image://theme/icon-m-enter-accept'
                 EnterKey.onClicked: {
                     dialog.accept()
                 }
+            }
+
+            TextSwitch {
+                id: store
+                text: qsTr('Store password')
+                visible: root.checked && !is_interactive
+                checked: is_stored
             }
         }
 

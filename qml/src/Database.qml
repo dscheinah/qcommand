@@ -14,7 +14,7 @@ QtObject {
 
     function create() {
         database = LocalStorage.openDatabaseSync('qCommand', '', 'stored commands from qCommand')
-        if (database.version === '1.7') {
+        if (database.version === '1.8') {
             ready()
             return
         }
@@ -46,7 +46,7 @@ QtObject {
                 callback = function(tx) {
                     tx.executeSql('ALTER TABLE commands ADD is_template INTEGER')
                 }
-                break;
+                break
             case '1.3':
                 target = '1.4'
                 callback = function(tx) {
@@ -59,20 +59,20 @@ QtObject {
                         }
                     }
                 }
-                break;
+                break
             case '1.4':
                 target = '1.5'
                 callback = function(tx) {
                     tx.executeSql('ALTER TABLE commands ADD is_interactive INTEGER')
                 }
-                break;
+                break
             case '1.5':
                 target = '1.6'
                 callback = function(tx) {
                     tx.executeSql('CREATE INDEX name_idx ON commands (name)')
                     tx.executeSql('CREATE INDEX cover_group_idx ON commands (cover_group)')
                 }
-                break;
+                break
             case '1.6':
                 target = '1.7'
                 callback = function(tx) {
@@ -114,6 +114,12 @@ QtObject {
                     )
                 }
                 break;
+            case '1.7':
+                target = '1.8'
+                callback = function(tx) {
+                    tx.executeSql('ALTER TABLE commands ADD is_stored INTEGER')
+                }
+                break
             default:
                 return
         }
@@ -247,6 +253,12 @@ QtObject {
             )
             var max = resultMax.rows.item(0).max
             callback(resultMin.rows.item(0).min + 1, max + 1, name)
+        })
+    }
+
+    function setStored(rowid, stored) {
+        database.transaction(function(tx) {
+            tx.executeSql('UPDATE commands SET is_stored = ? WHERE rowid = ?', [stored ? 1 : 0, rowid])
         })
     }
 }
