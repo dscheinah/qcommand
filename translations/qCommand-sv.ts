@@ -146,7 +146,7 @@
     <message>
         <location filename="../qml/pages/ExecPage.qml" line="124"/>
         <source>Store password</source>
-        <translation type="unfinished"></translation>
+        <translation>Lagra lösenordet</translation>
     </message>
 </context>
 <context>
