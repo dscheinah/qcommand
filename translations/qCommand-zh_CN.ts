@@ -19,28 +19,28 @@
         <translation>编辑</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommandPage.qml" line="60"/>
+        <location filename="../qml/pages/CommandPage.qml" line="69"/>
         <source>Duplicate</source>
         <translation>重复</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommandPage.qml" line="75"/>
+        <location filename="../qml/pages/CommandPage.qml" line="91"/>
         <source>Remove</source>
         <translation>移除</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommandPage.qml" line="77"/>
+        <location filename="../qml/pages/CommandPage.qml" line="93"/>
         <source>Deleting</source>
         <translation>删除中</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommandPage.qml" line="108"/>
+        <location filename="../qml/pages/CommandPage.qml" line="133"/>
         <source>Add command</source>
         <translation>添加指令</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommandPage.qml" line="119"/>
-        <location filename="../qml/pages/CommandPage.qml" line="150"/>
+        <location filename="../qml/pages/CommandPage.qml" line="144"/>
+        <location filename="../qml/pages/CommandPage.qml" line="175"/>
         <source>Search</source>
         <translation>搜索</translation>
     </message>
@@ -48,69 +48,79 @@
 <context>
     <name>EditPage</name>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="45"/>
+        <location filename="../qml/pages/EditPage.qml" line="47"/>
         <source>Edit command</source>
         <translation>编辑指令</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="45"/>
+        <location filename="../qml/pages/EditPage.qml" line="47"/>
         <source>Add command</source>
         <translation>添加指令</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="51"/>
-        <location filename="../qml/pages/EditPage.qml" line="52"/>
+        <location filename="../qml/pages/EditPage.qml" line="53"/>
+        <location filename="../qml/pages/EditPage.qml" line="54"/>
         <source>Name</source>
         <translation>名称</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="71"/>
+        <location filename="../qml/pages/EditPage.qml" line="73"/>
         <source>Use as cover action</source>
         <translation>用作封面操作</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="81"/>
-        <location filename="../qml/pages/EditPage.qml" line="88"/>
+        <location filename="../qml/pages/EditPage.qml" line="83"/>
+        <location filename="../qml/pages/EditPage.qml" line="90"/>
         <source>hint_group_disabled</source>
         <translation>用至少两个单词填充名称，以便使用第一个单词作为组名。</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="116"/>
+        <location filename="../qml/pages/EditPage.qml" line="118"/>
         <source>Command</source>
         <translation>指令</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="129"/>
+        <location filename="../qml/pages/EditPage.qml" line="131"/>
+        <source>Run as root</source>
+        <translation>以 root 模式运行</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/EditPage.qml" line="132"/>
+        <source>hint_root_disabled</source>
+        <translation>打开开发者模式并且设置密码以便在 root 状态运行指令。</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/EditPage.qml" line="139"/>
         <source>Interactive</source>
         <translation>交互式</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="130"/>
+        <location filename="../qml/pages/EditPage.qml" line="140"/>
         <source>hint_interactive</source>
         <translation>将使用 Terminal 应用程序以打开指令以使用用户交互。</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="130"/>
+        <location filename="../qml/pages/EditPage.qml" line="140"/>
         <source>hint_interactive_disabled</source>
         <translation>打开开发者模式或安装Fingerterm应用程序以使用用户交互模式。</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="137"/>
+        <location filename="../qml/pages/EditPage.qml" line="147"/>
         <source>Show output</source>
         <translation>显示输出</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="138"/>
+        <location filename="../qml/pages/EditPage.qml" line="148"/>
         <source>hint_output</source>
         <translation>这允许查看输出并打开已解析的文件或复制指令的每一行内容。</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="138"/>
+        <location filename="../qml/pages/EditPage.qml" line="148"/>
         <source>hint_output_disabled</source>
         <translation>为标记为交互式的指令禁用输出处理。</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="123"/>
+        <location filename="../qml/pages/EditPage.qml" line="125"/>
         <source>Editable before execution</source>
         <translation>执行前可编辑</translation>
     </message>
@@ -118,33 +128,33 @@
 <context>
     <name>ExecPage</name>
     <message>
-        <location filename="../qml/pages/ExecPage.qml" line="79"/>
+        <location filename="../qml/pages/ExecPage.qml" line="88"/>
         <source>Run command</source>
         <translation>运行指令</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ExecPage.qml" line="87"/>
+        <location filename="../qml/pages/ExecPage.qml" line="96"/>
         <source>none</source>
         <translation>无</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ExecPage.qml" line="92"/>
+        <location filename="../qml/pages/ExecPage.qml" line="101"/>
         <source>Run as root</source>
         <translation>以 root 模式运行</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ExecPage.qml" line="93"/>
+        <location filename="../qml/pages/ExecPage.qml" line="102"/>
         <source>hint_root_disabled</source>
         <translation>打开开发者模式并且设置密码以便在 root 状态运行指令。</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ExecPage.qml" line="109"/>
-        <location filename="../qml/pages/ExecPage.qml" line="110"/>
+        <location filename="../qml/pages/ExecPage.qml" line="119"/>
+        <location filename="../qml/pages/ExecPage.qml" line="120"/>
         <source>Password</source>
         <translation>密码</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ExecPage.qml" line="124"/>
+        <location filename="../qml/pages/ExecPage.qml" line="134"/>
         <source>Store password</source>
         <translation type="unfinished"></translation>
     </message>

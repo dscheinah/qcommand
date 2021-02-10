@@ -15,6 +15,7 @@ Dialog {
     property int is_template
     property string cover_group
     property int is_interactive
+    property int run_as_root
 
     onDone: {
         if (result === DialogResult.Accepted) {
@@ -23,6 +24,7 @@ Dialog {
             has_output = hasOutputField.checked
             is_template = isTemplateField.checked
             is_interactive = isInteractiveField.checked
+            run_as_root = runAsRootField.checked
             groupField.updateGroup(name)
             cover_group = groupField.checked ? groupField.group : ''
         }
@@ -124,6 +126,14 @@ Dialog {
             }
 
             TextSwitch {
+                id: runAsRootField
+                checked: run_as_root
+                text: qsTr('Run as root')
+                description: enabled ? '' : qsTr('hint_root_disabled')
+                enabled: checker.develSuAvailable
+            }
+
+            TextSwitch {
                 id: isInteractiveField
                 checked: is_interactive
                 text: qsTr('Interactive')
@@ -136,7 +146,7 @@ Dialog {
                 checked: has_output
                 text: qsTr('Show output')
                 description: enabled ? qsTr('hint_output') : qsTr('hint_output_disabled')
-                enabled: !isInteractiveField.checked && isInteractiveField.enabled
+                enabled: !isInteractiveField.checked || !isInteractiveField.enabled
             }
         }
 

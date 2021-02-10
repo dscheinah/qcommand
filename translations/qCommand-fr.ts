@@ -9,13 +9,13 @@
         <translation>Commandes disponibles</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommandPage.qml" line="119"/>
-        <location filename="../qml/pages/CommandPage.qml" line="150"/>
+        <location filename="../qml/pages/CommandPage.qml" line="144"/>
+        <location filename="../qml/pages/CommandPage.qml" line="175"/>
         <source>Search</source>
         <translation>Chercher</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommandPage.qml" line="108"/>
+        <location filename="../qml/pages/CommandPage.qml" line="133"/>
         <source>Add command</source>
         <translation>Ajouter une commande</translation>
     </message>
@@ -30,17 +30,17 @@
         <translation>Résultats de la recherche</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommandPage.qml" line="60"/>
+        <location filename="../qml/pages/CommandPage.qml" line="69"/>
         <source>Duplicate</source>
         <translation>Dupliquer</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommandPage.qml" line="75"/>
+        <location filename="../qml/pages/CommandPage.qml" line="91"/>
         <source>Remove</source>
         <translation>Supprimer</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommandPage.qml" line="77"/>
+        <location filename="../qml/pages/CommandPage.qml" line="93"/>
         <source>Deleting</source>
         <translation>Suppression</translation>
     </message>
@@ -48,69 +48,79 @@
 <context>
     <name>EditPage</name>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="45"/>
+        <location filename="../qml/pages/EditPage.qml" line="47"/>
         <source>Edit command</source>
         <translation>Modifier la commande</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="45"/>
+        <location filename="../qml/pages/EditPage.qml" line="47"/>
         <source>Add command</source>
         <translation>Ajouter la commande</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="51"/>
-        <location filename="../qml/pages/EditPage.qml" line="52"/>
+        <location filename="../qml/pages/EditPage.qml" line="53"/>
+        <location filename="../qml/pages/EditPage.qml" line="54"/>
         <source>Name</source>
         <translation>Nom</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="71"/>
+        <location filename="../qml/pages/EditPage.qml" line="73"/>
         <source>Use as cover action</source>
         <translation>Ajouter à l&apos;écran d&apos;accueil</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="81"/>
-        <location filename="../qml/pages/EditPage.qml" line="88"/>
+        <location filename="../qml/pages/EditPage.qml" line="83"/>
+        <location filename="../qml/pages/EditPage.qml" line="90"/>
         <source>hint_group_disabled</source>
         <translation>Remplissez le nom avec au moins deux mots pour utiliser le premier comme nom de groupe.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="116"/>
+        <location filename="../qml/pages/EditPage.qml" line="118"/>
         <source>Command</source>
         <translation>Commande</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="129"/>
+        <location filename="../qml/pages/EditPage.qml" line="131"/>
+        <source>Run as root</source>
+        <translation>Exécuter en tant que root</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/EditPage.qml" line="132"/>
+        <source>hint_root_disabled</source>
+        <translation>Activez le mode développeur et configurez un mot de passe pour exécuter les commandes en tant que root.</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/EditPage.qml" line="139"/>
         <source>Interactive</source>
         <translation>Interactive</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="130"/>
+        <location filename="../qml/pages/EditPage.qml" line="140"/>
         <source>hint_interactive</source>
         <translation>Ouvre les commandes avec l&apos;application Terminal pour permettre l&apos;interaction de l&apos;utilisateur.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="130"/>
+        <location filename="../qml/pages/EditPage.qml" line="140"/>
         <source>hint_interactive_disabled</source>
         <translation>Activez le mode développeur ou installez &quot;fingerterm&quot; pour utiliser le mode interactif.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="137"/>
+        <location filename="../qml/pages/EditPage.qml" line="147"/>
         <source>Show output</source>
         <translation>Afficher la sortie</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="138"/>
+        <location filename="../qml/pages/EditPage.qml" line="148"/>
         <source>hint_output</source>
         <translation>Cela permet de voir la sortie et d&apos;ouvrir les fichiers analysés ou de copier ligne par ligne.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="138"/>
+        <location filename="../qml/pages/EditPage.qml" line="148"/>
         <source>hint_output_disabled</source>
         <translation>La sorties est désactivée en mode interactif.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="123"/>
+        <location filename="../qml/pages/EditPage.qml" line="125"/>
         <source>Editable before execution</source>
         <translation>Modifiable avant exécution</translation>
     </message>
@@ -118,33 +128,33 @@
 <context>
     <name>ExecPage</name>
     <message>
-        <location filename="../qml/pages/ExecPage.qml" line="79"/>
+        <location filename="../qml/pages/ExecPage.qml" line="88"/>
         <source>Run command</source>
         <translation>Lancer la commande</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ExecPage.qml" line="87"/>
+        <location filename="../qml/pages/ExecPage.qml" line="96"/>
         <source>none</source>
         <translation>aucun</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ExecPage.qml" line="92"/>
+        <location filename="../qml/pages/ExecPage.qml" line="101"/>
         <source>Run as root</source>
         <translation>Exécuter en tant que root</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ExecPage.qml" line="93"/>
+        <location filename="../qml/pages/ExecPage.qml" line="102"/>
         <source>hint_root_disabled</source>
         <translation>Activez le mode développeur et configurez un mot de passe pour exécuter les commandes en tant que root.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ExecPage.qml" line="109"/>
-        <location filename="../qml/pages/ExecPage.qml" line="110"/>
+        <location filename="../qml/pages/ExecPage.qml" line="119"/>
+        <location filename="../qml/pages/ExecPage.qml" line="120"/>
         <source>Password</source>
         <translation>Mot de passe</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ExecPage.qml" line="124"/>
+        <location filename="../qml/pages/ExecPage.qml" line="134"/>
         <source>Store password</source>
         <translation type="unfinished"></translation>
     </message>

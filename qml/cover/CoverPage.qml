@@ -1,5 +1,6 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import qCommand 1.0
 import '../src'
 
 CoverBackground {
@@ -8,13 +9,21 @@ CoverBackground {
     property ApplicationWindow app
     property Database database
     property CommandEngine engine
+    property string visibleName
+
     property int rowid
     property string name
     property string command
-    property bool has_output
     property string cover_group
+    property bool has_output
     property bool is_interactive
-    property string visibleName
+    property bool is_template
+    property bool run_as_root
+    property bool is_stored
+
+    Secrets {
+        id: secrets
+    }
 
     Label {
         id: header
@@ -41,21 +50,36 @@ CoverBackground {
         CoverAction {
             iconSource: 'image://theme/icon-cover-play'
             onTriggered: {
-                if (has_output) {
-                    var resultPage = pageStack.find(function(page) {
-                        return page.objectName === 'result'
-                    })
-                    if (resultPage) {
-                        pageStack.pop(resultPage, true);
-                        pageStack.pop(null, true)
-                    }
-                    pageStack.push(Qt.resolvedUrl('../pages/ResultPage.qml'), {name: name}, true)
-                    app.activate()
+                var password = ''
+                if (run_as_root && is_stored && !is_interactive && !is_template) {
+                    password = secrets.read()
                 }
-                if (is_interactive) {
-                    engine.execInteractive(command)
+                if (is_template || (run_as_root && !is_interactive && !password)) {
+                    activate('exec', '../pages/ExecPage.qml', {
+                         engine: engine,
+                         database: database,
+                         name: name,
+                         command: command,
+                         has_output: has_output,
+                         is_template: is_template,
+                         is_interactive: is_interactive,
+                         is_stored: is_stored,
+                         run_as_root: run_as_root,
+                         rowid: rowid,
+                     })
                 } else {
-                    engine.exec(command, has_output)
+                    if (has_output && !is_interactive) {
+                        activate('result', '../pages/ResultPage.qml', {name: name})
+                    }
+                    if (run_as_root && is_interactive) {
+                        engine.execAsRootInteractive(command)
+                    } else if (password) {
+                        engine.execAsRoot(command, has_output, password)
+                    } else if (is_interactive) {
+                        engine.execInteractive(command)
+                    } else {
+                        engine.exec(command, has_output)
+                    }
                 }
                 next()
             }
@@ -78,9 +102,12 @@ CoverBackground {
         }
         name = item.name || ''
         command = item.command || ''
+        cover_group = item.cover_group || ''
         has_output = item.has_output || false
-        cover_group = item.cover_group
-        is_interactive = item.is_interactive
+        is_interactive = item.is_interactive || false
+        is_template = item.is_template || false
+        run_as_root = item.run_as_root || false
+        is_stored = item.is_stored || false
         visibleName = cover_group + '\n' + name.substr(cover_group.length).trim()
     }
 
@@ -90,6 +117,16 @@ CoverBackground {
 
     function nextGroup() {
         database.readNextGroup(cover, set)
+    }
+
+    function activate(target, url, data) {
+        var page = pageStack.find(function(page) { return page.objectName === target })
+        if (page) {
+            pageStack.pop(page, true)
+            pageStack.pop(null, true)
+        }
+        pageStack.push(Qt.resolvedUrl(url), data, true)
+        app.activate()
     }
 
     Component.onCompleted: {

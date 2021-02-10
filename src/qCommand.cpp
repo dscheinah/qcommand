@@ -12,14 +12,14 @@ QObject* recursiveFind(QObject* item, QString name)
   {
     return item;
   }
-  QObject* result = NULL;
+  QObject* result = nullptr;
   QObjectList list = item->children();
   int length = list.count();
   for (int i = 0; i < length; i++)
   {
     QObject* element = list[i];
     result = recursiveFind(element, name);
-    if (result != NULL)
+    if (result != nullptr)
     {
         return result;
     }

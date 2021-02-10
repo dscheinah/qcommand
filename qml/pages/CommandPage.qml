@@ -47,8 +47,17 @@ Page {
                         load(commandLabel.mapToItem(list, 0, 0), commandLabel.height)
                         database.read(commands.get(index), function(item) {
                             elementLoader.running = false
-                            item.database = database
-                            var dialog = pageStack.push(Qt.resolvedUrl('EditPage.qml'), item)
+                            var dialog = pageStack.push(Qt.resolvedUrl('EditPage.qml'), {
+                                database: database,
+                                name: item.name,
+                                command: item.command,
+                                cover_group: item.cover_group,
+                                has_output: item.has_output,
+                                is_template: item.is_template,
+                                is_interactive: item.is_interactive,
+                                run_as_root: item.run_as_root,
+                                rowid: item.rowid,
+                            })
                             dialog.accepted.connect(function() {
                                 load(commandLabel.mapToItem(list, 0, 0), commandLabel.height)
                                 database.edit(item, dialog)
@@ -62,9 +71,16 @@ Page {
                         load(commandLabel.mapToItem(list, 0, 0), commandLabel.height)
                         database.read(commands.get(index), function(item) {
                             elementLoader.running = false
-                            item.database = database
-                            item.rowid = 0
-                            var dialog = pageStack.push(Qt.resolvedUrl('EditPage.qml'), item)
+                            var dialog = pageStack.push(Qt.resolvedUrl('EditPage.qml'), {
+                                database: database,
+                                name: item.name,
+                                command: item.command,
+                                cover_group: item.cover_group,
+                                has_output: item.has_output,
+                                is_template: item.is_template,
+                                is_interactive: item.is_interactive,
+                                run_as_root: item.run_as_root,
+                            })
                             dialog.accepted.connect(function() {
                                 database.add(dialog)
                             })
@@ -86,9 +102,18 @@ Page {
                 load(commandLabel.mapToItem(list, 0, 0), commandLabel.height)
                 database.read(commands.get(index), function(item) {
                     elementLoader.running = false
-                    item.engine = engine
-                    item.database = database
-                    pageStack.push(Qt.resolvedUrl('ExecPage.qml'), item)
+                    pageStack.push(Qt.resolvedUrl('ExecPage.qml'), {
+                       engine: engine,
+                       database: database,
+                       name: item.name,
+                       command: item.command,
+                       has_output: item.has_output,
+                       is_template: item.is_template,
+                       is_interactive: item.is_interactive,
+                       is_stored: item.is_stored,
+                       run_as_root: item.run_as_root,
+                       rowid: item.rowid,
+                   })
                 })
             }
 

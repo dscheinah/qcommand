@@ -14,7 +14,7 @@ QtObject {
 
     function create() {
         database = LocalStorage.openDatabaseSync('qCommand', '', 'stored commands from qCommand')
-        if (database.version === '1.8') {
+        if (database.version === '1.9') {
             ready()
             return
         }
@@ -120,6 +120,12 @@ QtObject {
                     tx.executeSql('ALTER TABLE commands ADD is_stored INTEGER')
                 }
                 break
+            case '1.8':
+                target = '1.9'
+                callback = function(tx) {
+                    tx.executeSql('ALTER TABLE commands ADD run_as_root INTEGER')
+                }
+                break;
             default:
                 return
         }
@@ -212,8 +218,8 @@ QtObject {
     function add(data) {
         database.transaction(function(tx) {
             tx.executeSql(
-                'INSERT INTO commands(name, command, has_output, is_template, cover_group, is_interactive) VALUES(?, ?, ?, ?, ?, ?)',
-                [data.name, data.command, data.has_output, data.is_template, data.cover_group, data.is_interactive]
+                'INSERT INTO commands(name, command, has_output, is_template, cover_group, is_interactive, run_as_root) VALUES(?, ?, ?, ?, ?, ?, ?)',
+                [data.name, data.command, data.has_output, data.is_template, data.cover_group, data.is_interactive, data.run_as_root]
             )
             var result = tx.executeSql('SELECT rowid, * FROM commands WHERE rowid = last_insert_rowid()')
             var item = result.rows.item(0)
@@ -226,8 +232,8 @@ QtObject {
     function edit(item, data) {
         database.transaction(function(tx) {
             tx.executeSql(
-                'UPDATE commands SET name = ?, command = ?, has_output = ?, is_template = ?, cover_group = ?, is_interactive = ? WHERE rowid = ?',
-                [data.name, data.command, data.has_output, data.is_template, data.cover_group, data.is_interactive, item.rowid]
+                'UPDATE commands SET name = ?, command = ?, has_output = ?, is_template = ?, cover_group = ?, is_interactive = ?, run_as_root = ? WHERE rowid = ?',
+                [data.name, data.command, data.has_output, data.is_template, data.cover_group, data.is_interactive, data.run_as_root, item.rowid]
             )
             edited(item, data)
         })

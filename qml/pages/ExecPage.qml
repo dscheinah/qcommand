@@ -7,16 +7,20 @@ Dialog {
     id: dialog
     canAccept: command && (is_interactive || !root.checked || password.acceptableInput)
     allowedOrientations: Orientation.All
+    objectName: 'exec'
 
     property CommandEngine engine
     property Database database
+
     property string name
     property string command
     property int has_output
     property int is_template
     property int is_interactive
     property int is_stored
+    property int run_as_root
     property int rowid
+
     property string lastPassword: ''
 
     onDone: {
@@ -97,6 +101,7 @@ Dialog {
                 text: qsTr('Run as root')
                 description: enabled ? '' : qsTr('hint_root_disabled')
                 enabled: checker.develSuAvailable
+                checked: run_as_root
                 onCheckedChanged: {
                     if (checked && !is_interactive) {
                         if (!password.text && is_stored) {
