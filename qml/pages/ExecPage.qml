@@ -60,6 +60,11 @@ Dialog {
 
     Developer {
         id: checker
+
+        onChanged: {
+            password.validator = null
+            password.validator = checker
+        }
     }
 
     Secrets {
