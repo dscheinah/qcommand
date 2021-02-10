@@ -41,14 +41,12 @@ Item {
                 id: completions
                 model: []
 
-                TextField {
+                Button {
                     text: modelData.hint
-                    font.pixelSize: Theme.fontSizeExtraSmall
-                    cursorColor: 'transparent'
-
-                    background: Rectangle {
-                        color: 'transparent'
-                    }
+                    preferredWidth: 0
+                    backgroundColor: 'transparent'
+                    height: Theme.fontSizeSmall + 3 * Theme.paddingSmall
+                    color: Theme.primaryColor
 
                     onClicked: {
                         panel.stayOpened = true
@@ -117,7 +115,7 @@ Item {
 
     Timer {
         id: refocus
-        interval: 10
+        interval: 20
 
         property string text
         property int position
