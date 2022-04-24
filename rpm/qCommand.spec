@@ -9,17 +9,20 @@ Name:       qCommand
 # << macros
 
 Summary:    run commands from gui
-Version:    1.2
-Release:    2
+Version:    1.3
+Release:    1
 Group:      Qt/Qt
 License:    LICENSE
 Source0:    %{name}-%{version}.tar.bz2
 Source100:  qCommand.yaml
 Requires:   sailfishsilica-qt5 >= 0.10.9
+Requires:   sailfishsecretsdaemon-secretsplugins-default
+Requires:   fingerterm
 BuildRequires:  pkgconfig(sailfishapp) >= 1.0.2
 BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(Qt5Qml)
 BuildRequires:  pkgconfig(Qt5Quick)
+BuildRequires:  pkgconfig(sailfishsecrets)
 BuildRequires:  desktop-file-utils
 
 %description

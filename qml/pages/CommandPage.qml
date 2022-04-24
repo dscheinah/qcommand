@@ -96,6 +96,29 @@ Page {
                         })
                     }
                 }
+                MenuItem {
+                    text: qsTr('Create launcher icon')
+                    onClicked: {
+                        database.read(commands.get(index), function(item) {
+                            var sh = StandardPaths.data + '/' + item.rowid + '.sh';
+                            var shRequest = new XMLHttpRequest()
+                            shRequest.open('PUT', 'file:' + sh)
+                            shRequest.send(item.command);
+                            var desktopRequest = new XMLHttpRequest()
+                            desktopRequest.open('PUT', 'file:' + StandardPaths.home + '/.local/share/applications/qCommand-autogen-' + item.rowid + '.desktop', false)
+                            desktopRequest.send('
+[Desktop Entry]
+Type=Application
+Icon=qCommand
+Exec=fingerterm -e "chmod +x ' + sh + ' && ' + (item.run_as_root ? 'devel-su bash -c ' : '') + sh + '"
+Name=' + item.name + '
+
+[X-Sailjail]
+Sandboxing=Disabled
+                            ')
+                        })
+                    }
+                }
             }
 
             onClicked: {

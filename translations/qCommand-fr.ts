@@ -9,13 +9,18 @@
         <translation>Commandes disponibles</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommandPage.qml" line="144"/>
-        <location filename="../qml/pages/CommandPage.qml" line="175"/>
+        <location filename="../qml/pages/CommandPage.qml" line="100"/>
+        <source>Create launcher icon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/CommandPage.qml" line="167"/>
+        <location filename="../qml/pages/CommandPage.qml" line="198"/>
         <source>Search</source>
         <translation>Chercher</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommandPage.qml" line="133"/>
+        <location filename="../qml/pages/CommandPage.qml" line="156"/>
         <source>Add command</source>
         <translation>Ajouter une commande</translation>
     </message>

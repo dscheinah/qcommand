@@ -34,13 +34,18 @@
         <translation>Löschen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommandPage.qml" line="133"/>
+        <location filename="../qml/pages/CommandPage.qml" line="100"/>
+        <source>Create launcher icon</source>
+        <translation>Launcher Icon erstellen</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/CommandPage.qml" line="156"/>
         <source>Add command</source>
         <translation>Befehl hinzufügen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommandPage.qml" line="144"/>
-        <location filename="../qml/pages/CommandPage.qml" line="175"/>
+        <location filename="../qml/pages/CommandPage.qml" line="167"/>
+        <location filename="../qml/pages/CommandPage.qml" line="198"/>
         <source>Search</source>
         <translation>Suchen</translation>
     </message>
