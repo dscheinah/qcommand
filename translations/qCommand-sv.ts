@@ -11,7 +11,7 @@
     <message>
         <location filename="../qml/pages/CommandPage.qml" line="100"/>
         <source>Create launcher icon</source>
-        <translation type="unfinished"></translation>
+        <translation>Skapa startikon</translation>
     </message>
     <message>
         <location filename="../qml/pages/CommandPage.qml" line="167"/>
