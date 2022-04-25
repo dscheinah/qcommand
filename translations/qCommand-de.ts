@@ -39,13 +39,13 @@
         <translation>Launcher Icon erstellen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommandPage.qml" line="164"/>
+        <location filename="../qml/pages/CommandPage.qml" line="165"/>
         <source>Add command</source>
         <translation>Befehl hinzufügen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommandPage.qml" line="175"/>
-        <location filename="../qml/pages/CommandPage.qml" line="206"/>
+        <location filename="../qml/pages/CommandPage.qml" line="176"/>
+        <location filename="../qml/pages/CommandPage.qml" line="207"/>
         <source>Search</source>
         <translation>Suchen</translation>
     </message>

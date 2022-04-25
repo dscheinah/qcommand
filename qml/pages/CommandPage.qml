@@ -106,6 +106,7 @@ Page {
                             shRequest.send(item.command);
                             var desktopRequest = new XMLHttpRequest()
                             desktopRequest.open('PUT', 'file:' + StandardPaths.home + '/.local/share/applications/qCommand-autogen-' + item.rowid + '.desktop', false)
+                            var entry, prefix
                             if (item.is_interactive) {
                                 entry = 'fingerterm -e'
                                 prefix = item.run_as_root ? 'devel-su bash -c ' : 'bash -c '
