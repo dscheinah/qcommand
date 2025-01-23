@@ -4,48 +4,58 @@
 <context>
     <name>CommandPage</name>
     <message>
-        <location filename="../qml/pages/CommandPage.qml" line="28"/>
+        <location filename="../qml/pages/CommandPage.qml" line="29"/>
         <source>Search results</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommandPage.qml" line="28"/>
+        <location filename="../qml/pages/CommandPage.qml" line="29"/>
         <source>Available commands</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommandPage.qml" line="45"/>
+        <location filename="../qml/pages/CommandPage.qml" line="49"/>
         <source>Edit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommandPage.qml" line="69"/>
+        <location filename="../qml/pages/CommandPage.qml" line="73"/>
         <source>Duplicate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommandPage.qml" line="91"/>
+        <location filename="../qml/pages/CommandPage.qml" line="95"/>
         <source>Remove</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommandPage.qml" line="93"/>
+        <location filename="../qml/pages/CommandPage.qml" line="97"/>
         <source>Deleting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommandPage.qml" line="100"/>
+        <location filename="../qml/pages/CommandPage.qml" line="104"/>
         <source>Create launcher icon</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommandPage.qml" line="165"/>
+        <location filename="../qml/pages/CommandPage.qml" line="104"/>
+        <source>Update launcher icon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/CommandPage.qml" line="139"/>
+        <source>Remove launcher icon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/CommandPage.qml" line="180"/>
         <source>Add command</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommandPage.qml" line="176"/>
-        <location filename="../qml/pages/CommandPage.qml" line="207"/>
+        <location filename="../qml/pages/CommandPage.qml" line="191"/>
+        <location filename="../qml/pages/CommandPage.qml" line="222"/>
         <source>Search</source>
         <translation type="unfinished"></translation>
     </message>

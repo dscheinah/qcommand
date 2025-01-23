@@ -1,6 +1,7 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 import QtQuick.LocalStorage 2.0
+import qCommand 1.0
 import '../src'
 
 Page {
@@ -39,6 +40,9 @@ Page {
 
         delegate: ListItem {
             id: command
+
+            property string desktopFile: StandardPaths.home + '/.local/share/applications/qCommand-autogen-' + commands.get(index).rowid + '.desktop'
+            property bool desktopFileExists: checker.fileExists(command.desktopFile)
 
             menu: ContextMenu {
                 MenuItem {
@@ -97,7 +101,7 @@ Page {
                     }
                 }
                 MenuItem {
-                    text: qsTr('Create launcher icon')
+                    text: command.desktopFileExists ? qsTr('Update launcher icon') : qsTr('Create launcher icon')
                     onClicked: {
                         database.read(commands.get(index), function(item) {
                             var sh = StandardPaths.data + '/' + item.rowid + '.sh'
@@ -105,7 +109,7 @@ Page {
                             shRequest.open('PUT', 'file:' + sh)
                             shRequest.send(item.command);
                             var desktopRequest = new XMLHttpRequest()
-                            desktopRequest.open('PUT', 'file:' + StandardPaths.home + '/.local/share/applications/qCommand-autogen-' + item.rowid + '.desktop', false)
+                            desktopRequest.open('PUT', 'file:' + command.desktopFile, false)
                             var entry, prefix
                             if (item.is_interactive) {
                                 entry = 'fingerterm -e'
@@ -125,7 +129,16 @@ Name=' + item.name + '
 [X-Sailjail]
 Sandboxing=Disabled
                             ')
+                            command.desktopFileExists = true
                         })
+                    }
+                }
+                MenuItem {
+                    text: qsTr('Remove launcher icon')
+                    visible: command.desktopFileExists
+                    onClicked: {
+                        checker.deleteFile(command.desktopFile)
+                        command.desktopFileExists = false
                     }
                 }
             }
@@ -262,6 +275,10 @@ Sandboxing=Disabled
                 }, text)
             }
         }
+    }
+
+    Developer {
+        id: checker
     }
 
     function load(position, height) {

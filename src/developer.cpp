@@ -57,6 +57,16 @@ QString Developer::getFileToOpen(QString line)
     return "";
 }
 
+bool Developer::fileExists(QString file)
+{
+    return QFile(file).exists();
+}
+
+void Developer::deleteFile(QString file)
+{
+    QFile(file).remove();
+}
+
 QString Developer::replaceAndGetFile(QString line, QList<QRegExp> expressions)
 {
     QString reduced;

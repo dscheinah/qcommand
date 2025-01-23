@@ -22,6 +22,8 @@ public:
     bool fingertermAvailable();
     Q_INVOKABLE void open(QString file);
     Q_INVOKABLE QString getFileToOpen(QString line);
+    Q_INVOKABLE bool fileExists(QString file);
+    Q_INVOKABLE void deleteFile(QString file);
 
 private:
     QString replaceAndGetFile(QString line, QList<QRegExp> expressions);
