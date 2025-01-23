@@ -148,9 +148,6 @@ Dialog {
         if (has_output && !is_interactive) {
             dialog.acceptDestination = Qt.resolvedUrl('ResultPage.qml')
             dialog.acceptDestinationAction = PageStackAction.Push
-            dialog.acceptDestinationProperties = {
-                name: name,
-            }
         }
     }
 }

@@ -44,18 +44,18 @@
         <translation>Launcher Icon aktualisieren</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommandPage.qml" line="139"/>
+        <location filename="../qml/pages/CommandPage.qml" line="138"/>
         <source>Remove launcher icon</source>
         <translation>Launcher Icon entfernen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommandPage.qml" line="180"/>
+        <location filename="../qml/pages/CommandPage.qml" line="179"/>
         <source>Add command</source>
         <translation>Befehl hinzufügen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommandPage.qml" line="191"/>
-        <location filename="../qml/pages/CommandPage.qml" line="222"/>
+        <location filename="../qml/pages/CommandPage.qml" line="190"/>
+        <location filename="../qml/pages/CommandPage.qml" line="221"/>
         <source>Search</source>
         <translation>Suchen</translation>
     </message>
@@ -195,47 +195,47 @@
 <context>
     <name>ResultPage</name>
     <message>
-        <location filename="../qml/pages/ResultPage.qml" line="97"/>
+        <location filename="../qml/pages/ResultPage.qml" line="95"/>
         <source>Errors</source>
         <translation>Fehler</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ResultPage.qml" line="97"/>
+        <location filename="../qml/pages/ResultPage.qml" line="95"/>
         <source>Output</source>
         <translation>Ausgabe</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ResultPage.qml" line="24"/>
+        <location filename="../qml/pages/ResultPage.qml" line="23"/>
         <source>no output provided</source>
         <translation>es wurde nichts ausgegeben</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ResultPage.qml" line="28"/>
+        <location filename="../qml/pages/ResultPage.qml" line="27"/>
         <source>no messages provided</source>
         <translation>es wurden keine Meldungen ausgegeben</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ResultPage.qml" line="116"/>
+        <location filename="../qml/pages/ResultPage.qml" line="114"/>
         <source>Copy</source>
         <translation>Kopieren</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ResultPage.qml" line="123"/>
+        <location filename="../qml/pages/ResultPage.qml" line="121"/>
         <source>Open</source>
         <translation>Öffnen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ResultPage.qml" line="72"/>
+        <location filename="../qml/pages/ResultPage.qml" line="70"/>
         <source>Copy all</source>
         <translation>Alles kopieren</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ResultPage.qml" line="80"/>
+        <location filename="../qml/pages/ResultPage.qml" line="78"/>
         <source>Show errors</source>
         <translation>Fehler anzeigen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ResultPage.qml" line="88"/>
+        <location filename="../qml/pages/ResultPage.qml" line="86"/>
         <source>Show output</source>
         <translation>Ausgabe anzeigen</translation>
     </message>

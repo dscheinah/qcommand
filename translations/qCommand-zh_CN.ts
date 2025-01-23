@@ -44,18 +44,18 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommandPage.qml" line="139"/>
+        <location filename="../qml/pages/CommandPage.qml" line="138"/>
         <source>Remove launcher icon</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommandPage.qml" line="180"/>
+        <location filename="../qml/pages/CommandPage.qml" line="179"/>
         <source>Add command</source>
         <translation>添加指令</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommandPage.qml" line="191"/>
-        <location filename="../qml/pages/CommandPage.qml" line="222"/>
+        <location filename="../qml/pages/CommandPage.qml" line="190"/>
+        <location filename="../qml/pages/CommandPage.qml" line="221"/>
         <source>Search</source>
         <translation>搜索</translation>
     </message>
@@ -195,47 +195,47 @@
 <context>
     <name>ResultPage</name>
     <message>
-        <location filename="../qml/pages/ResultPage.qml" line="97"/>
+        <location filename="../qml/pages/ResultPage.qml" line="95"/>
         <source>Errors</source>
         <translation>错误</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ResultPage.qml" line="97"/>
+        <location filename="../qml/pages/ResultPage.qml" line="95"/>
         <source>Output</source>
         <translation>输出</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ResultPage.qml" line="24"/>
+        <location filename="../qml/pages/ResultPage.qml" line="23"/>
         <source>no output provided</source>
         <translation>没有提供的指令</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ResultPage.qml" line="28"/>
+        <location filename="../qml/pages/ResultPage.qml" line="27"/>
         <source>no messages provided</source>
         <translation>没有提供的密码</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ResultPage.qml" line="116"/>
+        <location filename="../qml/pages/ResultPage.qml" line="114"/>
         <source>Copy</source>
         <translation>复制</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ResultPage.qml" line="123"/>
+        <location filename="../qml/pages/ResultPage.qml" line="121"/>
         <source>Open</source>
         <translation>打开</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ResultPage.qml" line="72"/>
+        <location filename="../qml/pages/ResultPage.qml" line="70"/>
         <source>Copy all</source>
         <translation>全部复制</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ResultPage.qml" line="80"/>
+        <location filename="../qml/pages/ResultPage.qml" line="78"/>
         <source>Show errors</source>
         <translation>显示错误</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ResultPage.qml" line="88"/>
+        <location filename="../qml/pages/ResultPage.qml" line="86"/>
         <source>Show output</source>
         <translation>显示输出</translation>
     </message>

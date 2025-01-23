@@ -14,13 +14,13 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommandPage.qml" line="191"/>
-        <location filename="../qml/pages/CommandPage.qml" line="222"/>
+        <location filename="../qml/pages/CommandPage.qml" line="190"/>
+        <location filename="../qml/pages/CommandPage.qml" line="221"/>
         <source>Search</source>
         <translation>Chercher</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommandPage.qml" line="180"/>
+        <location filename="../qml/pages/CommandPage.qml" line="179"/>
         <source>Add command</source>
         <translation>Ajouter une commande</translation>
     </message>
@@ -55,7 +55,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommandPage.qml" line="139"/>
+        <location filename="../qml/pages/CommandPage.qml" line="138"/>
         <source>Remove launcher icon</source>
         <translation type="unfinished"></translation>
     </message>
@@ -195,47 +195,47 @@
 <context>
     <name>ResultPage</name>
     <message>
-        <location filename="../qml/pages/ResultPage.qml" line="97"/>
+        <location filename="../qml/pages/ResultPage.qml" line="95"/>
         <source>Errors</source>
         <translation>Erreurs</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ResultPage.qml" line="97"/>
+        <location filename="../qml/pages/ResultPage.qml" line="95"/>
         <source>Output</source>
         <translation>Sortie</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ResultPage.qml" line="24"/>
+        <location filename="../qml/pages/ResultPage.qml" line="23"/>
         <source>no output provided</source>
         <translation>aucune sortie fournie</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ResultPage.qml" line="28"/>
+        <location filename="../qml/pages/ResultPage.qml" line="27"/>
         <source>no messages provided</source>
         <translation>aucun message fourni</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ResultPage.qml" line="116"/>
+        <location filename="../qml/pages/ResultPage.qml" line="114"/>
         <source>Copy</source>
         <translation>Copier</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ResultPage.qml" line="123"/>
+        <location filename="../qml/pages/ResultPage.qml" line="121"/>
         <source>Open</source>
         <translation>Ouvrir</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ResultPage.qml" line="72"/>
+        <location filename="../qml/pages/ResultPage.qml" line="70"/>
         <source>Copy all</source>
         <translation>Tout copier</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ResultPage.qml" line="80"/>
+        <location filename="../qml/pages/ResultPage.qml" line="78"/>
         <source>Show errors</source>
         <translation>Afficher les erreurs</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ResultPage.qml" line="88"/>
+        <location filename="../qml/pages/ResultPage.qml" line="86"/>
         <source>Show output</source>
         <translation>Afficher la sortie</translation>
     </message>

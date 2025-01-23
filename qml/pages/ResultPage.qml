@@ -12,7 +12,6 @@ Page {
     property string errors
     property bool error: false
     property bool errorMode: false
-    property string name   
 
     property variant offsets: []
     property variant columns: []
@@ -63,7 +62,6 @@ Page {
 
     SilicaListView {
         anchors.fill: parent
-        contentHeight: content.height
 
         PullDownMenu {
             visible: error || output
