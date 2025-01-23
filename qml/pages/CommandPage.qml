@@ -125,6 +125,7 @@ Type=Application
 Icon=qCommand
 Exec=' + entry + ' "chmod +x ' + sh + ' && ' + prefix + sh + '"
 Name=' + item.name + '
+X-Nemo-Single-Instance=no
 
 [X-Sailjail]
 Sandboxing=Disabled
