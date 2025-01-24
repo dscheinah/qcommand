@@ -116,7 +116,7 @@ Page {
                                 prefix = item.run_as_root ? 'devel-su bash -c ' : 'bash -c '
                             } else {
                                 entry = 'bash -c'
-                                prefix = item.run_as_root ? 'devel-su bash -c ' : ''
+                                prefix = item.run_as_root ? 'pkexec bash -c ' : ''
                             }
 
                             desktopRequest.send('
@@ -129,7 +129,7 @@ X-Nemo-Single-Instance=no
 
 [X-Sailjail]
 Sandboxing=Disabled
-                            ')
+')
                             command.desktopFileExists = true
                         })
                     }
