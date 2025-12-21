@@ -13,3 +13,6 @@ Name[de]=qCommand
 
 [X-Sailjail]
 Sandboxing=Disabled
+
+[X-HarbourBackup]
+BackupPathList=.local/share/qCommand

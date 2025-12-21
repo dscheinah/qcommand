@@ -10,7 +10,7 @@ Name:       qCommand
 
 Summary:    run commands from gui
 Version:    1.4
-Release:    2
+Release:    3
 Group:      Qt/Qt
 License:    LICENSE
 Source0:    %{name}-%{version}.tar.bz2
