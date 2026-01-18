@@ -12,9 +12,12 @@
 # The name of your application
 TARGET = qCommand
 
-CONFIG += sailfishapp
+CONFIG += \
+    sailfishapp \
+    link_pkgconfig
 
 PKGCONFIG += \
+    sailfishapp \
     sailfishsecrets
 
 SOURCES += \
@@ -52,3 +55,5 @@ HEADERS += \
     src/completion.h \
     src/fingerterm.h \
     src/developer.h
+
+INCLUDEPATH += /usr/include/Sailfish
