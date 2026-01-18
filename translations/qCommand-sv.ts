@@ -14,13 +14,13 @@
         <translation>Skapa startikon</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommandPage.qml" line="190"/>
-        <location filename="../qml/pages/CommandPage.qml" line="221"/>
+        <location filename="../qml/pages/CommandPage.qml" line="168"/>
+        <location filename="../qml/pages/CommandPage.qml" line="199"/>
         <source>Search</source>
         <translation>Sök</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommandPage.qml" line="179"/>
+        <location filename="../qml/pages/CommandPage.qml" line="157"/>
         <source>Add command</source>
         <translation>Lägg till kommando</translation>
     </message>
@@ -55,7 +55,7 @@
         <translation>Uppdatera startikon</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommandPage.qml" line="138"/>
+        <location filename="../qml/pages/CommandPage.qml" line="116"/>
         <source>Remove launcher icon</source>
         <translation>Ta bort startikon</translation>
     </message>

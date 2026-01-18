@@ -104,33 +104,11 @@ Page {
                     text: command.desktopFileExists ? qsTr('Update launcher icon') : qsTr('Create launcher icon')
                     onClicked: {
                         database.read(commands.get(index), function(item) {
-                            var sh = StandardPaths.data + '/' + item.rowid + '.sh'
-                            var shRequest = new XMLHttpRequest()
-                            shRequest.open('PUT', 'file:' + sh)
-                            shRequest.send(item.command);
-                            var desktopRequest = new XMLHttpRequest()
-                            desktopRequest.open('PUT', 'file:' + command.desktopFile, false)
-                            var entry, prefix
-                            if (item.is_interactive) {
-                                entry = 'fingerterm -e'
-                                prefix = item.run_as_root ? 'devel-su bash -c ' : 'bash -c '
-                            } else {
-                                entry = 'bash -c'
-                                prefix = item.run_as_root ? 'pkexec bash -c ' : ''
-                            }
-
-                            desktopRequest.send('
-[Desktop Entry]
-Type=Application
-Icon=qCommand
-Exec=' + entry + ' "chmod +x ' + sh + ' && ' + prefix + sh + '"
-Name=' + item.name + '
-X-Nemo-Single-Instance=no
-
-[X-Sailjail]
-Sandboxing=Disabled
-')
-                            command.desktopFileExists = true
+                            engine.store(item, function() {
+                                engine.desktop(item, command.desktopFile, function() {
+                                    command.desktopFileExists = true
+                                })
+                            })
                         })
                     }
                 }
