@@ -143,33 +143,33 @@
 <context>
     <name>ExecPage</name>
     <message>
-        <location filename="../qml/pages/ExecPage.qml" line="88"/>
+        <location filename="../qml/pages/ExecPage.qml" line="94"/>
         <source>Run command</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/ExecPage.qml" line="96"/>
+        <location filename="../qml/pages/ExecPage.qml" line="102"/>
         <source>none</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/ExecPage.qml" line="101"/>
+        <location filename="../qml/pages/ExecPage.qml" line="107"/>
         <source>Run as root</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/ExecPage.qml" line="102"/>
+        <location filename="../qml/pages/ExecPage.qml" line="108"/>
         <source>hint_root_disabled</source>
         <translation>Enable developer mode and setup a password to run commands as root.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ExecPage.qml" line="119"/>
-        <location filename="../qml/pages/ExecPage.qml" line="120"/>
+        <location filename="../qml/pages/ExecPage.qml" line="125"/>
+        <location filename="../qml/pages/ExecPage.qml" line="126"/>
         <source>Password</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/ExecPage.qml" line="134"/>
+        <location filename="../qml/pages/ExecPage.qml" line="140"/>
         <source>Store password</source>
         <translation type="unfinished"></translation>
     </message>

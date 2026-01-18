@@ -28,38 +28,44 @@ Dialog {
     }
 
     onAccepted: {
-        if (!checker.fingertermAvailable)  {
-            is_interactive = false
+        var item = {
+            rowid: rowid + '-exec',
+            command: commandField.text,
         }
-        if (root.checked) {
-            var success = false
-            if (store.checked) {
-                success = true
-                if (password.text != lastPassword) {
-                    success = secrets.store(password.text)
+        engine.store(item, function() {
+            if (!checker.fingertermAvailable)  {
+                is_interactive = false
+            }
+            if (root.checked) {
+                var success = false
+                if (store.checked) {
+                    success = true
+                    if (password.text != lastPassword) {
+                        success = secrets.store(password.text)
+                    }
                 }
-            }
-            if (success) {
-                database.setStored(rowid, true)
-                lastPassword = password.text
-            } else {
-                database.setStored(rowid, false)
-                lastPassword = ''
-            }
-            if (checker.develSuAvailable) {
-                if (is_interactive) {
-                    engine.execAsRootInteractive(commandField.text)
+                if (success) {
+                    database.setStored(rowid, true)
+                    lastPassword = password.text
                 } else {
-                    engine.execAsRoot(commandField.text, has_output, password.text)
+                    database.setStored(rowid, false)
+                    lastPassword = ''
+                }
+                if (checker.develSuAvailable) {
+                    if (is_interactive) {
+                        engine.execAsRootInteractive(engine.path(item))
+                    } else {
+                        engine.execAsRoot(engine.path(item), has_output, password.text)
+                    }
+                }
+            } else {
+                if (is_interactive) {
+                    engine.execInteractive(engine.path(item))
+                } else {
+                    engine.exec(engine.path(item), has_output)
                 }
             }
-        } else {
-            if (is_interactive) {
-                engine.execInteractive(commandField.text)
-            } else {
-                engine.exec(commandField.text, has_output)
-            }
-        }
+        })
     }
 
     Developer {

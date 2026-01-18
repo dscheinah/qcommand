@@ -9,7 +9,7 @@ void CommandEngine::exec(QString cmd, bool emitOutput)
 {
     create(emitOutput);
     QStringList args;
-    args << "-c" << cmd;
+    args << "-c" << "chmod +x " + cmd + " && " + cmd;
     process->start("bash", args, QProcess::ReadOnly);
     process->closeWriteChannel();
 }
@@ -18,7 +18,7 @@ void CommandEngine::execAsRoot(QString cmd, bool emitOutput, QString password)
 {
     create(emitOutput);
     QStringList args;
-    args << "bash" << "-c" << cmd;
+    args << "bash" << "-c" << "chmod +x " + cmd + " && " + cmd;
     process->start("devel-su", args);
     process->write((password + "\n").toUtf8().data());
     process->closeWriteChannel();

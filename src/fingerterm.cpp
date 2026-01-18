@@ -8,7 +8,7 @@ void Fingerterm::execInteractive(QString cmd)
 {
     create(false);
     QStringList args;
-    args << "-e" << cmd + "\nwhile read; do :; done; exit";
+    args << "-e" << "chmod +x " + cmd + " && " + cmd + "\nwhile read; do :; done; exit";
     process->start("fingerterm", args, QProcess::ReadOnly);
     process->closeWriteChannel();
     process->closeReadChannel(QProcess::ProcessChannel::StandardOutput);
@@ -19,7 +19,7 @@ void Fingerterm::execAsRootInteractive(QString cmd)
 {
     create(false);
     QStringList args;
-    args << "-e" << "devel-su bash -c \"" + cmd.replace('"', "\\\"") + "\nwhile read; do :; done; exit\"";
+    args << "-e" << "chmod +x " + cmd + " && devel-su bash -c \"" + cmd + "\nwhile read; do :; done; exit\"";
     process->start("fingerterm", args, QProcess::ReadOnly);
     process->closeWriteChannel();
     process->closeReadChannel(QProcess::ProcessChannel::StandardOutput);

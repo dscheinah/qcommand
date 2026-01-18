@@ -143,33 +143,33 @@
 <context>
     <name>ExecPage</name>
     <message>
-        <location filename="../qml/pages/ExecPage.qml" line="88"/>
+        <location filename="../qml/pages/ExecPage.qml" line="94"/>
         <source>Run command</source>
         <translation>Kör kommando</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ExecPage.qml" line="96"/>
+        <location filename="../qml/pages/ExecPage.qml" line="102"/>
         <source>none</source>
         <translation>ingen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ExecPage.qml" line="101"/>
+        <location filename="../qml/pages/ExecPage.qml" line="107"/>
         <source>Run as root</source>
         <translation>Kör som root</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ExecPage.qml" line="102"/>
+        <location filename="../qml/pages/ExecPage.qml" line="108"/>
         <source>hint_root_disabled</source>
         <translation>Aktivera utvecklarläge och ange ett lösenord (aktivera även fjärranslutning), för att köra kommandon som root.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ExecPage.qml" line="119"/>
-        <location filename="../qml/pages/ExecPage.qml" line="120"/>
+        <location filename="../qml/pages/ExecPage.qml" line="125"/>
+        <location filename="../qml/pages/ExecPage.qml" line="126"/>
         <source>Password</source>
         <translation>Lösenord</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ExecPage.qml" line="134"/>
+        <location filename="../qml/pages/ExecPage.qml" line="140"/>
         <source>Store password</source>
         <translation>Lagra lösenordet</translation>
     </message>

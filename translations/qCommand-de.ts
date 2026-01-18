@@ -143,33 +143,33 @@
 <context>
     <name>ExecPage</name>
     <message>
-        <location filename="../qml/pages/ExecPage.qml" line="88"/>
+        <location filename="../qml/pages/ExecPage.qml" line="94"/>
         <source>Run command</source>
         <translation>Befehl ausführen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ExecPage.qml" line="96"/>
+        <location filename="../qml/pages/ExecPage.qml" line="102"/>
         <source>none</source>
         <translation>keiner</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ExecPage.qml" line="101"/>
+        <location filename="../qml/pages/ExecPage.qml" line="107"/>
         <source>Run as root</source>
         <translation>Als root ausführen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ExecPage.qml" line="102"/>
+        <location filename="../qml/pages/ExecPage.qml" line="108"/>
         <source>hint_root_disabled</source>
         <translation>Aktiviere den Entwickler-Modus und setze ein Passwort, um die Befehle als root ausführen zu können.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ExecPage.qml" line="119"/>
-        <location filename="../qml/pages/ExecPage.qml" line="120"/>
+        <location filename="../qml/pages/ExecPage.qml" line="125"/>
+        <location filename="../qml/pages/ExecPage.qml" line="126"/>
         <source>Password</source>
         <translation>Passwort</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ExecPage.qml" line="134"/>
+        <location filename="../qml/pages/ExecPage.qml" line="140"/>
         <source>Store password</source>
         <translation>Passwort speichern</translation>
     </message>

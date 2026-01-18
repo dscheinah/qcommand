@@ -143,33 +143,33 @@
 <context>
     <name>ExecPage</name>
     <message>
-        <location filename="../qml/pages/ExecPage.qml" line="88"/>
+        <location filename="../qml/pages/ExecPage.qml" line="94"/>
         <source>Run command</source>
         <translation>运行指令</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ExecPage.qml" line="96"/>
+        <location filename="../qml/pages/ExecPage.qml" line="102"/>
         <source>none</source>
         <translation>无</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ExecPage.qml" line="101"/>
+        <location filename="../qml/pages/ExecPage.qml" line="107"/>
         <source>Run as root</source>
         <translation>以 root 模式运行</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ExecPage.qml" line="102"/>
+        <location filename="../qml/pages/ExecPage.qml" line="108"/>
         <source>hint_root_disabled</source>
         <translation>打开开发者模式并且设置密码以便在 root 状态运行指令。</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ExecPage.qml" line="119"/>
-        <location filename="../qml/pages/ExecPage.qml" line="120"/>
+        <location filename="../qml/pages/ExecPage.qml" line="125"/>
+        <location filename="../qml/pages/ExecPage.qml" line="126"/>
         <source>Password</source>
         <translation>密码</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ExecPage.qml" line="134"/>
+        <location filename="../qml/pages/ExecPage.qml" line="140"/>
         <source>Store password</source>
         <translation type="unfinished"></translation>
     </message>
