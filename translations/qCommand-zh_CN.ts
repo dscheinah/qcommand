@@ -63,79 +63,89 @@
 <context>
     <name>EditPage</name>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="47"/>
+        <location filename="../qml/pages/EditPage.qml" line="48"/>
         <source>Edit command</source>
         <translation>编辑指令</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="47"/>
+        <location filename="../qml/pages/EditPage.qml" line="48"/>
         <source>Add command</source>
         <translation>添加指令</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="53"/>
         <location filename="../qml/pages/EditPage.qml" line="54"/>
+        <location filename="../qml/pages/EditPage.qml" line="55"/>
         <source>Name</source>
         <translation>名称</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="73"/>
+        <location filename="../qml/pages/EditPage.qml" line="74"/>
         <source>Use as cover action</source>
         <translation>用作封面操作</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="83"/>
-        <location filename="../qml/pages/EditPage.qml" line="90"/>
+        <location filename="../qml/pages/EditPage.qml" line="84"/>
+        <location filename="../qml/pages/EditPage.qml" line="91"/>
         <source>hint_group_disabled</source>
         <translation>用至少两个单词填充名称，以便使用第一个单词作为组名。</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="118"/>
+        <location filename="../qml/pages/EditPage.qml" line="119"/>
         <source>Command</source>
         <translation>指令</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="131"/>
+        <location filename="../qml/pages/EditPage.qml" line="132"/>
         <source>Run as root</source>
         <translation>以 root 模式运行</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="132"/>
+        <location filename="../qml/pages/EditPage.qml" line="133"/>
         <source>hint_root_disabled</source>
         <translation>打开开发者模式并且设置密码以便在 root 状态运行指令。</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="139"/>
+        <location filename="../qml/pages/EditPage.qml" line="140"/>
         <source>Interactive</source>
         <translation>交互式</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="140"/>
+        <location filename="../qml/pages/EditPage.qml" line="141"/>
         <source>hint_interactive</source>
         <translation>将使用 Terminal 应用程序以打开指令以使用用户交互。</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="140"/>
+        <location filename="../qml/pages/EditPage.qml" line="141"/>
         <source>hint_interactive_disabled</source>
         <translation>打开开发者模式或安装Fingerterm应用程序以使用用户交互模式。</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="147"/>
+        <location filename="../qml/pages/EditPage.qml" line="148"/>
         <source>Show output</source>
         <translation>显示输出</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="148"/>
+        <location filename="../qml/pages/EditPage.qml" line="149"/>
         <source>hint_output</source>
         <translation>这允许查看输出并打开已解析的文件或复制指令的每一行内容。</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="148"/>
+        <location filename="../qml/pages/EditPage.qml" line="149"/>
         <source>hint_output_disabled</source>
         <translation>为标记为交互式的指令禁用输出处理。</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="125"/>
+        <location filename="../qml/pages/EditPage.qml" line="166"/>
+        <source>Export</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/EditPage.qml" line="159"/>
+        <source>Import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/EditPage.qml" line="126"/>
         <source>Editable before execution</source>
         <translation>执行前可编辑</translation>
     </message>

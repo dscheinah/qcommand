@@ -63,79 +63,89 @@
 <context>
     <name>EditPage</name>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="47"/>
+        <location filename="../qml/pages/EditPage.qml" line="48"/>
         <source>Edit command</source>
         <translation>Modifier la commande</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="47"/>
+        <location filename="../qml/pages/EditPage.qml" line="48"/>
         <source>Add command</source>
         <translation>Ajouter la commande</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="53"/>
         <location filename="../qml/pages/EditPage.qml" line="54"/>
+        <location filename="../qml/pages/EditPage.qml" line="55"/>
         <source>Name</source>
         <translation>Nom</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="73"/>
+        <location filename="../qml/pages/EditPage.qml" line="74"/>
         <source>Use as cover action</source>
         <translation>Ajouter à l&apos;écran d&apos;accueil</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="83"/>
-        <location filename="../qml/pages/EditPage.qml" line="90"/>
+        <location filename="../qml/pages/EditPage.qml" line="84"/>
+        <location filename="../qml/pages/EditPage.qml" line="91"/>
         <source>hint_group_disabled</source>
         <translation>Remplissez le nom avec au moins deux mots pour utiliser le premier comme nom de groupe.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="118"/>
+        <location filename="../qml/pages/EditPage.qml" line="119"/>
         <source>Command</source>
         <translation>Commande</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="131"/>
+        <location filename="../qml/pages/EditPage.qml" line="132"/>
         <source>Run as root</source>
         <translation>Exécuter en tant que root</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="132"/>
+        <location filename="../qml/pages/EditPage.qml" line="133"/>
         <source>hint_root_disabled</source>
         <translation>Activez le mode développeur et configurez un mot de passe pour exécuter les commandes en tant que root.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="139"/>
+        <location filename="../qml/pages/EditPage.qml" line="140"/>
         <source>Interactive</source>
         <translation>Interactive</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="140"/>
+        <location filename="../qml/pages/EditPage.qml" line="141"/>
         <source>hint_interactive</source>
         <translation>Ouvre les commandes avec l&apos;application Terminal pour permettre l&apos;interaction de l&apos;utilisateur.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="140"/>
+        <location filename="../qml/pages/EditPage.qml" line="141"/>
         <source>hint_interactive_disabled</source>
         <translation>Activez le mode développeur ou installez &quot;fingerterm&quot; pour utiliser le mode interactif.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="147"/>
+        <location filename="../qml/pages/EditPage.qml" line="148"/>
         <source>Show output</source>
         <translation>Afficher la sortie</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="148"/>
+        <location filename="../qml/pages/EditPage.qml" line="149"/>
         <source>hint_output</source>
         <translation>Cela permet de voir la sortie et d&apos;ouvrir les fichiers analysés ou de copier ligne par ligne.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="148"/>
+        <location filename="../qml/pages/EditPage.qml" line="149"/>
         <source>hint_output_disabled</source>
         <translation>La sorties est désactivée en mode interactif.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="125"/>
+        <location filename="../qml/pages/EditPage.qml" line="166"/>
+        <source>Export</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/EditPage.qml" line="159"/>
+        <source>Import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/EditPage.qml" line="126"/>
         <source>Editable before execution</source>
         <translation>Modifiable avant exécution</translation>
     </message>

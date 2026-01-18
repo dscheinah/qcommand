@@ -1,5 +1,6 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import Sailfish.Pickers 1.0
 import qCommand 1.0
 import '../src'
 
@@ -152,5 +153,49 @@ Dialog {
 
         VerticalScrollDecorator {
         }
+
+        PullDownMenu {
+            MenuItem {
+                text: qsTr('Import')
+                onClicked: {
+                    pageStack.push(filePickerPage)
+                }
+            }
+
+            MenuItem {
+                text: qsTr('Export')
+                onClicked: {
+                    pageStack.push(folderPickerPage)
+                }
+            }
+        }
+
+        Component {
+             id: filePickerPage
+             FilePickerPage {
+                 onSelectedContentPropertiesChanged: {
+                     var request = new XMLHttpRequest()
+                     request.onreadystatechange = function() {
+                         if (request.readyState === XMLHttpRequest.DONE) {
+                             nameField.text = nameField.text || selectedContentProperties.fileName.replace('qCommand_', '')
+                             commandField.text = request.responseText
+                         }
+                     }
+                     request.open('GET', 'file:' + selectedContentProperties.filePath)
+                     request.send()
+                 }
+             }
+         }
+
+         Component {
+             id: folderPickerPage
+             FolderPickerPage {
+                 onSelectedPathChanged: {
+                     var request = new XMLHttpRequest()
+                     request.open('PUT', 'file:' + selectedPath + '/qCommand_' + (nameField.text || rowid || 'unknown'))
+                     request.send(commandField.text)
+                 }
+             }
+         }
     }
 }

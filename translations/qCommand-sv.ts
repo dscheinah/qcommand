@@ -63,79 +63,89 @@
 <context>
     <name>EditPage</name>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="47"/>
+        <location filename="../qml/pages/EditPage.qml" line="48"/>
         <source>Edit command</source>
         <translation>Redigera kommando</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="47"/>
+        <location filename="../qml/pages/EditPage.qml" line="48"/>
         <source>Add command</source>
         <translation>Lägg till kommando</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="53"/>
         <location filename="../qml/pages/EditPage.qml" line="54"/>
+        <location filename="../qml/pages/EditPage.qml" line="55"/>
         <source>Name</source>
         <translation>Namn</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="73"/>
+        <location filename="../qml/pages/EditPage.qml" line="74"/>
         <source>Use as cover action</source>
         <translation>Använd som miniatyråtgärd</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="83"/>
-        <location filename="../qml/pages/EditPage.qml" line="90"/>
+        <location filename="../qml/pages/EditPage.qml" line="84"/>
+        <location filename="../qml/pages/EditPage.qml" line="91"/>
         <source>hint_group_disabled</source>
         <translation>Namnge kommandot med minst två ord, för att använda det första som åtgärdsnamn.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="118"/>
+        <location filename="../qml/pages/EditPage.qml" line="119"/>
         <source>Command</source>
         <translation>Kommando</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="131"/>
+        <location filename="../qml/pages/EditPage.qml" line="132"/>
         <source>Run as root</source>
         <translation>Kör som root</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="132"/>
+        <location filename="../qml/pages/EditPage.qml" line="133"/>
         <source>hint_root_disabled</source>
         <translation>Aktivera utvecklarläge och ange ett lösenord (aktivera även fjärranslutning), för att köra kommandon som root.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="139"/>
+        <location filename="../qml/pages/EditPage.qml" line="140"/>
         <source>Interactive</source>
         <translation>Interaktiv</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="140"/>
+        <location filename="../qml/pages/EditPage.qml" line="141"/>
         <source>hint_interactive</source>
         <translation>Kommandot öppnas i terminal, för att låta användare interagera.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="140"/>
+        <location filename="../qml/pages/EditPage.qml" line="141"/>
         <source>hint_interactive_disabled</source>
         <translation>Aktivera utvecklarläge eller installera &quot;FingerTerm&quot; för att interagera.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="147"/>
+        <location filename="../qml/pages/EditPage.qml" line="148"/>
         <source>Show output</source>
         <translation>Visa utdata</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="148"/>
+        <location filename="../qml/pages/EditPage.qml" line="149"/>
         <source>hint_output</source>
         <translation>Låter dig se utdata och öppna analyserade filer eller kopiera enskilda rader.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="148"/>
+        <location filename="../qml/pages/EditPage.qml" line="149"/>
         <source>hint_output_disabled</source>
         <translation>Utdatahantering är inaktiverad för kommandon markerade som interaktiva.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="125"/>
+        <location filename="../qml/pages/EditPage.qml" line="166"/>
+        <source>Export</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/EditPage.qml" line="159"/>
+        <source>Import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/EditPage.qml" line="126"/>
         <source>Editable before execution</source>
         <translation>Redigerbar före körning</translation>
     </message>

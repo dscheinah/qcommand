@@ -63,79 +63,89 @@
 <context>
     <name>EditPage</name>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="47"/>
+        <location filename="../qml/pages/EditPage.qml" line="48"/>
         <source>Edit command</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="47"/>
+        <location filename="../qml/pages/EditPage.qml" line="48"/>
         <source>Add command</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="53"/>
         <location filename="../qml/pages/EditPage.qml" line="54"/>
+        <location filename="../qml/pages/EditPage.qml" line="55"/>
         <source>Name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="73"/>
+        <location filename="../qml/pages/EditPage.qml" line="74"/>
         <source>Use as cover action</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="83"/>
-        <location filename="../qml/pages/EditPage.qml" line="90"/>
+        <location filename="../qml/pages/EditPage.qml" line="84"/>
+        <location filename="../qml/pages/EditPage.qml" line="91"/>
         <source>hint_group_disabled</source>
         <translation>Fill the name with at least two words to use the first one as group name.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="118"/>
+        <location filename="../qml/pages/EditPage.qml" line="119"/>
         <source>Command</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="131"/>
+        <location filename="../qml/pages/EditPage.qml" line="132"/>
         <source>Run as root</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="132"/>
+        <location filename="../qml/pages/EditPage.qml" line="133"/>
         <source>hint_root_disabled</source>
         <translation>Enable developer mode and setup a password to run commands as root.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="139"/>
+        <location filename="../qml/pages/EditPage.qml" line="140"/>
         <source>Interactive</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="140"/>
+        <location filename="../qml/pages/EditPage.qml" line="141"/>
         <source>hint_interactive</source>
         <translation>The command will be opened with the Terminal app to allow user interaction.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="140"/>
+        <location filename="../qml/pages/EditPage.qml" line="141"/>
         <source>hint_interactive_disabled</source>
         <translation>Enable developer mode or install &quot;fingerterm&quot; to use the interactive mode.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="147"/>
+        <location filename="../qml/pages/EditPage.qml" line="148"/>
         <source>Show output</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="148"/>
+        <location filename="../qml/pages/EditPage.qml" line="149"/>
         <source>hint_output</source>
         <translation>This allows to see the output and open parsed files or copy each line.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="148"/>
+        <location filename="../qml/pages/EditPage.qml" line="149"/>
         <source>hint_output_disabled</source>
         <translation>Output handling is disabled for commands marked as interactive.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditPage.qml" line="125"/>
+        <location filename="../qml/pages/EditPage.qml" line="166"/>
+        <source>Export</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/EditPage.qml" line="159"/>
+        <source>Import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/EditPage.qml" line="126"/>
         <source>Editable before execution</source>
         <translation type="unfinished"></translation>
     </message>
