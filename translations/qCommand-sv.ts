@@ -137,12 +137,12 @@
     <message>
         <location filename="../qml/pages/EditPage.qml" line="166"/>
         <source>Export</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportera</translation>
     </message>
     <message>
         <location filename="../qml/pages/EditPage.qml" line="159"/>
         <source>Import</source>
-        <translation type="unfinished"></translation>
+        <translation>Importera</translation>
     </message>
     <message>
         <location filename="../qml/pages/EditPage.qml" line="126"/>
