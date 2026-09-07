@@ -126,7 +126,8 @@ Dialog {
                 placeholderText: qsTr('Password')
                 visible: root.checked && !is_interactive
                 enabled: visible
-                validator: checker
+                // The current implementation does no longer work on Sailfish >= 5.1 - so it is disabled for now.
+                // validator: checker
                 showEchoModeToggle: !is_stored
 
                 EnterKey.iconSource: 'image://theme/icon-m-enter-accept'
