@@ -179,7 +179,7 @@
         <translation>密码</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ExecPage.qml" line="140"/>
+        <location filename="../qml/pages/ExecPage.qml" line="141"/>
         <source>Store password</source>
         <translation type="unfinished"></translation>
     </message>

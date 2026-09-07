@@ -9,8 +9,8 @@ Name:       qCommand
 # << macros
 
 Summary:    run commands from gui
-Version:    1.5
-Release:    2
+Version:    1.6
+Release:    1
 Group:      Qt/Qt
 License:    LICENSE
 Source0:    %{name}-%{version}.tar.bz2
